@@ -16,8 +16,9 @@ module.exports = function (config) {
             stats: 'errors-only'
         },
         preprocessors: {
-            'spec/*.js': ['webpack']
+            'spec/*.js': ['webpack', 'coverage']
         },
+        plugins: ['karma-coverage', 'karma-webpack','karma-jasmine', 'karma-spec-reporter', 'karma-threshold-reporter', 'karma-phantomjs-launcher'],
         reporters: ['spec', 'coverage', 'threshold'],
         thresholdReporter: {
             statements: 80,
