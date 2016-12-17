@@ -1,0 +1,14 @@
+sudo: required
+language: node_js
+node_js:
+- '4.2.2'
+before_install:
+- gem install sass
+- gem install ruby
+- gem install scss_lint
+- npm install -g yarn
+- npm install promise
+before_script:
+- yarn install
+script:
+- yarn test

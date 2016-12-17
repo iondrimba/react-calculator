@@ -18,6 +18,24 @@ module.exports = function (config) {
         preprocessors: {
             'spec/*.js': ['webpack', 'coverage']
         },
+        coverageReporter: {
+            instrumenters: { isparta: require('isparta') },
+            instrumenter: {
+                'spec/*.js': 'isparta'
+            },
+            instrumenterOptions: {
+                isparta: { babel: { presets: 'es2015' } }
+            },
+            istanbul: { noCompact: true },
+            dir: 'test/reports/coverage',
+            reporters: [
+                // reporters not supporting the `file` property 
+                {
+                    type: 'lcovonly',
+                    subdir: 'report-lcov'
+                }
+            ]
+        },
         plugins: ['karma-coverage', 'karma-webpack','karma-jasmine', 'karma-spec-reporter', 'karma-threshold-reporter', 'karma-phantomjs-launcher'],
         reporters: ['spec', 'coverage', 'threshold'],
         thresholdReporter: {
