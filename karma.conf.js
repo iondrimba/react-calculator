@@ -36,8 +36,8 @@ module.exports = function (config) {
                 }
             ]
         },
-        plugins: ['karma-coverage', 'karma-webpack','karma-jasmine', 'karma-spec-reporter', 'karma-threshold-reporter', 'karma-phantomjs-launcher'],
-        reporters: ['spec', 'coverage', 'threshold'],
+        plugins: ['karma-coverage', 'karma-webpack','karma-jasmine', 'karma-spec-reporter', 'karma-threshold-reporter', 'karma-phantomjs-launcher', 'karma-coveralls'],
+        reporters: ['spec', 'coverage', 'threshold', 'coveralls'],
         thresholdReporter: {
             statements: 80,
             branches: 50,
