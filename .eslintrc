@@ -1,0 +1,33 @@
+{
+	"globals": {
+		"PRODUCTION": true,
+		"describe": true,
+		"it": true,
+		"expect": true
+	},
+	"extends": [
+		"eslint:recommended"
+	],
+	"parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+	"env": {		
+		"es6":true,
+		"browser": true,
+		"node": true
+	},
+	"rules": {
+		"eqeqeq": 1,
+		"no-unused-vars": 0,
+		"no-console": 0,
+		"curly": 1,
+		"quotes": [
+			1,
+			"single"
+		]
+	}
+}
