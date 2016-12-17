@@ -8,6 +8,7 @@ module.exports = function (config) {
         basePath: '',
         frameworks: ['jasmine', 'browserify'],
         files: [
+            'src/scripts/model/calc.js',
             'spec/*.js'
         ],
         included: false,
