@@ -16,7 +16,7 @@ module.exports = function (config) {
             stats: 'errors-only'
         },
         preprocessors: {
-            'src/**/*.js': ['webpack', 'coverage'],
+            'src/scripts/model/calc.js': ['webpack', 'coverage'],
             'spec/*.js': ['webpack', 'coverage']
         },
         coverageReporter: {
