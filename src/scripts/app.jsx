@@ -3,15 +3,18 @@ import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import { createStore } from 'redux';
 import AppContainer from './container/appContainer.jsx';
+import RootReducer from './reducers/root';
+
 const defaultStore = {
-  greeting: 'Hello'
+  history: ['23','+','158'],
+  displayValue: 0
 };
 
-let store = createStore(() => { }, defaultStore, window.devToolsExtension && window.devToolsExtension());
+let store = createStore(RootReducer, defaultStore, window.devToolsExtension && window.devToolsExtension());
 
 render(
   <Provider store={store} >
-    <AppContainer/>
+    <AppContainer />
   </Provider>,
   document.getElementById('app')
 );

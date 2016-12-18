@@ -1,12 +1,7 @@
 class Calculator {
-    constructor(props) {
-    }
-
     add(x, y) {
-        let result = x + y;
-        return result;
+        return x + y;
     }
-
 }
 
 export default Calculator;

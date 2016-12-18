@@ -1,0 +1,10 @@
+@media screen and (max-width:499px) {
+    .home {
+        padding-top: 0;
+        &__content {
+            height: 97vh;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    }
+}

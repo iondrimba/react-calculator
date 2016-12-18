@@ -3,9 +3,13 @@ import Title from '../components/title.jsx';
 import Button from '../components/button.jsx';
 import Style from '../../scss/app.scss';
 
+
 class Home extends React.Component {
     constructor(props) {
         super(props);
+        let {history, displayValue} = props;
+        this.displayHistory = history.toString().split(',').join(' ');        
+        this.displayValue = displayValue;
     }
     render() {
         return (
@@ -13,8 +17,8 @@ class Home extends React.Component {
                 <div className={Style.home__content}>
                     <div className={Style.calc}>
                         <div className={Style.calc__header}>
-                            <p className={Style.history}>89+898+56</p>
-                            <p className={Style.result}>899.5656,45</p>
+                            <p className={Style.history}>{ this.displayHistory}</p>
+                            <p className={Style.result}>{this.displayValue}</p>
                         </div>
                         <div className={Style.calc__body}>
                             <button type="button" className={Style.button}>C</button>
@@ -44,5 +48,7 @@ class Home extends React.Component {
         );
     }
 }
+
+Home.propTypes={ history: React.PropTypes.array };
 
 export default Home;
