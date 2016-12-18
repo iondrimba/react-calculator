@@ -12,9 +12,31 @@ class Home extends React.Component {
             <div className={Style.home}>
                 <div className={Style.home__content}>
                     <div className={Style.calc}>
-                        <div className={Style.calc__header}>1
+                        <div className={Style.calc__header}>
+                            <p className={Style.history}>89+898+56</p>
+                            <p className={Style.result}>899.5656,45</p>
                         </div>
-                        <div className={Style.calc__body}>2
+                        <div className={Style.calc__body}>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={`${Style.button} ${Style.button_primaryOperator}`}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={`${Style.button} ${Style.button_primaryOperator}`}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={`${Style.button} ${Style.button_primaryOperator}`}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={`${Style.button} ${Style.button_primaryOperator}`}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={Style.button}>C</button>
+                            <button type="button" className={`${Style.button} ${Style.button_runOperator}`}>C</button>
                         </div>
                     </div>
                 </div>
