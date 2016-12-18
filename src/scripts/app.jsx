@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import { createStore } from 'redux';
 import Style from '../scss/app.scss';
+import AppContainer from './container/appContainer.jsx';
 
 const defaultStore = {
   greeting: 'Hello'
@@ -12,7 +13,7 @@ let store = createStore(() => { }, defaultStore, window.devToolsExtension && win
 
 render(
   <Provider store={store} >
-    <h1>{defaultStore.greeting}</h1>
+    <AppContainer/>
   </Provider>,
   document.getElementById('app')
 );
