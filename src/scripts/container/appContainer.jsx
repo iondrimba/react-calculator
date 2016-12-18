@@ -7,13 +7,17 @@ import add from '../actions/add';
 function mapStateToProps(store) {
   return {
     history: store.history,
+    historyDisplay: store.historyDisplay,
     displayValue: store.displayValue
   };
 }
 
-function mapDispatchToProps(dispatch) {
+
+const mapDispatchToProps = (dispatch) => {
   return {
-    add: bindActionCreators(add, dispatch)
+    addAction: (value) => {
+      dispatch(add(value))
+    }
   };
 }
 

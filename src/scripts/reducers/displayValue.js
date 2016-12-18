@@ -1,13 +1,10 @@
 import { ADD } from '../actions/constants';
+import defaultStore from '../model/initialState';
 
-function displayValue(state = { history: [], displayValue: 0 }, action) {
-
+function displayValue(state = '' , action) {
     switch (action.type) {
         case ADD:
-            return {
-                history: state.history,
-                displayValue: state.displayValue
-            };
+            return action.value;
     }
     return state;
 }

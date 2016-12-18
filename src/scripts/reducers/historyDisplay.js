@@ -1,12 +1,13 @@
 import { ADD } from '../actions/constants';
 import defaultStore from '../model/initialState';
 
-function history(state = [], action) {
+function historyDisplay(state = '', action) {
     switch (action.type) {
         case ADD:
-            return [...state, action.value];
+            var output = state += action.value.toString();
+            return output;
     }
     return state;
 }
 
-export default history;
+export default historyDisplay;
