@@ -8,7 +8,6 @@ module.exports = function (config) {
         basePath: '',
         frameworks: ['jasmine', 'browserify'],
         files: [
-            'src/scripts/model/calc.js',
             'spec/*.js'
         ],
         included: false,
@@ -36,7 +35,6 @@ module.exports = function (config) {
             }
         },
         preprocessors: {
-            'src/scripts/model/calc.js': ['babel','browserify'],
             'spec/*.js': ['babel','browserify']
         },
         coverageReporter: {
