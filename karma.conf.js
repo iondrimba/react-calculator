@@ -20,12 +20,12 @@ module.exports = function (config) {
             transform: ['stringify', 'babelify', istanbul({
                 defaultIgnore: true
             })],
-            extensions: ['.js'],
+            extensions: ['.js', '.jsx'],
             bundleDelay: 1000
         },
         babelPreprocessor: {
             options: {
-                presets: ['es2015']
+                presets: ['es2015', 'react']
             },
             filename: function (file) {
                 return file.originalPath;
@@ -43,7 +43,7 @@ module.exports = function (config) {
                 'spec/*.js': 'isparta'
             },
             instrumenterOptions: {
-                isparta: { babel: { presets: 'es2015' } }
+                isparta: { babel: { presets: ['es2015', 'react'] } }
             },
             istanbul: { noCompact: true },
             dir: 'test/reports/coverage',
