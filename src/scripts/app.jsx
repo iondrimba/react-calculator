@@ -2,9 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { render } from 'react-dom';
 import { createStore } from 'redux';
-import Style from '../scss/app.scss';
 import AppContainer from './container/appContainer.jsx';
-
 const defaultStore = {
   greeting: 'Hello'
 };

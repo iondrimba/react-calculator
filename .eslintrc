@@ -5,18 +5,22 @@
 		"it": true,
 		"expect": true
 	},
+	"plugins": [
+		"react"
+	],
 	"extends": [
-		"eslint:recommended"
+		"eslint:recommended",
+		"plugin:react/recommended"
 	],
 	"parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
-	"env": {		
-		"es6":true,
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"env": {
+		"es6": true,
 		"browser": true,
 		"node": true
 	},

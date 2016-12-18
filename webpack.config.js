@@ -42,6 +42,13 @@ var config = {
                 test: /\.(s|c)css$/,
                 loader: isProduction ? ExtractTextPlugin.extract('css?&modules&importLoaders=1&localIdentName=[name]_[local]!resolve-url!postcss!sass') :
                     "style!css?sourceMap&modules&importLoaders=1&localIdentName=[name]_[local]!resolve-url!postcss!sass?sourceMap"
+            },
+            {
+                test: /.*\.(gif|png|jpe?g|svg)$/i,
+                loaders: [
+                    'file?hash=sha512&digest=hex&name=images/[name].[hash].[ext]',
+                    'image-webpack?{optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}, mozjpeg: {quality: 65}}'
+                ]
             }
         ]
 

@@ -1,3 +1,35 @@
 body {
-  background-color: red;
+    background-color: #1f2525;
+    background-image: url(images/calci-design.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+.home {
+    padding-top: 66px;
+
+    &__content {
+        background-color: rgba(255, 0, 0, 0.78);
+        border-radius: 4px;
+        height: 451px;
+        margin: 0 auto;
+        max-width: 280px;
+        overflow: hidden;
+    }
+}
+
+.calc {
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+
+    &__header {
+        background-color: #fff;
+        flex-basis: 33%;
+    }
+
+    &__body {
+        background-color: #333;
+        flex-basis: 77%;
+    }
 }
