@@ -1,8 +1,10 @@
+import MapKeys from './mapKeys';
+
 const defaultStore = {
-    history: [],
     historyDisplay: '',
     displayValue: 0,
-    keyDown: 0
+    keyDown: '',
+    keys: MapKeys
 };
 
 export default defaultStore;

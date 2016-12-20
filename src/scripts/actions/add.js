@@ -1,9 +1,10 @@
 import { ADD } from './constants';
 
-const add = (value) => {
+const add = (value, history) => {
     return {
         type: ADD,
-        value
+        value,
+        history
     };
 };
 

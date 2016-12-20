@@ -3,26 +3,37 @@ import { connect } from 'react-redux';
 import Home from '../views/home.jsx';
 import add from '../actions/add';
 import keyDown from '../actions/keyDown';
+import calc from '../actions/calc';
+import clear from '../actions/clear';
 
 
 function mapStateToProps(store) {
   return {
-    history: store.history,
     historyDisplay: store.historyDisplay,
     displayValue: store.displayValue,
-    keyDown: store.keyDown
+    keyDown: store.keyDown,
+    keys: store.keys
   };
 }
 
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addAction: (value) => {
-      dispatch(add(value))
+    addAction: (value, historyDisplay) => {
+      dispatch(add(value, historyDisplay));
     },
     keyDownAction: (value) => {
       dispatch(keyDown(value))
-    }
+    },
+    calcAction: (value, historyDisplay) => {
+      dispatch(calc(value, historyDisplay));
+    },
+    resultAction: (value, historyDisplay) => {      
+      dispatch(calc(value, historyDisplay));
+    },
+    clearAction: (value, historyDisplay) => {
+      dispatch(clear(value, historyDisplay));
+    }      
   };
 }
 
