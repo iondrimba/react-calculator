@@ -1,5 +1,4 @@
 import { CLEAR } from '../actions/constants';
-import defaultStore from '../model/initialState';
 
 function clear(state = '', action) {
     switch (action.type) {

@@ -9,7 +9,6 @@ function add(state = '', action) {
     switch (action.type) {
         case ADD:
             if(isNaN(parseInt(action.value, 10))) {
-                console.log('add output', output);
                 return output;
             }
             if (action.history) {

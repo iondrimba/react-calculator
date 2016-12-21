@@ -6,7 +6,6 @@ import keyDown from '../actions/keyDown';
 import calc from '../actions/calc';
 import clear from '../actions/clear';
 
-
 function mapStateToProps(store) {
   return {
     historyDisplay: store.historyDisplay,
@@ -28,12 +27,38 @@ const mapDispatchToProps = (dispatch) => {
     calcAction: (value, historyDisplay) => {
       dispatch(calc(value, historyDisplay));
     },
-    resultAction: (value, historyDisplay) => {      
+    resultAction: (value, historyDisplay) => {
       dispatch(calc(value, historyDisplay));
     },
     clearAction: (value, historyDisplay) => {
       dispatch(clear(value, historyDisplay));
-    }      
+    },
+    isActiveCSS: (css, key, keyDown, Styles) => {
+      let active = '';
+      let className = '';
+      if (key === keyDown) {
+        active = Styles.active;
+      }
+      className = `${css} ${active}`;
+      return className;
+    },
+    getButtonClass: (elmt, Styles) => {
+      let css = Styles.button;
+      if (elmt.type === 'operator') {
+        css = `${Styles.button} ${Styles.button_primaryOperator}`;
+      }
+      if (elmt.type === 'result') {
+        css = `${Styles.button} ${Styles.button_runOperator}`;
+      }
+      return css;
+    },
+    keyUpAction: (evt, props) => {      
+      props.keys.filter(function (elmt) {
+        if (evt.key === elmt.key) {
+          props[elmt.command](evt.key, props.historyDisplay);
+        }
+      });
+    },
   };
 }
 

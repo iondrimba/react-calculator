@@ -1,12 +1,13 @@
 import React from 'react';
 
 class Button extends React.Component {
-    constructor(props) {
-        super(props);
+    isActive() {
+        console.log('isACtive', this.props.className);
+        return /active/.test(this.props.className);
     }
     render() {
         return (                                    
-            <button type="button" key={this.props.id} ref={this.props.id} onClick={this.props.onClick} className={this.props.className}>{this.props.label}</button>            
+            <button type="button" onClick={this.props.onClick} className={this.props.className}>{this.props.label}</button>            
         );
     }
 }

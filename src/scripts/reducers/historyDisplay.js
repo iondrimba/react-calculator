@@ -1,5 +1,4 @@
 import { ADD, CALC, CLEAR } from '../actions/constants';
-import defaultStore from '../model/initialState';
 
 function historyDisplay(state = '', action) {
     let output = state;
@@ -19,14 +18,14 @@ function historyDisplay(state = '', action) {
             if (values.length > 0) {
                 last = values.pop();
             }
-            if (isNaN(parseInt(action.value)) && isNaN(parseInt(last)) && action.history.length) {
+            if (isNaN(parseInt(action.value, 10)) && isNaN(parseInt(last, 10)) && action.history.length) {
                 output = state;
             } else {
                 output = state += action.value.toString();
             }
             return output;
     }
-    return state;
+    return output;
 }
 
 export default historyDisplay;
