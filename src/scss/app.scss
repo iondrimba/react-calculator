@@ -1,22 +1,30 @@
+@import 'fonts.scss';
 body {
     background-color: #4800c1;
     background-position: top center;
     background-repeat: no-repeat;
+    font-family: 'rounded_eleganceregular';
 }
 
 * {
     box-sizing: border-box;
 }
 
+button {
+    font-family: inherit;
+}
+
 .home {
-    padding-top: 66px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
     &__content {
-        background-color: rgba(255, 0, 0, 0.78);
         border-radius: 4px;
         box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.21);
         height: 580px;
         margin: 0 auto;
-        max-width: 360px;
+        width: 360px;
         overflow: hidden;
     }
 }
@@ -67,13 +75,14 @@ body {
         color: #333;
         border-right: 0;
         border-bottom: 0;
-        box-shadow: 3px 9px 20px 5px rgba(0, 0, 0, 0.37);
+        font-weight: bold;
+        box-shadow: 1px 6px 20px 5px rgba(0, 0, 0, 0.4);
     }
     &:active {
         box-shadow: inset 0px -3px 8px 0px rgba(0, 0, 0, .3);
         padding-top: 3px;
     }
-    &_runOperator:active, 
+    &_runOperator:active,
     &_runOperator.active {
         box-shadow: inset 1px 5px 9px 0px rgba(0, 0, 0, .37);
     }

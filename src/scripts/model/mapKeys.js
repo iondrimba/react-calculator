@@ -1,7 +1,7 @@
 let MapKeys = [
     {
         key: 'c',
-        label: 'c',
+        label: 'C',
         type: 'command',
         command: 'clearAction'
     },
