@@ -52,10 +52,10 @@ const mapDispatchToProps = (dispatch) => {
       }
       return css;
     },
-    keyUpAction: (evt, props) => {      
+    keyUpAction: (key, props) => {      
       props.keys.filter(function (elmt) {
-        if (evt.key === elmt.key) {
-          props[elmt.command](evt.key, props.historyDisplay);
+        if (key === elmt.key) {
+          props[elmt.command](key, props.historyDisplay);
         }
       });
     },

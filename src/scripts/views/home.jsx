@@ -20,12 +20,12 @@ class Home extends React.Component {
     
     onKeyUp(evt) {
         this.props.keyDownAction('');
-        this.props.keyUpAction(evt, this.props);
+        this.props.keyUpAction(evt.key, this.props);
     }
-    onButtonClick(evt) {
-        evt.preventDefault();
-        //this.props.addAction(evt.target.attributes['key']);
-        //this.props.keyDownAction(evt.target.attributes['key']);
+    onButtonClick(key) {
+        console.log(key);
+        this.props.keyDownAction('');
+        this.props.keyUpAction(key, this.props);
     }
     render() {
         return (

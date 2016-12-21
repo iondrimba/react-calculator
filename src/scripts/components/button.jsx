@@ -5,9 +5,13 @@ class Button extends React.Component {
         console.log('isACtive', this.props.className);
         return /active/.test(this.props.className);
     }
+    onClick(evt) {       
+        evt.preventDefault();         
+        this.props.onClick(this.props.id);
+    }
     render() {
         return (                                    
-            <button type="button" onClick={this.props.onClick} className={this.props.className}>{this.props.label}</button>            
+            <button type="button" onClick={this.onClick.bind(this)} className={this.props.className}>{this.props.label}</button>            
         );
     }
 }
