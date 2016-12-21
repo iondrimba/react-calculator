@@ -45,7 +45,7 @@ var config = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
-                loader: 'file?name=fonts/[name].[ext]'
+                loader: 'file?name=../fonts/[name].[ext]'
             },
             {
                 test: /.*\.(gif|png|jpe?g|svg)$/i,
@@ -61,7 +61,6 @@ var config = {
         postcssCssnext()
     ],
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({ name: ["bootstrap"] }),
         new HtmlWebpackPlugin({
             title: "Calc",
             minify: {
@@ -73,21 +72,27 @@ var config = {
             template: "./src/index.html",
             inject: "body"
         }),
-        new WebpackCleanupPlugin(),
-        new StyleLintPlugin({
-            configFile: ".stylelintrc",
-            files: ["**/*.s?(a|c)ss"],
-            failOnError: false
+        new WebpackCleanupPlugin({
+            exclude: ["fonts/*"],
         }),
         new webpack.DefinePlugin({
-            PRODUCTION: JSON.stringify(isProduction)
+            'process.env': {
+                'NODE_ENV': JSON.stringify('production')
+            }
         })
     ]
 };
 
 
 if (isProduction) {
-    config.plugins.push(new ExtractTextPlugin("[name].[hash].css"));
+    config.plugins.push(new webpack.optimize.CommonsChunkPlugin({ name: ["bootstrap"] }));
+    config.plugins.push(new ExtractTextPlugin("./css/[name].[hash].css"));
+} else {
+    config.plugins.push(new StyleLintPlugin({
+        configFile: ".stylelintrc",
+        files: ["./src/scss/**/*.s?(a|c)ss"],
+        failOnError: false
+    }));
 }
 
 if (isTesting) {

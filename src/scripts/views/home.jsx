@@ -51,7 +51,7 @@ class Home extends React.Component {
     }
 }
 
-
+Home.propTypes = { history: React.PropTypes.array };
 Home.propTypes = { displayValue: React.PropTypes.number };
 Home.propTypes = { addAction: React.PropTypes.func };
 Home.propTypes = { historyDisplay: React.PropTypes.string };
