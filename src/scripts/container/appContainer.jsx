@@ -8,6 +8,7 @@ import clear from '../actions/clear';
 import del from '../actions/del';
 import operator from '../actions/operator';
 import calculated from '../actions/calculated';
+import comma from '../actions/comma';
 
 
 function mapStateToProps(store) {
@@ -55,6 +56,10 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(operator(value, data));
       dispatch(calculated(true));
     },
+    commaAction: (value, data) => {
+      dispatch(comma(value, data));
+      dispatch(calculated(false));
+    },    
     isActiveCSS: (css, key, keyDown, Styles) => {
       let active = '';
       let className = '';

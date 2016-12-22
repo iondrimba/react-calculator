@@ -6,3 +6,4 @@ export const CLEAR = 'CLEAR';
 export const DEL = 'DEL';
 export const OPERATOR = 'OPERATOR';
 export const CALCULATED = 'CALCULATED';
+export const COMMA = 'COMMA';

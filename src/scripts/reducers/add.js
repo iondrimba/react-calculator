@@ -7,6 +7,7 @@ function add(state = '', action) {
 
     switch (action.type) {
         case ADD:
+
             if (isNaN(parseInt(action.value, 10))) {
                 return state;
             }
@@ -21,7 +22,7 @@ function add(state = '', action) {
             if (isNaN(result) === false) {
                 if (state.length) {
                     if (action.data.calculated ||
-                        parseInt(state, 10) === 0 ||
+                        Number(state + action.value) === 0 ||
                         (lastCommand.length === 0 && action.data.calculated)) {
                         state = action.value;
                     } else {

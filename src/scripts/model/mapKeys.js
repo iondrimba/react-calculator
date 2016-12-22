@@ -102,10 +102,10 @@ let MapKeys = [
         command: 'addAction'
     },
     {
-        key: '.',
-        label: '.',
+        key: ',',
+        label: ',',
         type: 'command',
-        command: 'clearAction'
+        command: 'commaAction'
     },
     {
         key: 'Backspace',
