@@ -7,6 +7,7 @@ import calc from '../actions/calc';
 import clear from '../actions/clear';
 import del from '../actions/del';
 import operator from '../actions/operator';
+import calculated from '../actions/calculated';
 
 
 function mapStateToProps(store) {
@@ -14,6 +15,7 @@ function mapStateToProps(store) {
     historyDisplay: store.historyDisplay,
     displayValue: store.displayValue,
     keyDown: store.keyDown,
+    calculated: store.calculated,
     keys: store.keys
   };
 }
@@ -21,27 +23,37 @@ function mapStateToProps(store) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    keyUpAction: (key, props) => {
+      let {displayValue, historyDisplay, calculated} = props;
+      props.keys.filter(function (elmt) {
+        if (key === elmt.key) {
+          props[elmt.command](key, { displayValue, historyDisplay, calculated });
+        }
+      });
+    },
     addAction: (value, data) => {
       dispatch(add(value, data));
+      dispatch(calculated(false));
     },
     keyDownAction: (value) => {
       dispatch(keyDown(value))
     },
     calcAction: (value, data) => {
-      dispatch(calc(value, data));
+      dispatch(calc(value, data));      
     },
-    resultAction: (value, data) => {
+    resultAction: (value, data) => {      
       dispatch(calc(value, data));
+      dispatch(calculated(true));
     },
     clearAction: (value, data) => {
       dispatch(clear(value, data));
     },
     deleteAction: (value, data) => {
       dispatch(del(value, data));
-    },   
+    },
     operatorAction: (value, data) => {
       dispatch(operator(value, data));
-    },        
+    },
     isActiveCSS: (css, key, keyDown, Styles) => {
       let active = '';
       let className = '';
@@ -60,15 +72,7 @@ const mapDispatchToProps = (dispatch) => {
         css = `${Styles.button} ${Styles.button_runOperator}`;
       }
       return css;
-    },
-    keyUpAction: (key, props) => {      
-      let {displayValue, historyDisplay} = props;
-      props.keys.filter(function (elmt) {
-        if (key === elmt.key) {          
-          props[elmt.command](key, {displayValue, historyDisplay});
-        }
-      });
-    },
+    }
   };
 }
 

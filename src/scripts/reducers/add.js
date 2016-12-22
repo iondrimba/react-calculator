@@ -7,8 +7,7 @@ function add(state = '', action) {
     let output = state;
 
     switch (action.type) {
-        case ADD:
-        console.log('reducer add', state, action);
+        case ADD:        
             if (isNaN(parseInt(action.value, 10))) {
                 return output;
             }
@@ -22,8 +21,7 @@ function add(state = '', action) {
 
             if (isNaN(result) === false) {
                 if (state) {
-                    console.log(state, lastCommand, commands, output);
-                    if (isNaN(lastCommand)  || parseInt(output, 10) === 0) {
+                    if (isNaN(lastCommand)  || parseInt(output, 10) === 0 || action.data.calculated) {
                         output = action.value;
                     } else {
                         output += action.value;

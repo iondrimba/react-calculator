@@ -1,7 +1,7 @@
 import { CALC } from '../actions/constants';
 
 function calc(state = '', action) {
-    switch (action.type) {
+    switch (action.type) {        
         case CALC:
             if (action.data.historyDisplay) {
                 try {

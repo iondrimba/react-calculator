@@ -69,7 +69,7 @@ let MapKeys = [
         key: '-',
         label: '-',
         type: 'operator',
-        command: 'addAction'
+        command: 'operatorAction'
     },
     {
         key: '1',

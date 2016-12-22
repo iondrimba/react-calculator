@@ -16,8 +16,7 @@ class Home extends React.Component {
         if (button && !button.isActive()) {
             this.props.keyDownAction(evt.key);
         }
-    }
-    
+    }    
     onKeyUp(evt) {
         this.props.keyDownAction('');
         this.props.keyUpAction(evt.key, this.props);
