@@ -40,12 +40,12 @@ var config = {
             },
             {
                 test: /\.(s|c)css$/,
-                loader: isProduction ? ExtractTextPlugin.extract('css?&modules&importLoaders=1&localIdentName=[name]_[local]!resolve-url!postcss!sass') :
+                loader: isProduction ? ExtractTextPlugin.extract('css?root=.&modules&importLoaders=1&localIdentName=[name]_[local]!resolve-url!postcss!sass') :
                     "style!css?sourceMap&modules&importLoaders=1&localIdentName=[name]_[local]!resolve-url!postcss!sass?sourceMap"
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
-                loader: 'file?name=../fonts/[name].[ext]'
+                loader: 'file?name=fonts/[name].[ext]' + (isProduction ? '&publicPath=../':'')
             },
             {
                 test: /.*\.(gif|png|jpe?g|svg)$/i,
@@ -72,9 +72,7 @@ var config = {
             template: "./src/index.html",
             inject: "body"
         }),
-        new WebpackCleanupPlugin({
-            exclude: ["fonts/*"],
-        }),
+        new WebpackCleanupPlugin(),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
