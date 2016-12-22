@@ -1,16 +1,18 @@
-import { ADD, CALC, CLEAR, OPERATOR } from '../actions/constants';
+import { ADD, CALC, CLEAR, OPERATOR, CALCULATED } from '../actions/constants';
 import operator from '../reducers/operator';
 
 function historyDisplay(state = '', action) {
+    let output = state;
+
     switch (action.type) {
         case CLEAR:
         case CALC:
-            state = '';
-            break;
-        case OPERATOR:        
-            state = operator(action.data.historyDisplay, action);
+            return '';
+        case OPERATOR:
+            output = operator(action.data.historyDisplay, action);
+            return output;
     }
-    return state;
+    return output;
 }
 
 export default historyDisplay;

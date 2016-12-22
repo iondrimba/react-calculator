@@ -4,12 +4,11 @@ function add(state = '', action) {
     let commands = [];
     let lastCommand = [];
     let result = parseInt(action.value);
-    let output = state;
 
     switch (action.type) {
-        case ADD:        
+        case ADD:
             if (isNaN(parseInt(action.value, 10))) {
-                return output;
+                return state;
             }
             if (action.data.historyDisplay) {
                 commands = action.data.historyDisplay.split('');
@@ -20,20 +19,22 @@ function add(state = '', action) {
             }
 
             if (isNaN(result) === false) {
-                if (state) {
-                    if (isNaN(lastCommand)  || parseInt(output, 10) === 0 || action.data.calculated) {
-                        output = action.value;
+                if (state.length) {
+                    if (action.data.calculated ||
+                        parseInt(state, 10) === 0 ||
+                        (lastCommand.length === 0 && action.data.calculated)) {
+                        state = action.value;
                     } else {
-                        output += action.value;
+                        state += action.value;
                     }
 
                 } else {
-                    output = action.value;
+                    state = action.value;
                 }
             }
 
 
-            return output;
+            return state;
     }
     return state;
 }

@@ -53,6 +53,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     operatorAction: (value, data) => {
       dispatch(operator(value, data));
+      dispatch(calculated(true));
     },
     isActiveCSS: (css, key, keyDown, Styles) => {
       let active = '';
