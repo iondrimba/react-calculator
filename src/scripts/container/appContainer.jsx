@@ -5,6 +5,7 @@ import add from '../actions/add';
 import keyDown from '../actions/keyDown';
 import calc from '../actions/calc';
 import clear from '../actions/clear';
+import del from '../actions/del';
 
 function mapStateToProps(store) {
   return {
@@ -33,6 +34,9 @@ const mapDispatchToProps = (dispatch) => {
     clearAction: (value, historyDisplay) => {
       dispatch(clear(value, historyDisplay));
     },
+    deleteAction: (value, historyDisplay) => {
+      dispatch(del(value, historyDisplay));
+    },    
     isActiveCSS: (css, key, keyDown, Styles) => {
       let active = '';
       let className = '';

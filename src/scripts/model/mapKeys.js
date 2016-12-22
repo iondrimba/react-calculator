@@ -1,6 +1,6 @@
 let MapKeys = [
     {
-        key: 'c',
+        key: 'Delete',
         label: 'C',
         type: 'command',
         command: 'clearAction'
@@ -108,8 +108,8 @@ let MapKeys = [
         command: 'clearAction'
     },
     {
-        key: 'Delete',
-        label: 'del',
+        key: 'Backspace',
+        label: '\u232B',
         type: 'command',
         command: 'deleteAction'
     },

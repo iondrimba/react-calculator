@@ -1,9 +1,10 @@
 import { DEL } from './constants';
 
-const del = (value) => {
+const del = (value, history) => {
     return {
         type: DEL,
-        value
+        value,
+        history
     };
 };
 

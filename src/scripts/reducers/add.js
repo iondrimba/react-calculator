@@ -21,7 +21,7 @@ function add(state = '', action) {
 
             if (isNaN(result) === false) {
                 if (state) {
-                    if (isNaN(lastCommand) || commands.length === 0) {
+                    if (isNaN(lastCommand) || commands.length === 0 || parseInt(output, 10)===0) {
                         output = action.value;
                     } else {
                         output += action.value;
