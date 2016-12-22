@@ -5,7 +5,7 @@ function calc(state = '', action) {
         case CALC:
             if (action.data.historyDisplay) {
                 try {
-                    state = eval(`${action.data.historyDisplay}${action.data.displayValue}`);
+                    state = eval(`${action.data.historyDisplay}${action.data.displayValue}`).toString();
                 } catch (err) {
                     return state;
                 }
