@@ -3,10 +3,9 @@ import { CALC } from '../actions/constants';
 function calc(state = '', action) {
     switch (action.type) {
         case CALC:
-            if (action.history) {
-                
+            if (action.data.historyDisplay) {
                 try {
-                    state = eval(action.history);
+                    state = eval(`${action.data.historyDisplay}${action.data.displayValue}`);
                 } catch (err) {
                     return state;
                 }

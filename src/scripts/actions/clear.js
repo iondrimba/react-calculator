@@ -1,10 +1,10 @@
 import { CLEAR } from './constants';
 
-const clear = (value, history) => {
+const clear = (value, data) => {
     return {
         type: CLEAR,
         value,
-        history
+        data
     };
 };
 

@@ -8,11 +8,12 @@ function add(state = '', action) {
 
     switch (action.type) {
         case ADD:
-            if(isNaN(parseInt(action.value, 10))) {
+        console.log('reducer add', state, action);
+            if (isNaN(parseInt(action.value, 10))) {
                 return output;
             }
-            if (action.history) {
-                commands = action.history.split('');
+            if (action.data.historyDisplay) {
+                commands = action.data.historyDisplay.split('');
             }
 
             if (commands.length > 1) {
@@ -21,7 +22,8 @@ function add(state = '', action) {
 
             if (isNaN(result) === false) {
                 if (state) {
-                    if (isNaN(lastCommand) || commands.length === 0 || parseInt(output, 10)===0) {
+                    console.log(state, lastCommand, commands, output);
+                    if (isNaN(lastCommand)  || parseInt(output, 10) === 0) {
                         output = action.value;
                     } else {
                         output += action.value;
@@ -31,9 +33,9 @@ function add(state = '', action) {
                     output = action.value;
                 }
             }
-            state = output;
 
-            return state;
+
+            return output;
     }
     return state;
 }

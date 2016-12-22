@@ -6,6 +6,8 @@ import keyDown from '../actions/keyDown';
 import calc from '../actions/calc';
 import clear from '../actions/clear';
 import del from '../actions/del';
+import operator from '../actions/operator';
+
 
 function mapStateToProps(store) {
   return {
@@ -19,24 +21,27 @@ function mapStateToProps(store) {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    addAction: (value, historyDisplay) => {
-      dispatch(add(value, historyDisplay));
+    addAction: (value, data) => {
+      dispatch(add(value, data));
     },
     keyDownAction: (value) => {
       dispatch(keyDown(value))
     },
-    calcAction: (value, historyDisplay) => {
-      dispatch(calc(value, historyDisplay));
+    calcAction: (value, data) => {
+      dispatch(calc(value, data));
     },
-    resultAction: (value, historyDisplay) => {
-      dispatch(calc(value, historyDisplay));
+    resultAction: (value, data) => {
+      dispatch(calc(value, data));
     },
-    clearAction: (value, historyDisplay) => {
-      dispatch(clear(value, historyDisplay));
+    clearAction: (value, data) => {
+      dispatch(clear(value, data));
     },
-    deleteAction: (value, historyDisplay) => {
-      dispatch(del(value, historyDisplay));
-    },    
+    deleteAction: (value, data) => {
+      dispatch(del(value, data));
+    },   
+    operatorAction: (value, data) => {
+      dispatch(operator(value, data));
+    },        
     isActiveCSS: (css, key, keyDown, Styles) => {
       let active = '';
       let className = '';
@@ -57,9 +62,10 @@ const mapDispatchToProps = (dispatch) => {
       return css;
     },
     keyUpAction: (key, props) => {      
+      let {displayValue, historyDisplay} = props;
       props.keys.filter(function (elmt) {
-        if (key === elmt.key) {
-          props[elmt.command](key, props.historyDisplay);
+        if (key === elmt.key) {          
+          props[elmt.command](key, {displayValue, historyDisplay});
         }
       });
     },

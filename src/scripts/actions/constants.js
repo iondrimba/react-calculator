@@ -4,3 +4,4 @@ export const KEY_UP = 'KEY_UP';
 export const CALC = 'CALC';
 export const CLEAR = 'CLEAR';
 export const DEL = 'DEL';
+export const OPERATOR = 'OPERATOR';

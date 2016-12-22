@@ -2,7 +2,6 @@ import React from 'react';
 
 class Button extends React.Component {
     isActive() {
-        console.log('isACtive', this.props.className);
         return /active/.test(this.props.className);
     }
     onClick(evt) {       

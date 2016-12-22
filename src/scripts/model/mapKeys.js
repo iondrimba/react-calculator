@@ -21,7 +21,7 @@ let MapKeys = [
         key: '/',
         label: '/',
         type: 'operator',
-        command: 'addAction'
+        command: 'operatorAction'
     },
     {
         key: '7',
@@ -45,7 +45,7 @@ let MapKeys = [
         key: '*',
         label: 'x',
         type: 'operator',
-        command: 'addAction'
+        command: 'operatorAction'
     },
     {
         key: '4',
@@ -93,7 +93,7 @@ let MapKeys = [
         key: '+',
         label: '+',
         type: 'operator',
-        command: 'addAction'
+        command: 'operatorAction'
     },
     {
         key: '0',

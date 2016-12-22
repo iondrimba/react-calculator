@@ -1,10 +1,10 @@
 import { CALC } from './constants';
 
-const calc = (value, history) => {
+const calc = (value, data) => {
     return {
         type: CALC,
         value,
-        history
+        data
     };
 };
 

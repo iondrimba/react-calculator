@@ -1,4 +1,5 @@
-import { ADD, CALC, CLEAR } from '../actions/constants';
+import { ADD, CALC, CLEAR, OPERATOR } from '../actions/constants';
+import operator from '../reducers/operator';
 
 function historyDisplay(state = '', action) {
     let output = state;
@@ -9,20 +10,8 @@ function historyDisplay(state = '', action) {
         case CLEAR:
         case CALC:
             return '';
-        case ADD:
-            values = action.history.split('');
-            if (state.length === 0 && isNaN(parseInt(action.value, 10))) {
-                return output;
-            }
-
-            if (values.length > 0) {
-                last = values.pop();
-            }
-            if (isNaN(parseInt(action.value, 10)) && isNaN(parseInt(last, 10)) && action.history.length) {
-                output = state;
-            } else {
-                output = state += action.value.toString();
-            }
+        case OPERATOR:        
+            output = operator(action.data.historyDisplay, action);
             return output;
     }
     return output;
