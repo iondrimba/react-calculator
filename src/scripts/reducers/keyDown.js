@@ -4,6 +4,7 @@ function keyDown(state = '', action) {
     switch (action.type) {
         case KEY_DOWN:
             state = action.value;
+            console.log('KEY_DOWN', state);
     }
     return state;
 }

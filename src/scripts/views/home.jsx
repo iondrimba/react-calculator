@@ -18,6 +18,7 @@ class Home extends React.Component {
         }
     }    
     onKeyUp(evt) {
+        console.log('onKeyUp', evt.key);
         this.props.keyDownAction('');
         this.props.keyUpAction(evt.key, this.props);
     }
