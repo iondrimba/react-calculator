@@ -4,7 +4,7 @@ function add(state = '', action) {
     let commands = [];
     let lastCommand = [];
     let result = parseInt(action.value);
-console.log('add', action)
+
     switch (action.type) {
         case ADD:
 
@@ -19,7 +19,7 @@ console.log('add', action)
                 lastCommand = commands.pop();
             }
             if (isNaN(result) === false) {
-                if (state.length) {                    
+                if (state.length) {
                     if (action.data.calculated ||
                         Number(state + action.value) === 0 ||
                         (lastCommand.length === 0 && action.data.calculated)) {
