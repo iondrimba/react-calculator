@@ -1,12 +1,14 @@
 @media screen and (max-width: 450px) {
     .home {
         width: 98%;
+
         &__content {
             height: 98vh;
             margin: 0 auto;
             width: inherit;
         }
     }
+
     .result {
         font-size: 8vw;
     }
