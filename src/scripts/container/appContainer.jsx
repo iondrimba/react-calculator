@@ -1,15 +1,5 @@
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Home from '../views/home.jsx';
-import add from '../actions/add';
-import keyDown from '../actions/keyDown';
-import calc from '../actions/calc';
-import clear from '../actions/clear';
-import del from '../actions/del';
-import operator from '../actions/operator';
-import calculated from '../actions/calculated';
-import comma from '../actions/comma';
-import switchOperator from '../actions/switchOperator';
 import createAction from '../actions/createAction';
 import * as constants from '../actions/constants';
 
