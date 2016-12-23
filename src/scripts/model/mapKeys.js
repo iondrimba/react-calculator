@@ -9,7 +9,7 @@ let MapKeys = [
         key: '+/-',
         label: '+/-',
         type: 'command',
-        command: 'swithOperatorAction'
+        command: 'switchOperatorAction'
     },
     {
         key: '%',

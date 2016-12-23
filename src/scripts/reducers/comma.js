@@ -4,8 +4,7 @@ function comma(state = '', action) {
 
     switch (action.type) {
         case COMMA:
-
-            if (state.toString().indexOf(',') === -1 && Number(state) === 0) {
+            if (state.toString().indexOf(',') === -1 && !isNaN(Number(state.toString().replace(/-/, '')))) {
                 state = `${state}${action.value}`;
             }
 

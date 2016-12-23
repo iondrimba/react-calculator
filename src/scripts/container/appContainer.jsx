@@ -9,6 +9,7 @@ import del from '../actions/del';
 import operator from '../actions/operator';
 import calculated from '../actions/calculated';
 import comma from '../actions/comma';
+import switchOperator from '../actions/switchOperator';
 
 
 function mapStateToProps(store) {
@@ -59,7 +60,11 @@ const mapDispatchToProps = (dispatch) => {
     commaAction: (value, data) => {
       dispatch(comma(value, data));
       dispatch(calculated(false));
-    },    
+    },   
+    switchOperatorAction: (value, data) => {
+      dispatch(switchOperator(value, data));
+      dispatch(calculated(false));
+    },     
     isActiveCSS: (css, key, keyDown, Styles) => {
       let active = '';
       let className = '';
