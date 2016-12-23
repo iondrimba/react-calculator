@@ -10,6 +10,8 @@ import operator from '../actions/operator';
 import calculated from '../actions/calculated';
 import comma from '../actions/comma';
 import switchOperator from '../actions/switchOperator';
+import createAction from '../actions/createAction';
+import * as constants from '../actions/constants';
 
 
 function mapStateToProps(store) {
@@ -22,7 +24,6 @@ function mapStateToProps(store) {
   };
 }
 
-
 const mapDispatchToProps = (dispatch) => {
   return {
     keyUpAction: (key, props) => {
@@ -34,37 +35,37 @@ const mapDispatchToProps = (dispatch) => {
       });
     },
     addAction: (value, data) => {
-      dispatch(add(value, data));
-      dispatch(calculated(false));
+      dispatch(createAction(constants.ADD, { value, data }));
+      dispatch(createAction(constants.CALCULATED, { value: false }));
     },
     keyDownAction: (value) => {
-      dispatch(keyDown(value))
+      dispatch(createAction(constants.KEY_DOWN, { value }));
     },
     calcAction: (value, data) => {
-      dispatch(calc(value, data));      
+      dispatch(createAction(constants.CALC, { value, data }));
     },
-    resultAction: (value, data) => {      
-      dispatch(calc(value, data));
-      dispatch(calculated(true));
+    resultAction: (value, data) => {
+      dispatch(createAction(constants.CALC, { value, data }));
+      dispatch(createAction(constants.CALCULATED, { value: true }));
     },
     clearAction: (value, data) => {
-      dispatch(clear(value, data));
+      dispatch(createAction(constants.CLEAR, { value, data }));
     },
     deleteAction: (value, data) => {
-      dispatch(del(value, data));
+      dispatch(createAction(constants.DEL, { value, data }));
     },
     operatorAction: (value, data) => {
-      dispatch(operator(value, data));
-      dispatch(calculated(true));
+      dispatch(createAction(constants.OPERATOR, { value, data }));
+      dispatch(createAction(constants.CALCULATED, { value: true }));
     },
     commaAction: (value, data) => {
-      dispatch(comma(value, data));
-      dispatch(calculated(false));
-    },   
+      dispatch(createAction(constants.COMMA, { value, data }));
+      dispatch(createAction(constants.CALCULATED, { value: false }));
+    },
     switchOperatorAction: (value, data) => {
-      dispatch(switchOperator(value, data));
-      dispatch(calculated(false));
-    },     
+      dispatch(createAction(constants.SWITCH_OPERATOR, { value, data }));
+      dispatch(createAction(constants.CALCULATED, { value: false }));
+    },
     isActiveCSS: (css, key, keyDown, Styles) => {
       let active = '';
       let className = '';

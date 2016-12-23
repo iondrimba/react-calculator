@@ -7,7 +7,7 @@ let MapKeys = [
     },
     {
         key: '+/-',
-        label: '+/-',
+        label: '\u00B1',
         type: 'command',
         command: 'switchOperatorAction'
     },
@@ -19,7 +19,7 @@ let MapKeys = [
     },
     {
         key: '/',
-        label: '/',
+        label: '\u00F7',
         type: 'operator',
         command: 'operatorAction'
     },
@@ -43,7 +43,7 @@ let MapKeys = [
     },
     {
         key: '*',
-        label: 'x',
+        label: '\u2715',
         type: 'operator',
         command: 'operatorAction'
     },
@@ -67,7 +67,7 @@ let MapKeys = [
     },
     {
         key: '-',
-        label: '-',
+        label: '\u2212',
         type: 'operator',
         command: 'operatorAction'
     },

@@ -4,7 +4,7 @@ function add(state = '', action) {
     let commands = [];
     let lastCommand = [];
     let result = parseInt(action.value);
-
+console.log('add', action)
     switch (action.type) {
         case ADD:
 
