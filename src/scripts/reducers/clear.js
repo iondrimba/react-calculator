@@ -1,10 +1,10 @@
 import { CLEAR } from '../actions/constants';
 
-function clear(state = '', action) {
+function clear(state = 0, action) {
     switch (action.type) {
         case CLEAR:
             if (action.value) {
-                state = '0';
+                state = 0;
             }
             return state;
     }
