@@ -61,6 +61,7 @@
     "sass-loader": "^4.0.2",
     "stringify": "^5.0.0",
     "style-loader": "^0.13.1",
+    "stylefmt": "^5.0.3",
     "stylelint-config-standard": "^15.0.0",
     "stylelint-webpack-plugin": "^0.4.0",
     "url-loader": "^0.5.7",

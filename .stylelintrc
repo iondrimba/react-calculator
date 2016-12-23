@@ -3,6 +3,8 @@
 	"rules": {
 		"indentation": 4,
 		"declaration-block-properties-order": "alphabetical",
-		"rule-nested-empty-line-before":"never"
+		"rule-nested-empty-line-before":"never",
+		"no-missing-end-of-source-newline": true,
+		"number-leading-zero":"never"
 	}
 }

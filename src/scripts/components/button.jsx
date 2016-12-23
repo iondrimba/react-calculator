@@ -4,13 +4,13 @@ class Button extends React.Component {
     isActive() {
         return /active/.test(this.props.className);
     }
-    onClick(evt) {       
-        evt.preventDefault();         
+    onClick(evt) {
+        evt.preventDefault();
         this.props.onClick(this.props.id);
     }
     render() {
-        return (                                    
-            <button type="button" onClick={this.onClick.bind(this)} className={this.props.className}>{this.props.label}</button>            
+        return (
+            <button type="button" onClick={this.onClick.bind(this)} className={this.props.className}>{this.props.label}</button>
         );
     }
 }

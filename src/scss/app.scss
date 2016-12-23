@@ -1,4 +1,5 @@
 @import 'fonts.scss';
+
 body {
     background-color: #4800c1;
     background-position: top center;
@@ -15,17 +16,17 @@ button {
 }
 
 .home {
+    left: 50%;
     position: absolute;
     top: 50%;
-    left: 50%;
     transform: translateY(-50%) translateX(-50%);
     &__content {
         border-radius: 4px;
-        box-shadow: 0px 6px 17px 0px rgba(0, 0, 0, 0.21);
+        box-shadow: 0 6px 17px 0 rgba(0, 0, 0, .21);
         height: 580px;
         margin: 0 auto;
-        width: 360px;
         overflow: hidden;
+        width: 360px;
     }
 }
 
@@ -34,8 +35,8 @@ button {
     flex-direction: column;
     height: inherit;
     &__header {
-        align-items: flex-end;
         align-content: space-between;
+        align-items: flex-end;
         background-color: rgba(255, 255, 255, 1);
         display: flex;
         flex-basis: 38%;
@@ -54,16 +55,16 @@ button {
 
 .button {
     background-color: rgba(31, 37, 37, 1);
-    border-top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .04);
     border-left: 0;
-    border-right: 1px solid rgba(255, 255, 255, 0.04);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-    box-shadow: inset -1px -1px 0 0 rgba(0, 0, 0, 0.3);
+    border-right: 1px solid rgba(255, 255, 255, .04);
+    border-top: 0;
+    box-shadow: inset -1px -1px 0 0 rgba(0, 0, 0, .3);
     color: #fff;
     cursor: pointer;
     font-size: 1.1rem;
-    outline: none;
     height: 20%;
+    outline: none;
     width: 25%;
     &_primaryOperator {
         background-color: rebeccapurple;
@@ -72,24 +73,24 @@ button {
     }
     &_runOperator {
         background-color: yellow;
-        color: #333;
-        border-right: 0;
         border-bottom: 0;
+        border-right: 0;
+        box-shadow: 1px 6px 20px 5px rgba(0, 0, 0, .4);
+        color: #333;
         font-weight: bold;
-        box-shadow: 1px 6px 20px 5px rgba(0, 0, 0, 0.4);
     }
     &:active {
-        box-shadow: inset 0px -3px 8px 0px rgba(0, 0, 0, .3);
+        box-shadow: inset 0 -3px 8px 0 rgba(0, 0, 0, .3);
         padding-top: 3px;
     }
     &_runOperator:active,
     &_runOperator.active {
-        box-shadow: inset 1px 5px 9px 0px rgba(0, 0, 0, .37);
+        box-shadow: inset 1px 5px 9px 0 rgba(0, 0, 0, .37);
     }
 }
 
 .active {
-    box-shadow: inset 0px -3px 8px 0px rgba(0, 0, 0, .3);
+    box-shadow: inset 0 -3px 8px 0 rgba(0, 0, 0, .3);
     padding-top: 3px;
 }
 
@@ -97,26 +98,26 @@ button {
 .button:nth-child(18),
 .button:nth-child(19) {
     border-bottom: 0;
-    box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, 0.3);
+    box-shadow: inset -1px 0 0 0 rgba(0, 0, 0, .3);
     &:active,
     &.active {
-        box-shadow: inset 0px 3px 8px 0px rgba(0, 0, 0, .3);
+        box-shadow: inset 0 3px 8px 0 rgba(0, 0, 0, .3);
         padding-top: 3px;
     }
 }
 
 .history {
-    opacity: .6;
     font-size: 1.1rem;
     margin: 0;
+    opacity: .6;
     text-align: right;
     width: 100%;
 }
 
 .result {
     font-size: 2.5rem;
-    padding: 0;
     margin: 0;
+    padding: 0;
     text-align: right;
     width: 100%;
 }
