@@ -18,7 +18,6 @@ function add(state = '', action) {
             if (commands.length > 1) {
                 lastCommand = commands.pop();
             }
-console.log('add', state, action.data.calculated, Number(state + action.value),(lastCommand.length === 0 && action.data.calculated) )
             if (isNaN(result) === false) {
                 if (state.length) {                    
                     if (action.data.calculated ||
