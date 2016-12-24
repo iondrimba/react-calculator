@@ -14,10 +14,17 @@ function calc(state = '', action) {
 
                     history = action.data.historyDisplay.replace(/,/, '.');
                     input = action.data.displayValue.replace(/,/, '.');
-                    output = eval(`${history}${input}`).toString();
-                    if (output.indexOf('.') > 0) {
-                        output = Number(output).toFixed(2).toString().replace(/\./, ',');
+                    var expressionInvalid = /[a-z]|(\{|\}|\(|\))/g.test(history);
+
+                    if (expressionInvalid) {
+                        output = 0;
+                    } else {
+                        output = eval(`${history}${input}`).toString();
+                        if (output.indexOf('.') > 0) {
+                            output = Number(output).toFixed(2).toString().replace(/\./, ',');
+                        }
                     }
+
                 } catch (err) {
                     return output;
                 }

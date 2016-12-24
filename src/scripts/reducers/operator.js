@@ -5,7 +5,7 @@ function operator(state = '0', action) {
 
     switch (action.type) {
         case OPERATOR:
-            if (calculated === false) {
+            if (calculated === false || historyDisplay.length === 0) {
                 state = `${historyDisplay}${displayValue}${action.value}`;
             } else {
                 state = historyDisplay;
