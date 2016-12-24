@@ -5,6 +5,9 @@ function operator(state = '0', action) {
 
     switch (action.type) {
         case OPERATOR:
+            if (isNaN(Number(action.data.displayValue.toString().replace(/,/, '.'))) || Number(action.data.displayValue.toString().replace(/,/, '.')) === 0) {
+                return '';
+            }
             if (calculated === false || historyDisplay.length === 0) {
                 state = `${historyDisplay}${displayValue}${action.value}`;
             } else {
