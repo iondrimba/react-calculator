@@ -56,6 +56,10 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(createAction(constants.SWITCH_OPERATOR, { value, data }));
       dispatch(createAction(constants.CALCULATED, { value: false }));
     },
+    percentAction: (value, data) => {
+      dispatch(createAction(constants.PERCENT, { value, data }));
+      dispatch(createAction(constants.CALCULATED, { value: false }));
+    },
     isActiveCSS: (css, key, keyDown, Styles) => {
       let active = '';
       let className = '';

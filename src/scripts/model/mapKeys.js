@@ -15,7 +15,7 @@ let MapKeys = [
         key: '%',
         label: '%',
         type: 'percent',
-        command: 'calcAction'
+        command: 'percentAction'
     },
     {
         key: '/',

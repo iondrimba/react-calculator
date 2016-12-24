@@ -1,4 +1,4 @@
-import { OPERATOR } from '../actions/constants';
+import { OPERATOR, CALCULATED } from '../actions/constants';
 
 function operator(state = '0', action) {
     let { historyDisplay, displayValue, calculated } = action.data;
