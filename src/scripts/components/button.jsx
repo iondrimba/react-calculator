@@ -6,11 +6,15 @@ class Button extends React.Component {
     }
     onClick(evt) {
         evt.preventDefault();
+        evt.currentTarget.blur();
         this.props.onClick(this.props.id);
+    }
+    focus() {
+        this.refs['btn'][0].focus();
     }
     render() {
         return (
-            <button type="button" onClick={this.onClick.bind(this)} className={this.props.className}>{this.props.label}</button>
+            <button ref={'btn'} type="button" onClick={this.onClick.bind(this)} className={this.props.className}>{this.props.label}</button>
         );
     }
 }

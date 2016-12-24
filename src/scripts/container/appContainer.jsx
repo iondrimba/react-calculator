@@ -23,6 +23,7 @@ const mapDispatchToProps = (dispatch) => {
           props[elmt.command](key, { displayValue, historyDisplay, calculated });
         }
       });
+      return false;
     },
     addAction: (value, data) => {
       dispatch(createAction(constants.ADD, { value, data }));

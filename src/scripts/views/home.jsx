@@ -11,12 +11,12 @@ class Home extends React.Component {
         document.body.onkeydown = this.onKeyDown.bind(this);
         document.body.onkeyup = this.onKeyUp.bind(this);
     }
-    onKeyDown(evt) {    
-        let button = this.refs[evt.key];    
+    onKeyDown(evt) {
+        let button = this.refs[evt.key];
         if (button && !button.isActive()) {
             this.props.keyDownAction(evt.key);
         }
-    }    
+    }
     onKeyUp(evt) {
         this.props.keyDownAction('');
         this.props.keyUpAction(evt.key, this.props);
@@ -38,7 +38,7 @@ class Home extends React.Component {
                             this.props.keys.map(function (elmt, index) {
                                 var css = this.props.getButtonClass(elmt, Styles);
                                 return (
-                                    <Button key={index} ref={elmt.key}  label={elmt.label} id={elmt.key} onClick={this.onClick} className={this.props.isActiveCSS(css, elmt.key, this.props.keyDown, Styles)} />
+                                    <Button key={index} ref={elmt.key} label={elmt.label} id={elmt.key} onClick={this.onClick} className={this.props.isActiveCSS(css, elmt.key, this.props.keyDown, Styles)} />
                                 );
                             }.bind(this))
                         }
