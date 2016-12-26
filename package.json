@@ -27,6 +27,7 @@
     "eslint-loader": "^1.6.1",
     "eslint-plugin-react": "^6.8.0",
     "extract-text-webpack-plugin": "^1.0.1",
+    "howler": "^2.0.2",
     "html-loader": "^0.4.4",
     "html-webpack-plugin": "^2.24.1",
     "image-webpack-loader": "^3.0.0",

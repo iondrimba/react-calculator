@@ -2,6 +2,7 @@ import React from 'react';
 import Title from '../components/title.jsx';
 import Button from '../components/button.jsx';
 import Styles from '../../scss/app.scss';
+import Sound from '../model/sound';
 
 
 class Home extends React.Component {
@@ -10,9 +11,13 @@ class Home extends React.Component {
         this.onClick = this.onButtonClick.bind(this);
         document.body.onkeydown = this.onKeyDown.bind(this);
         document.body.onkeyup = this.onKeyUp.bind(this);
+
+        this.sound = new Sound();
+        this.sound.setup();
     }
     onKeyDown(evt) {
         let button = this.refs[evt.key];
+        this.sound.play();
         if (button && !button.isActive()) {
             this.props.keyDownAction(evt.key);
         }
@@ -22,6 +27,7 @@ class Home extends React.Component {
         this.props.keyUpAction(evt.key, this.props);
     }
     onButtonClick(key) {
+        this.sound.play();
         this.props.keyDownAction('');
         this.props.keyUpAction(key, this.props);
     }

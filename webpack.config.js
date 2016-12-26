@@ -11,7 +11,7 @@ var isTesting = (process.env.NODE_ENV === "testing");
 
 var config = {
     resolve: {
-        extensions: ["", ".js", ".jsx", ".json"]
+        extensions: ["", ".js", ".jsx", ".json", ".mp3"]
     },
     entry: {
         app: "./src/scripts/app"
@@ -46,6 +46,10 @@ var config = {
             {
                 test: /\.(eot|svg|ttf|woff|woff2)$/,
                 loader: 'file?name=fonts/[name].[ext]' + (isProduction ? '&publicPath=../':'')
+            },
+            {
+                test: /\.(mp3)$/,
+                loader: 'file?name=sounds/[name].[ext]' + (isProduction ? '&publicPath=../':'')
             },
             {
                 test: /.*\.(gif|png|jpe?g|svg)$/i,

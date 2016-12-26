@@ -7,6 +7,7 @@ import comma from '../reducers/comma';
 import switchOperator from '../reducers/switchOperator';
 import percent from '../reducers/percent';
 
+
 function displayValue(state = '', action) {
     switch (action.type) {
         case SWITCH_OPERATOR:
