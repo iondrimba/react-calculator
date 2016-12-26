@@ -8,6 +8,9 @@ function del(state = 0, action) {
                 countRemove = 2;
             }
             state = Number(state.toString().substring(0, state.length - countRemove));
+            if (isNaN(state)) {
+                state = 0;
+            }
             break;
         default:
             return state;
