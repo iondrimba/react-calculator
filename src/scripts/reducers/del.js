@@ -1,13 +1,16 @@
 import { DEL } from '../actions/constants';
 
 function del(state = 0, action) {
-    let output = 0;
+    let countRemove = 1;
     switch (action.type) {
         case DEL:
-            if (state.length > 1) {
-                output = state.substring(0,state.length-1);
+            if (Number(state) < 0) {
+                countRemove = 2;
             }
-            return output;
+            state = Number(state.toString().substring(0, state.length - countRemove));
+            break;
+        default:
+            return state;
     }
     return state;
 }

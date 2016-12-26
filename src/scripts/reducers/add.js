@@ -27,8 +27,6 @@ function add(state = '', action) {
             } else {
                 state = action.value;
             }
-
-
             if(Number(state)===0) {
                 state = Number(state);
             }
