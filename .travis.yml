@@ -1,7 +1,7 @@
 sudo: required
 language: node_js
 node_js:
-- '5.0.x'
+- '5'
 before_install:
 - gem install sass
 - gem install ruby
