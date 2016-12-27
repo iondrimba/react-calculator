@@ -5,13 +5,15 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var StyleLintPlugin = require("stylelint-webpack-plugin");
 var postcssCssnext = require("postcss-cssnext");
 var WebpackCleanupPlugin = require("webpack-cleanup-plugin");
+var CompressionPlugin = require("compression-webpack-plugin");
+var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 
 var isProduction = (process.env.NODE_ENV === "production");
 var isTesting = (process.env.NODE_ENV === "testing");
 
 var config = {
     resolve: {
-        extensions: ["", ".js", ".jsx", ".json", ".mp3"]
+        extensions: ["", ".js", ".jsx", ".json", ".mp3", ".gz"]
     },
     entry: {
         app: "./src/scripts/app"
@@ -45,11 +47,11 @@ var config = {
             },
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
-                loader: 'file?name=fonts/[name].[ext]' + (isProduction ? '&publicPath=../':'')
+                loader: 'file?name=fonts/[name].[ext]' + (isProduction ? '&publicPath=../' : '')
             },
             {
                 test: /\.(mp3)$/,
-                loader: 'file?name=sounds/[name].[ext]' + (isProduction ? '&publicPath=../':'')
+                loader: 'file?name=sounds/[name].[ext]' + (isProduction ? '&publicPath=../' : '')
             },
             {
                 test: /.*\.(gif|png|jpe?g|svg)$/i,
@@ -76,12 +78,44 @@ var config = {
             template: "./src/index.html",
             inject: "body"
         }),
-        new WebpackCleanupPlugin(),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.AggressiveMergingPlugin(),
+        new WebpackCleanupPlugin({
+            exclude: ["GzipSimpleHTTPServer.py"],
+        }),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
             }
-        })
+        }),
+        new CompressionPlugin({
+            asset: "[path].gz",
+            algorithm: "gzip",
+            test: /\.js$|\.html$/,
+            threshold: 10240,
+            minRatio: 0.8
+        }),
+        new SWPrecacheWebpackPlugin(
+            {
+                cacheId: 'calc',
+                filename: 'calc-service-worker.js',
+                directoryIndex: '/public',
+                maximumFileSizeToCacheInBytes: 4194304,
+                staticFileGlobs: [
+                    'public/**/*.css',
+                    'public/**/*.js',
+                    'public/fonts/**',
+                    'public/**/*.mp3',
+                    'public/**/*.html'
+                ],
+                stripPrefix:'public',
+                runtimeCaching: [{
+                    handler: 'cacheFirst',
+                    urlPattern: /\/$/,
+                }],
+            }
+        )
     ]
 };
 
