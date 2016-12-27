@@ -1,14 +1,10 @@
 import { DEL } from '../actions/constants';
 
 function del(state = 0, action) {
-    let countRemove = 1;
     switch (action.type) {
         case DEL:
-            if (Number(state) < 0) {
-                countRemove = 2;
-            }
-            state = Number(state.toString().substring(0, state.length - countRemove));
-            if (isNaN(state)) {
+            state = state.toString().substring(0, state.length - 1);
+            if (isNaN(parseInt(state)) || Number(state) === 0) {
                 state = 0;
             }
             break;
