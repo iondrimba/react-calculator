@@ -13,7 +13,7 @@ var isTesting = (process.env.NODE_ENV === "testing");
 
 var config = {
     resolve: {
-        extensions: ["", ".js", ".jsx", ".json", ".mp3", ".gz"]
+        extensions: ["", ".js", ".jsx", ".json", ".mp3"]
     },
     entry: {
         app: "./src/scripts/app"
@@ -78,9 +78,6 @@ var config = {
             template: "./src/index.html",
             inject: "body"
         }),
-        new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin(),
-        new webpack.optimize.AggressiveMergingPlugin(),
         new WebpackCleanupPlugin({
             exclude: ["GzipSimpleHTTPServer.py"],
         }),
@@ -89,33 +86,7 @@ var config = {
                 'NODE_ENV': JSON.stringify('production')
             }
         }),
-        new CompressionPlugin({
-            asset: "[path].gz",
-            algorithm: "gzip",
-            test: /\.js$|\.html$/,
-            threshold: 10240,
-            minRatio: 0.8
-        }),
-        new SWPrecacheWebpackPlugin(
-            {
-                cacheId: 'calc',
-                filename: 'calc-service-worker.js',
-                directoryIndex: '/public',
-                maximumFileSizeToCacheInBytes: 4194304,
-                staticFileGlobs: [
-                    'public/**/*.css',
-                    'public/**/*.js',
-                    'public/fonts/**',
-                    'public/**/*.mp3',
-                    'public/**/*.html'
-                ],
-                stripPrefix:'public',
-                runtimeCaching: [{
-                    handler: 'cacheFirst',
-                    urlPattern: /\/$/,
-                }],
-            }
-        )
+
     ]
 };
 
@@ -123,6 +94,36 @@ var config = {
 if (isProduction) {
     config.plugins.push(new webpack.optimize.CommonsChunkPlugin({ name: ["bootstrap"] }));
     config.plugins.push(new ExtractTextPlugin("./css/[name].[hash].css"));
+    config.plugins.push(new webpack.optimize.DedupePlugin());
+    config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+    config.plugins.push(new webpack.optimize.AggressiveMergingPlugin());
+    config.plugins.push(new CompressionPlugin({
+        asset: "[path].gz",
+        algorithm: "gzip",
+        test: /\.js$|\.html$/,
+        threshold: 10240,
+        minRatio: 0.8
+    }));
+    config.plugins.push(new SWPrecacheWebpackPlugin(
+        {
+            cacheId: 'calc',
+            filename: 'calc-service-worker.js',
+            directoryIndex: '/public',
+            maximumFileSizeToCacheInBytes: 4194304,
+            staticFileGlobs: [
+                'public/**/*.css',
+                'public/**/*.js',
+                'public/fonts/**',
+                'public/**/*.mp3',
+                'public/**/*.html'
+            ],
+            stripPrefix: 'public',
+            runtimeCaching: [{
+                handler: 'cacheFirst',
+                urlPattern: /\/$/,
+            }],
+        }
+    ));
 } else {
     config.plugins.push(new StyleLintPlugin({
         configFile: ".stylelintrc",
