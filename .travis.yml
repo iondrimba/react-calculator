@@ -1,7 +1,7 @@
 sudo: required
 language: node_js
 node_js:
-- '4.2.2'
+- '5.0.x'
 before_install:
 - gem install sass
 - gem install ruby
@@ -9,6 +9,6 @@ before_install:
 - npm install -g yarn
 - npm install promise
 before_script:
-- yarn install 
+- yarn install
 script:
 - yarn test
