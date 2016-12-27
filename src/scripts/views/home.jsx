@@ -19,12 +19,16 @@ class Home extends React.Component {
     }
     onKeyDown(evt) {
         let button = this.refs[evt.key];
-        this.sound.play();
         if (button && !button.isActive()) {
             this.props.keyDownAction(evt.key);
         }
     }
     onKeyUp(evt) {
+        let button = this.refs[evt.key];
+        if (button ) {
+            this.sound.play();
+        }
+
         this.props.keyDownAction('');
         this.props.keyUpAction(evt.key, this.props);
     }
