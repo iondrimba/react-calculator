@@ -6,7 +6,6 @@ import Styles from '../../scss/app.scss';
 class SoundIcon extends React.Component {
     constructor(props) {
         super(props);
-        this.soundIcon = document.getElementsByClassName(Styles.soundIcon)[0];
     }
     componentDidMount() {
     }
@@ -15,10 +14,9 @@ class SoundIcon extends React.Component {
     }
     getMutedCss(muted) {
         let css = Styles.soundIcon;
-        if(muted) {
-            css = `${Styles.soundIcon} ${Styles['soundIcon--muted']}`
+        if (muted) {
+            css = `${css} ${Styles['soundIcon--muted']}`
         }
-
         return css;
     }
     render() {
