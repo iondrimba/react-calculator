@@ -9,10 +9,9 @@ class Sound {
         this.sound = new Howler.Howl({
             src: './sounds/input.mp3'
         });
-
     }
     play() {
-       this.sound.play();
+        this.sound.play();
     }
 }
 

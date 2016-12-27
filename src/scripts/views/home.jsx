@@ -1,8 +1,10 @@
 import React from 'react';
 import Title from '../components/title.jsx';
 import Button from '../components/button.jsx';
+import SoundIcon from '../components/soundIcon';
 import Styles from '../../scss/app.scss';
 import Sound from '../model/sound';
+
 
 
 class Home extends React.Component {
@@ -31,11 +33,15 @@ class Home extends React.Component {
         this.props.keyDownAction('');
         this.props.keyUpAction(key, this.props);
     }
+    onMuteIconClick(value) {
+        this.props.muteAction(value);
+    }
     render() {
         return (
             <div className={Styles.home}>
                 <div className={Styles.home__content}>
                     <div className={Styles.calc}>
+                        <SoundIcon onClick={this.onMuteIconClick.bind(this)} muted={this.props.muted}/>
                         <div className={Styles.calc__header}>
                             <p className={Styles.history}>{this.props.historyDisplay}</p>
                             <p className={Styles.result}>{this.props.displayValue}</p>
@@ -59,6 +65,8 @@ class Home extends React.Component {
 Home.propTypes = { history: React.PropTypes.array };
 Home.propTypes = { displayValue: React.PropTypes.number };
 Home.propTypes = { addAction: React.PropTypes.func };
+Home.propTypes = { muteAction: React.PropTypes.func };
+Home.propTypes = { muted: React.PropTypes.bool };
 Home.propTypes = { historyDisplay: React.PropTypes.string };
 Home.propTypes = { keyDownAction: React.PropTypes.func };
 Home.propTypes = { keyDown: React.PropTypes.string };

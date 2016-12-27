@@ -4,6 +4,7 @@ import displayValue from './displayValue';
 import MapKeys from '../model/mapKeys';
 import keyDown from './keyDown';
 import calculated from './calculated';
+import muted from './muted';
 
 
 const RootReducer = combineReducers({
@@ -11,7 +12,8 @@ const RootReducer = combineReducers({
     displayValue,
     calculated,
     keyDown,
-    keys: () => MapKeys
+    keys: () => MapKeys,
+    muted
 });
 
-export default RootReducer; 
+export default RootReducer;

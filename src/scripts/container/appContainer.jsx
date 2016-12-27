@@ -10,7 +10,8 @@ function mapStateToProps(store) {
     displayValue: store.displayValue,
     keyDown: store.keyDown,
     calculated: store.calculated,
-    keys: store.keys
+    keys: store.keys,
+    muted: store.muted
   };
 }
 
@@ -24,6 +25,9 @@ const mapDispatchToProps = (dispatch) => {
         }
       });
       return false;
+    },
+    muteAction: (value) => {
+      dispatch(createAction(constants.MUTED, { value }));
     },
     addAction: (value, data) => {
       dispatch(createAction(constants.ADD, { value, data }));

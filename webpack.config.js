@@ -44,7 +44,7 @@ var config = {
                     "style!css?sourceMap&modules&importLoaders=1&localIdentName=[name]_[local]!resolve-url!postcss!sass?sourceMap"
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'file?name=fonts/[name].[ext]' + (isProduction ? '&publicPath=../':'')
             },
             {
