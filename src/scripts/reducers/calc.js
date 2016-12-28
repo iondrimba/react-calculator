@@ -6,14 +6,15 @@ function calc(state = '', action) {
     let history = '';
     let input = '';
     let output = state;
+    let { historyDisplay, displayValue } = action.data;
 
     switch (action.type) {
         case CALC:
-            if (action.data.historyDisplay) {
+            if (historyDisplay) {
                 try {
 
-                    history = action.data.historyDisplay.replace(/,/, '.');
-                    input = action.data.displayValue.replace(/,/, '.');
+                    history = historyDisplay.replace(/,/, '.');
+                    input = displayValue.replace(/,/, '.');
                     var expressionInvalid = /[a-z]|(\{|\}|\(|\))/g.test(history);
 
                     if (expressionInvalid) {

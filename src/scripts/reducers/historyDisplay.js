@@ -4,6 +4,7 @@ import percent from '../reducers/percent';
 
 function historyDisplay(state = '', action) {
     let output = state;
+    let { historyDisplay } = action.data;
 
     switch (action.type) {
         case CLEAR:
@@ -11,7 +12,7 @@ function historyDisplay(state = '', action) {
         case PERCENT:
             return '';
         case OPERATOR:
-            output = operator(action.data.historyDisplay, action);
+            output = operator(historyDisplay, action);
             return output;
     }
     return output;

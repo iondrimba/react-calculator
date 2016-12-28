@@ -9,7 +9,7 @@ function add(state = '', action) {
 
     switch (action.type) {
         case ADD:
-            if (action.data.historyDisplay) {
+            if (historyDisplay) {
                 commands = historyDisplay.split('');
             }
 
