@@ -8,8 +8,6 @@ function del(state = 0, action) {
                 state = 0;
             }
             break;
-        default:
-            return state;
     }
     return state;
 }

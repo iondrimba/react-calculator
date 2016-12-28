@@ -36,8 +36,7 @@ function add(state = '', action) {
             if (Number(state) === 0) {
                 state = Number(state);
             }
-
-            return state;
+            break;
     }
     return state;
 }

@@ -6,11 +6,11 @@ function percent(state = 0, action) {
     switch (action.type) {
         case PERCENT:
             var output = eval(`${state}${displayValue}`) / 100;
-            output = output.toString().replace(/\./,',');
-            if(historyDisplay.length === 0) {
-                output = 0;
+            state = output.toString().replace(/\./, ',');
+            if (historyDisplay.length === 0) {
+                state = 0;
             }
-            return output;
+            break;
     }
     return state;
 }

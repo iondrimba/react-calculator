@@ -11,19 +11,26 @@ import percent from '../reducers/percent';
 function displayValue(state = '', action) {
     switch (action.type) {
         case SWITCH_OPERATOR:
-            return switchOperator(state, action);
+            state = switchOperator(state, action);
+            break;
         case COMMA:
-            return comma(state, action);
+            state = comma(state, action);
+            break;
         case DEL:
-            return del(state, action);
+            state = del(state, action);
+            break;
         case CLEAR:
-            return clear(state, action);
+            state = clear(state, action);
+            break;
         case PERCENT:
-            return add(percent(action.data.historyDisplay, action), action);
+            state = add(percent(action.data.historyDisplay, action), action);
+            break;
         case CALC:
-            return calc(state, action);
+            state = calc(state, action);
+            break;
         case ADD:
-            return comma(add(state, action), action);
+            state = comma(add(state, action), action);
+            break;
 
     }
     return state;

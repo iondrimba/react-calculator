@@ -7,13 +7,16 @@ function operator(state = '0', action) {
         case OPERATOR:
             var formatedValue = displayValue.toString().replace(/,/, '.');
             if (isNaN(Number(formatedValue)) || Number(formatedValue) === 0) {
-                return '';
-            }
-            if (calculated === false || historyDisplay.length === 0) {
-                state = `${historyDisplay}${displayValue}${action.value}`;
+                state = '';
             } else {
-                state = historyDisplay;
+                if (calculated === false || historyDisplay.length === 0) {
+                    state = `${historyDisplay}${displayValue}${action.value}`;
+                } else {
+                    state = historyDisplay;
+                }
             }
+
+            break;
     }
     return state;
 }

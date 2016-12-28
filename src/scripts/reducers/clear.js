@@ -6,7 +6,7 @@ function clear(state = 0, action) {
             if (action.value) {
                 state = 0;
             }
-            return state;
+            break;
     }
     return state;
 }

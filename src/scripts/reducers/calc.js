@@ -5,7 +5,6 @@ import {
 function calc(state = '', action) {
     let history = '';
     let input = '';
-    let output = state;
     let { historyDisplay, displayValue } = action.data;
 
     switch (action.type) {
@@ -18,22 +17,22 @@ function calc(state = '', action) {
                     var expressionInvalid = /[a-z]|(\{|\}|\(|\))/g.test(history);
 
                     if (expressionInvalid) {
-                        output = 0;
+                        state = 0;
                     } else {
-                        output = eval(`${history}${input}`).toString();
-                        if (output.indexOf('.') > 0) {
-                            output = Number(output).toFixed(2).toString().replace(/\./, ',');
+                        state = eval(`${history}${input}`).toString();
+                        if (state.indexOf('.') > 0) {
+                            state = Number(state).toFixed(2).toString().replace(/\./, ',');
                         }
                     }
 
                 } catch (err) {
-                    return output;
+                    console.log('Error:calc reducer', err.message);
                 }
 
             }
-            return output;
+            break;
     }
-    return output;
+    return state;
 }
 
 export default calc;

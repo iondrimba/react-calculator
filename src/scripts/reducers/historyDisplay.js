@@ -3,19 +3,17 @@ import operator from '../reducers/operator';
 import percent from '../reducers/percent';
 
 function historyDisplay(state = '', action) {
-    let output = state;
-    let { historyDisplay } = action.data;
-
     switch (action.type) {
         case CLEAR:
         case CALC:
         case PERCENT:
-            return '';
+            state = '';
+            break;
         case OPERATOR:
-            output = operator(historyDisplay, action);
-            return output;
+            state = operator(action.data.historyDisplay, action);
+            break;
     }
-    return output;
+    return state;
 }
 
 export default historyDisplay;

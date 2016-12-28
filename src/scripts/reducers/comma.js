@@ -7,6 +7,7 @@ function comma(state = '', action) {
             if (!isNaN(Number(state))) {
                 state = `${state}${action.value}`;
             }
+            break;
 
     }
     return state;

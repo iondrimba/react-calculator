@@ -4,7 +4,7 @@ function muted(state = false, action) {
     switch (action.type) {
         case MUTED:
             state = action.value;
-            return state;
+            break;
 
     }
     return state;
