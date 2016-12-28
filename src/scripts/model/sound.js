@@ -13,6 +13,10 @@ class Sound {
     play() {
         this.sound.play();
     }
+    mute(mute) {
+        console.log('mute', mute);
+        this.sound.mute(mute);
+    }
 }
 
 export default Sound;

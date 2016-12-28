@@ -26,6 +26,7 @@ class Home extends React.Component {
     onKeyUp(evt) {
         let button = this.refs[evt.key];
         if (button ) {
+            this.sound.mute(this.props.muted);
             this.sound.play();
         }
 
@@ -33,6 +34,7 @@ class Home extends React.Component {
         this.props.keyUpAction(evt.key, this.props);
     }
     onButtonClick(key) {
+        this.sound.mute(this.props.muted);
         this.sound.play();
         this.props.keyDownAction('');
         this.props.keyUpAction(key, this.props);
