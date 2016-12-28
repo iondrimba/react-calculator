@@ -1,0 +1,15 @@
+.home {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+
+    &__content {
+        border-radius: 8px;
+        box-shadow: 0 6px 17px 0 rgba(0, 0, 0, .21);
+        height: 580px;
+        margin: 0 auto;
+        overflow: hidden;
+        width: 360px;
+    }
+}

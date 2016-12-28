@@ -42,8 +42,8 @@ var config = {
             },
             {
                 test: /\.(s|c)css$/,
-                loader: isProduction ? ExtractTextPlugin.extract('css?root=.&modules&importLoaders=1&localIdentName=[name]_[local]!resolve-url!postcss!sass') :
-                    "style!css?sourceMap&modules&importLoaders=1&localIdentName=[name]_[local]!resolve-url!postcss!sass?sourceMap"
+                loader: isProduction ? ExtractTextPlugin.extract('css?root=.&modules&importLoaders=1&localIdentName=[local]!resolve-url!postcss!sass') :
+                    "style!css?sourceMap&modules&importLoaders=1&localIdentName=[local]!resolve-url!postcss!sass?sourceMap"
             },
             {
                 test: /\.(eot|ttf|woff|woff2)$/,

@@ -1,0 +1,17 @@
+.github {
+    display: inline-block;
+    fill: #fff;
+    left: 50%;
+    margin-top: 30px;
+    position: relative;
+    transform: translateX(-50%);
+
+    &:active {
+        left: 50.5%;
+        top: 2px;
+    }
+
+    &:hover {
+        fill: #a9b9f1;
+    }
+}

@@ -1,9 +1,7 @@
 import React from 'react';
-import Title from '../components/title.jsx';
-import Button from '../components/button.jsx';
-import SoundIcon from '../components/soundIcon';
+import Calculator from './calculator';
 import GithubIcon from '../components/githubIcon';
-import Styles from '../../scss/app.scss';
+import Styles from '../../scss/home.scss';
 import Sound from '../model/sound';
 
 
@@ -46,24 +44,8 @@ class Home extends React.Component {
     render() {
         return (
             <div className={Styles.home}>
-
                 <div className={Styles.home__content}>
-                    <div className={Styles.calc}>
-                        <SoundIcon onClick={this.onMuteIconClick.bind(this)} muted={this.props.muted}/>
-                        <div className={Styles.calc__header}>
-                            <p className={Styles.history}>{this.props.historyDisplay}</p>
-                            <p className={Styles.result}>{this.props.displayValue}</p>
-                        </div>
-                        <div className={Styles.calc__body}> {
-                            this.props.keys.map(function (elmt, index) {
-                                var css = this.props.getButtonClass(elmt, Styles);
-                                return (
-                                    <Button key={index} ref={elmt.key} label={elmt.label} id={elmt.key} onClick={this.onClick} className={this.props.isActiveCSS(css, elmt.key, this.props.keyDown, Styles)} />
-                                );
-                            }.bind(this))
-                        }
-                        </div>
-                    </div>
+                    <Calculator {...this.props} buttonClick={this.onButtonClick.bind(this)} muteIconClick={this.onMuteIconClick.bind(this)}/>
                 </div>
                 <GithubIcon/>
             </div>
@@ -71,19 +53,10 @@ class Home extends React.Component {
     }
 }
 
-Home.propTypes = { history: React.PropTypes.array };
-Home.propTypes = { displayValue: React.PropTypes.number };
-Home.propTypes = { addAction: React.PropTypes.func };
 Home.propTypes = { muteAction: React.PropTypes.func };
 Home.propTypes = { muted: React.PropTypes.bool };
-Home.propTypes = { historyDisplay: React.PropTypes.string };
 Home.propTypes = { keyDownAction: React.PropTypes.func };
 Home.propTypes = { keyDown: React.PropTypes.string };
 Home.propTypes = { keyUpAction: React.PropTypes.func };
-Home.propTypes = { calcAction: React.PropTypes.func };
-Home.propTypes = { clearAction: React.PropTypes.func };
-Home.propTypes = { getButtonClass: React.PropTypes.func };
-Home.propTypes = { isActiveCSS: React.PropTypes.func };
-Home.propTypes = { keys: React.PropTypes.array };
 
 export default Home;

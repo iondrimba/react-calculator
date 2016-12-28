@@ -1,0 +1,18 @@
+@import 'fonts.scss';
+
+body {
+    background-color: #3858c5;
+    background-position: top center;
+    background-repeat: no-repeat;
+    font-family: 'rounded_eleganceregular';
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+button {
+    font-family: inherit;
+}

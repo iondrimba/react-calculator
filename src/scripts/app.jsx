@@ -5,12 +5,13 @@ import { createStore } from 'redux';
 import AppContainer from './container/appContainer.jsx';
 import RootReducer from './reducers/root';
 import defaultStore from './model/initialState';
+import Styles from '../scss/app.scss';
 
 let store = createStore(RootReducer, defaultStore, window.devToolsExtension && window.devToolsExtension());
 
 render(
   <Provider store={store} >
-    <AppContainer /> 
+    <AppContainer />
   </Provider>,
   document.getElementById('app')
 );
