@@ -2,6 +2,7 @@ import React from 'react';
 import Title from '../components/title.jsx';
 import Button from '../components/button.jsx';
 import SoundIcon from '../components/soundIcon';
+import GithubIcon from '../components/githubIcon';
 import Styles from '../../scss/app.scss';
 import Sound from '../model/sound';
 
@@ -45,6 +46,7 @@ class Home extends React.Component {
     render() {
         return (
             <div className={Styles.home}>
+
                 <div className={Styles.home__content}>
                     <div className={Styles.calc}>
                         <SoundIcon onClick={this.onMuteIconClick.bind(this)} muted={this.props.muted}/>
@@ -63,6 +65,7 @@ class Home extends React.Component {
                         </div>
                     </div>
                 </div>
+                <GithubIcon/>
             </div>
         );
     }
