@@ -96,7 +96,6 @@ if (isProduction) {
     config.plugins.push(new ExtractTextPlugin("./css/[name].[hash].css"));
     config.plugins.push(new webpack.optimize.DedupePlugin());
     config.plugins.push(new webpack.optimize.UglifyJsPlugin());
-    config.plugins.push(new webpack.optimize.AggressiveMergingPlugin());
     config.plugins.push(new CompressionPlugin({
         asset: "[path].gz",
         algorithm: "gzip",
