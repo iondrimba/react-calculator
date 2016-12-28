@@ -9,7 +9,9 @@
         }
     }
 
-    .result {
-        font-size: 8vw;
+    .calculator {
+        &__result {
+            font-size: 8vw;
+        }
     }
 }
