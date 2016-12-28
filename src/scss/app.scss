@@ -125,8 +125,8 @@ button {
     position: relative;
     right: -12%;
     text-align: right;
-    width: 100%;
     width: 89%;
+    width: 100%;
 }
 
 .result {
@@ -141,10 +141,11 @@ button {
 .soundIcon {
     cursor: pointer;
     fill: #1f2525;
+    height: 22px;
     left: 10px;
     position: absolute;
     top: 10px;
-    width: 7%;
+    width: 25px;
     z-index: 1;
 
     &__wave {
