@@ -17,13 +17,13 @@ class Home extends React.Component {
         this.sound.setup();
     }
     onKeyDown(evt) {
-        let button = this.refs[evt.key];
+        let button = this.refs['calculator'].refs[evt.key];
         if (button && !button.isActive()) {
             this.props.keyDownAction(evt.key);
         }
     }
     onKeyUp(evt) {
-        let button = this.refs[evt.key];
+        let button = this.refs['calculator'].refs[evt.key];
         if (button ) {
             this.sound.mute(this.props.muted);
             this.sound.play();
@@ -45,7 +45,7 @@ class Home extends React.Component {
         return (
             <div className={Styles.home}>
                 <div className={Styles.home__content}>
-                    <Calculator {...this.props} buttonClick={this.onButtonClick.bind(this)} muteIconClick={this.onMuteIconClick.bind(this)}/>
+                    <Calculator ref={'calculator'} {...this.props} buttonClick={this.onButtonClick.bind(this)} muteIconClick={this.onMuteIconClick.bind(this)}/>
                 </div>
                 <GithubIcon/>
             </div>
