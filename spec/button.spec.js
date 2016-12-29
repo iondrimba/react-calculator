@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow, mount, render } from 'enzyme';
-import ReactTestUtils from 'react-addons-test-utils';
 import Button from '../src/scripts/components/button.jsx';
 
 
