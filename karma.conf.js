@@ -20,6 +20,13 @@ module.exports = function (config) {
             transform: ['stringify', 'babelify', istanbul({
                 defaultIgnore: true
             })],
+            configure: function (bundle) {
+                bundle.on('prebundle', function () {
+                    bundle.external('react/addons');
+                    bundle.external('react/lib/ReactContext');
+                    bundle.external('react/lib/ExecutionEnvironment');
+                });
+            },
             extensions: ['.js', '.jsx'],
             bundleDelay: 1000
         },
@@ -35,7 +42,7 @@ module.exports = function (config) {
             }
         },
         preprocessors: {
-            'spec/*.js': ['babel','browserify']
+            'spec/*.js': ['babel', 'browserify']
         },
         coverageReporter: {
             instrumenters: { isparta: require('isparta') },
