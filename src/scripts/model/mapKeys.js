@@ -43,7 +43,7 @@ let MapKeys = [
     },
     {
         key: '*',
-        label: '\u2715',
+        label: '\u00D7',
         type: 'operator',
         command: 'operatorAction'
     },
