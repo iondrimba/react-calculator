@@ -1,4 +1,5 @@
 import React from 'react';
+import Styles from '../../scss/button.scss';
 
 class Button extends React.Component {
     isActive() {
