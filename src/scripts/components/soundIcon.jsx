@@ -1,5 +1,4 @@
 import React from 'react';
-import speaker from '../../images/speaker.svg';
 import Styles from '../../scss/soundIcon.scss';
 
 class SoundIcon extends React.Component {

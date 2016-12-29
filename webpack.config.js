@@ -7,13 +7,14 @@ var postcssCssnext = require("postcss-cssnext");
 var WebpackCleanupPlugin = require("webpack-cleanup-plugin");
 var CompressionPlugin = require("compression-webpack-plugin");
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var isProduction = (process.env.NODE_ENV === "production");
 var isTesting = (process.env.NODE_ENV === "testing");
 
 var config = {
     resolve: {
-        extensions: ["", ".js", ".jsx", ".json", ".mp3"]
+        extensions: ["", ".js", ".jsx", ".json", ".mp3", ".ico"]
     },
     entry: {
         app: "./src/scripts/app"
@@ -27,6 +28,7 @@ var config = {
         inline: true,
         stats: "errors-only",
         compress: isProduction,
+        outputPath: './public',
         contentBase: "./public"
     },
     module: {
@@ -67,20 +69,35 @@ var config = {
         postcssCssnext()
     ],
     plugins: [
+        new WebpackCleanupPlugin(),
         new HtmlWebpackPlugin({
             title: "Calculator",
             minify: {
-                collapseWhitespace: true,
-                minifyCSS: true,
-                minifyJS: true,
-                removeComments: true
+                collapseWhitespace: isProduction,
+                minifyCSS: isProduction,
+                minifyJS: isProduction,
+                removeComments: isProduction
             },
             template: "./src/index.html",
             inject: "body"
         }),
-        new WebpackCleanupPlugin({
-            exclude: ["GzipSimpleHTTPServer.py", "manifest.json", "images/icons/*", ".htaccess"],
-        }),
+        new CopyWebpackPlugin([
+            {
+                from: 'src/manifest.json', to: 'manifest.json'
+            },
+            {
+                from: 'src/.htaccess', to: '.htaccess'
+            },
+            {
+                from: 'src/GzipSimpleHTTPServer.py', to: 'GzipSimpleHTTPServer.py'
+            },
+            {
+                from: 'src/favicon.ico', to: 'favicon.ico'
+            },
+            {
+                from: 'src/images/', to: 'images'
+            },
+        ]),
         new webpack.DefinePlugin({
             'process.env': {
                 'NODE_ENV': JSON.stringify('production')
