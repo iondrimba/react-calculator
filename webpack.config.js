@@ -68,7 +68,7 @@ var config = {
     ],
     plugins: [
         new HtmlWebpackPlugin({
-            title: "Calc",
+            title: "Calculator",
             minify: {
                 collapseWhitespace: true,
                 minifyCSS: true,
@@ -79,7 +79,7 @@ var config = {
             inject: "body"
         }),
         new WebpackCleanupPlugin({
-            exclude: ["GzipSimpleHTTPServer.py"],
+            exclude: ["GzipSimpleHTTPServer.py", "manifest.json"],
         }),
         new webpack.DefinePlugin({
             'process.env': {
