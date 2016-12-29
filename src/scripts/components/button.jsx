@@ -1,9 +1,8 @@
 import React from 'react';
-import Styles from '../../scss/button.scss';
 
 class Button extends React.Component {
     isActive() {
-        return /`${Styles.active}`/.test(this.props.className);
+        return /active/.test(this.props.className);
     }
     onClick(evt) {
         evt.preventDefault();
