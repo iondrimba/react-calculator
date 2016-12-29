@@ -79,7 +79,7 @@ var config = {
             inject: "body"
         }),
         new WebpackCleanupPlugin({
-            exclude: ["GzipSimpleHTTPServer.py", "manifest.json"],
+            exclude: ["GzipSimpleHTTPServer.py", "manifest.json", "images/icons"],
         }),
         new webpack.DefinePlugin({
             'process.env': {
