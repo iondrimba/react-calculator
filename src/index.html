@@ -28,7 +28,10 @@
     <script>
         (function () {
             if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/calc-service-worker.js');
+                window.addEventListener('load', function () {
+                    navigator.serviceWorker.register('/calc-service-worker.js');
+                });
+
             }
         })();
     </script>
