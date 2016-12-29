@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/app.4ea4d95d48af1e678466.js","bc87953b5b2e338e7d32c119bc32591b"],["/bootstrap.4ea4d95d48af1e678466.js","3fe4da701aec34efd4f9ea1f063da395"],["/css/app.4ea4d95d48af1e678466.css","784ef87c038a1944aa761c11bdf5d632"],["/fonts/geosanslight.woff","03025f1ca4b9a48cdc5d5260244c76d3"],["/fonts/geosanslight.woff2","d90383514a4a5bd3556ad527ee6092b7"],["/fonts/rounded_elegance.woff","1d5230da9ce1c60352068340a5fd4a9b"],["/fonts/rounded_elegance.woff2","05c1672c90045863e6ea0d4a134560b1"],["/index.html","14c23124fc019a607ed94ba0f8255ec9"],["/sounds/input.mp3","76e7162ab01d727350754b6f82b26cbe"]];
+var precacheConfig = [["/app.ab90aa34fa791c383edf.js","d06496b5460ffa9e561d6ef3f744263e"],["/bootstrap.ab90aa34fa791c383edf.js","cdf6c48bc889d2931c8cfbbd6c51031b"],["/css/app.ab90aa34fa791c383edf.css","784ef87c038a1944aa761c11bdf5d632"],["/fonts/geosanslight.woff","03025f1ca4b9a48cdc5d5260244c76d3"],["/fonts/geosanslight.woff2","d90383514a4a5bd3556ad527ee6092b7"],["/fonts/rounded_elegance.woff","1d5230da9ce1c60352068340a5fd4a9b"],["/fonts/rounded_elegance.woff2","05c1672c90045863e6ea0d4a134560b1"],["/index.html","115bf821a98f5f5216a758b38fdb9f4a"],["/sounds/input.mp3","76e7162ab01d727350754b6f82b26cbe"]];
 var cacheName = 'sw-precache-v2-calc-' + (self.registration ? self.registration.scope : '');
 
 

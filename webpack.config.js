@@ -86,7 +86,7 @@ var config = {
                 from: 'src/manifest.json', to: 'manifest.json'
             },
             {
-                from: 'src/.htaccess', to: '.htaccess'
+                from: 'src/.htaccess'
             },
             {
                 from: 'src/GzipSimpleHTTPServer.py', to: 'GzipSimpleHTTPServer.py'
