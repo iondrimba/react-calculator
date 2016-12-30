@@ -7,8 +7,7 @@
 
 ## Stack:
 
-- React
-- Redux
+- React + Redux
 - Sass
 - ES6
 - Jasmine + Karma
@@ -17,8 +16,10 @@
 ## Features:
 
 - PWA
+- Offline ready
+- Desktop version via manifest (Add to homescreen)
 - Responsive
 - Keyboard ready
 
 
-Design inspired via http://collectui.com/designers/pramodrhegde
+### Design inspired via [http://collectui.com/designers/pramodrhegde](http://collectui.com/designers/pramodrhegde)

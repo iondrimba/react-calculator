@@ -15,7 +15,7 @@
     <meta name="topic" content="">
     <meta name="summary" content="Calculator build wih ReactJS Redux ES6">
     <meta name="author" content="Ion Drimba Filho">
-    <meta name="url" content="http://br.iondrimbafilho.me">
+    <meta name="url" content="http://calculator.iondrimbafilho.me">
     <meta name="pagename" content="ReactJs Calculator">
     <meta name="category" content="">
     <meta name="coverage" content="Worldwide">
@@ -24,13 +24,33 @@
     <meta name="subtitle" content="ReactJS Calculator">
     <meta name="target" content="all">
     <link rel="manifest" href="manifest.json">
+    <!-- IE cleartype -->
+	<meta http-equiv="cleartype" content="on">
+	<!-- Social: Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="Calculator">
+	<meta name="twitter:creator" content="Ion Drimba Filho">
+	<meta name="twitter:title" content="Calculator">
+	<meta name="twitter:description" content="React+Redux Calculator">
+	<meta name="twitter:image:src" content="https://dl.dropboxusercontent.com/u/4633623/calctwitter.png">
+	<!-- Social: Facebook  -->
+	<meta property="og:url" content="http://calculator.iondrimbafilho.me/">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="Calculator">
+	<meta property="og:image" content="https://dl.dropboxusercontent.com/u/4633623/calcface.png" />
+	<meta property="og:description" content="React+Redux Calculator">
+	<meta property="og:site_name" content="React+Redux Calculator">
+	<meta property="article:author" content="http://iondrimbafilho.me/">
+	<meta property="article:publisher" content="http://iondrimbafilho.me/">
+	<!-- Social: Google+ / Schema.org  -->
+	<meta itemprop="name" content="Calculator">
+	<meta itemprop="description" content="React+Redux Calculator">
+	<meta itemprop="image" content="https://dl.dropboxusercontent.com/u/4633623/calcgoogleplus.png">
     <title>Calculator</title>
     <script>
         (function () {
             if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function () {
-                    navigator.serviceWorker.register('/calc-service-worker.js');
-                });
+                navigator.serviceWorker.register('/calc-service-worker.js');
 
             }
         })();
