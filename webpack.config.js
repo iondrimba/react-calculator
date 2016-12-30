@@ -124,7 +124,8 @@ if (isProduction) {
         cacheId: 'calc',
         filename: 'calc-service-worker.js',
         maximumFileSizeToCacheInBytes: 4194304,
-        staticFileGlobs: ['public/**/*.{js,json,mp3,html,css,png,jpg,gif}'],
+        staticFileGlobs: ['public/**/*.{js,json,mp3,html,css,png,jpg,gif,woff2,woff}',
+        'public/fonts/*.{woff2,woff}'],
         stripPrefix: 'public',
         runtimeCaching: [{
             urlPattern: /^https:\/\/br\.iondrimbafilho\.me\/.+/,
