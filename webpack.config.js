@@ -120,26 +120,25 @@ if (isProduction) {
         threshold: 10240,
         minRatio: 0.8
     }));
-    config.plugins.push(new SWPrecacheWebpackPlugin(
-        {
-            cacheId: 'calc',
-            filename: 'calc-service-worker.js',
-            directoryIndex: '/public/index.html',
-            maximumFileSizeToCacheInBytes: 4194304,
-            staticFileGlobs: [
-                'public/*.json',
-                'public/**/*.css',
-                'public/**/*.js',
-                'public/fonts/**',
-                'public/**/*.mp3',
-                'public/**/*.html'
-            ],
-            stripPrefix: 'public',
-            runtimeCaching: [{
-                handler: 'cacheFirst',
-                urlPattern: /^https\:.+/gm,
-            }],
-        }
+    config.plugins.push(new SWPrecacheWebpackPlugin({
+        cacheId: 'calc',
+        filename: 'calc-service-worker.js',
+        directoryIndex: '/public/index.html',
+        maximumFileSizeToCacheInBytes: 4194304,
+        staticFileGlobs: [
+            'public/*.json',
+            'public/**/*.css',
+            'public/**/*.js',
+            'public/fonts/**',
+            'public/**/*.mp3',
+            'public/**/*.html'
+        ],
+        stripPrefix: 'public',
+        runtimeCaching: [{
+            urlPattern: /^https:\/\/br\.iondrimbafilho\.me\//,
+            handler: 'networkFirst'
+        }],
+    }
     ));
 } else {
     config.plugins.push(new StyleLintPlugin({

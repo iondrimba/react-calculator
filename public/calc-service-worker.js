@@ -249,7 +249,7 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
-toolbox.router.get(/^https\:.+/gm, toolbox.cacheFirst, {});
+toolbox.router.get(/^https:\/\/br\.iondrimbafilho\.me\//, toolbox.networkFirst, {});
 
 
 
