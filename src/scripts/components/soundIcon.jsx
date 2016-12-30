@@ -31,7 +31,9 @@ class SoundIcon extends React.Component {
     }
 }
 
-SoundIcon.propTypes = { muted: React.PropTypes.bool };
-SoundIcon.propTypes = { onClick: React.PropTypes.func };
+SoundIcon.propTypes = {
+    muted: React.PropTypes.bool,
+    onClick: React.PropTypes.func
+};
 
 export default SoundIcon;

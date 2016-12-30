@@ -24,7 +24,7 @@ class Calculator extends React.Component {
                         var css = this.props.getButtonClass(elmt, StylesButton);
                         return (
                             <Button key={index} ref={elmt.key} label={elmt.label} id={elmt.key} onClick={this.props.buttonClick}
-                            className={this.props.isActiveCSS(css, elmt.key, this.props.keyDown, StylesButton)} />
+                                className={this.props.isActiveCSS(css, elmt.key, this.props.keyDown, StylesButton)} />
                         );
                     }.bind(this))
                 }
@@ -34,14 +34,16 @@ class Calculator extends React.Component {
     }
 }
 
-Calculator.propTypes = { muteIconClick: React.PropTypes.func };
-Calculator.propTypes = { buttonClick: React.PropTypes.func };
-Calculator.propTypes = { displayValue: React.PropTypes.number };
-Calculator.propTypes = { historyDisplay: React.PropTypes.string };
-Calculator.propTypes = { keyDown: React.PropTypes.string };
-Calculator.propTypes = { muted: React.PropTypes.bool };
-Calculator.propTypes = { getButtonClass: React.PropTypes.func };
-Calculator.propTypes = { isActiveCSS: React.PropTypes.func };
-Calculator.propTypes = { keys: React.PropTypes.array };
+Calculator.propTypes = {
+    muteIconClick: React.PropTypes.func
+    , buttonClick: React.PropTypes.func
+    , displayValue: React.PropTypes.number
+    , historyDisplay: React.PropTypes.string
+    , keyDown: React.PropTypes.string
+    , muted: React.PropTypes.bool
+    , getButtonClass: React.PropTypes.func
+    , isActiveCSS: React.PropTypes.func
+    , keys: React.PropTypes.array
+};
 
 export default Calculator;

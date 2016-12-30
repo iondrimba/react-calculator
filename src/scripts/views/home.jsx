@@ -24,7 +24,7 @@ class Home extends React.Component {
     }
     onKeyUp(evt) {
         let button = this.refs['calculator'].refs[evt.key];
-        if (button ) {
+        if (button) {
             this.sound.mute(this.props.muted);
             this.sound.play();
         }
@@ -45,18 +45,20 @@ class Home extends React.Component {
         return (
             <div className={Styles.home}>
                 <div className={Styles.home__content}>
-                    <Calculator ref={'calculator'} {...this.props} buttonClick={this.onButtonClick.bind(this)} muteIconClick={this.onMuteIconClick.bind(this)}/>
+                    <Calculator ref={'calculator'} {...this.props} buttonClick={this.onButtonClick.bind(this)} muteIconClick={this.onMuteIconClick.bind(this)} />
                 </div>
-                <GithubIcon/>
+                <GithubIcon />
             </div>
         );
     }
 }
 
-Home.propTypes = { muteAction: React.PropTypes.func };
-Home.propTypes = { muted: React.PropTypes.bool };
-Home.propTypes = { keyDownAction: React.PropTypes.func };
-Home.propTypes = { keyDown: React.PropTypes.string };
-Home.propTypes = { keyUpAction: React.PropTypes.func };
+Home.propTypes = {
+    muteAction: React.PropTypes.func
+    , muted: React.PropTypes.bool
+    , keyDownAction: React.PropTypes.func
+    , keyDown: React.PropTypes.string
+    , keyUpAction: React.PropTypes.func
+};
 
 export default Home;
