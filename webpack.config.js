@@ -124,9 +124,10 @@ if (isProduction) {
         {
             cacheId: 'calc',
             filename: 'calc-service-worker.js',
-            directoryIndex: '/public',
+            directoryIndex: '/public/index.html',
             maximumFileSizeToCacheInBytes: 4194304,
             staticFileGlobs: [
+                'public/*.json',
                 'public/**/*.css',
                 'public/**/*.js',
                 'public/fonts/**',
