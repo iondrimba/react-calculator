@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/app.e79b7128830eec9250fb.js","563665678c55b96f8be04227ee3ab30e"],["/bootstrap.e79b7128830eec9250fb.js","4bb7623b9cac3d814157165f48ac26df"],["/css/app.e79b7128830eec9250fb.css","c35c2efa46d33ba7169e9f0961b845fa"],["/fonts/geosanslight.woff","03025f1ca4b9a48cdc5d5260244c76d3"],["/fonts/geosanslight.woff2","d90383514a4a5bd3556ad527ee6092b7"],["/fonts/rounded_elegance.woff","1d5230da9ce1c60352068340a5fd4a9b"],["/fonts/rounded_elegance.woff2","05c1672c90045863e6ea0d4a134560b1"],["/index.html","f185ca665e3457c0a910346091c2a849"],["/manifest.json","bcaba86bc16abbd347348f9a54f5f947"],["/sounds/input.mp3","76e7162ab01d727350754b6f82b26cbe"]];
+var precacheConfig = [["/app.e79b7128830eec9250fb.js","563665678c55b96f8be04227ee3ab30e"],["/bootstrap.e79b7128830eec9250fb.js","4bb7623b9cac3d814157165f48ac26df"],["/css/app.e79b7128830eec9250fb.css","c35c2efa46d33ba7169e9f0961b845fa"],["/fonts/geosanslight.woff","03025f1ca4b9a48cdc5d5260244c76d3"],["/fonts/geosanslight.woff2","d90383514a4a5bd3556ad527ee6092b7"],["/fonts/rounded_elegance.woff","1d5230da9ce1c60352068340a5fd4a9b"],["/fonts/rounded_elegance.woff2","05c1672c90045863e6ea0d4a134560b1"],["/index.html","f185ca665e3457c0a910346091c2a849"],["/manifest.json","161ea6d7914b1e1ade369c4a8c8b299e"],["/sounds/input.mp3","76e7162ab01d727350754b6f82b26cbe"]];
 var cacheName = 'sw-precache-v2-calc-' + (self.registration ? self.registration.scope : '');
 
 
@@ -249,7 +249,7 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
-toolbox.router.get(/\/$/, toolbox.cacheFirst, {});
+toolbox.router.get(/^https\:.+/gm, toolbox.cacheFirst, {});
 
 
 

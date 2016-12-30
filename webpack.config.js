@@ -137,7 +137,7 @@ if (isProduction) {
             stripPrefix: 'public',
             runtimeCaching: [{
                 handler: 'cacheFirst',
-                urlPattern: /\/$/,
+                urlPattern: /^https\:.+/gm,
             }],
         }
     ));
