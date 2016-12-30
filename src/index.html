@@ -28,9 +28,7 @@
     <script>
         (function () {
             if ('serviceWorker' in navigator) {
-                window.addEventListener('load', function () {
-                    navigator.serviceWorker.register('/calc-service-worker.js');
-                });
+                navigator.serviceWorker.register('/calc-service-worker.js');
 
             }
         })();
