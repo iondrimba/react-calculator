@@ -123,20 +123,12 @@ if (isProduction) {
     config.plugins.push(new SWPrecacheWebpackPlugin({
         cacheId: 'calc',
         filename: 'calc-service-worker.js',
-        directoryIndex: '/public/index.html',
         maximumFileSizeToCacheInBytes: 4194304,
-        staticFileGlobs: [
-            'public/*.json',
-            'public/**/*.css',
-            'public/**/*.js',
-            'public/fonts/**',
-            'public/**/*.mp3',
-            'public/**/*.html'
-        ],
+        staticFileGlobs: ['public/**/*.{js,json,mp3,html,css,png,jpg,gif}'],
         stripPrefix: 'public',
         runtimeCaching: [{
-            urlPattern: /^https:\/\/br\.iondrimbafilho\.me\//,
-            handler: 'networkFirst'
+            urlPattern: /^https:\/\/br\.iondrimbafilho\.me\/.+/,
+            handler: 'cacheFirst'
         }],
     }
     ));

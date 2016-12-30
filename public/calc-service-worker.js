@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/app.e79b7128830eec9250fb.js","563665678c55b96f8be04227ee3ab30e"],["/bootstrap.e79b7128830eec9250fb.js","4bb7623b9cac3d814157165f48ac26df"],["/css/app.e79b7128830eec9250fb.css","c35c2efa46d33ba7169e9f0961b845fa"],["/fonts/geosanslight.woff","03025f1ca4b9a48cdc5d5260244c76d3"],["/fonts/geosanslight.woff2","d90383514a4a5bd3556ad527ee6092b7"],["/fonts/rounded_elegance.woff","1d5230da9ce1c60352068340a5fd4a9b"],["/fonts/rounded_elegance.woff2","05c1672c90045863e6ea0d4a134560b1"],["/index.html","9bff67ab0125da0961d0c1b9705c51b9"],["/manifest.json","161ea6d7914b1e1ade369c4a8c8b299e"],["/sounds/input.mp3","76e7162ab01d727350754b6f82b26cbe"]];
+var precacheConfig = [["/app.e79b7128830eec9250fb.js","563665678c55b96f8be04227ee3ab30e"],["/bootstrap.e79b7128830eec9250fb.js","4bb7623b9cac3d814157165f48ac26df"],["/css/app.e79b7128830eec9250fb.css","c35c2efa46d33ba7169e9f0961b845fa"],["/images/favicons/android-chrome-192x192.png","18bed671f450a3661e77bc9c71a71f71"],["/images/favicons/android-chrome-512x512.png","7c3bd3d2cfc3832b8a67a9fcbc998e24"],["/images/favicons/apple-touch-icon.png","f0c01ebefca7da13813cf40707f16730"],["/images/favicons/favicon-16x16.png","599f197f24cc600e1e1119a0bddc16f9"],["/images/favicons/favicon-32x32.png","409681b1dd83704f4188336f01c65b87"],["/images/favicons/mstile-150x150.png","0b06ad48330543410387a26791c0ced6"],["/images/icons/icon-128x128.png","e0adb596375428312d9485483bcad818"],["/images/icons/icon-144x144.png","eca51935a480c4533f9564efd540e21d"],["/images/icons/icon-152x152.png","66e338358214597fd2f3a4b149c234cd"],["/images/icons/icon-192x192.png","b9c355a6c3263dae8f79ffe4484bbd1e"],["/images/icons/icon-384x384.png","f9ae23223155bd7d942db9eacd5b2843"],["/images/icons/icon-512x512.png","013aa04eee1600dfdee8900a2011420b"],["/images/icons/icon-72x72.png","09e89e55fc9ef38ba4e37d9f3de043e8"],["/images/icons/icon-96x96.png","c785ce630daa374be30cf434f36a8305"],["/index.html","9bff67ab0125da0961d0c1b9705c51b9"],["/manifest.json","161ea6d7914b1e1ade369c4a8c8b299e"],["/sounds/input.mp3","76e7162ab01d727350754b6f82b26cbe"]];
 var cacheName = 'sw-precache-v2-calc-' + (self.registration ? self.registration.scope : '');
 
 
@@ -185,7 +185,7 @@ self.addEventListener('fetch', function(event) {
 
     // If shouldRespond is false, check again, this time with 'index.html'
     // (or whatever the directoryIndex option is set to) at the end.
-    var directoryIndex = '/public/index.html';
+    var directoryIndex = 'index.html';
     if (!shouldRespond && directoryIndex) {
       url = addDirectoryIndex(url, directoryIndex);
       shouldRespond = urlsToCacheKeys.has(url);
@@ -249,7 +249,7 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
-toolbox.router.get(/^https:\/\/br\.iondrimbafilho\.me\//, toolbox.networkFirst, {});
+toolbox.router.get(/^https:\/\/br\.iondrimbafilho\.me\/.+/, toolbox.cacheFirst, {});
 
 
 
