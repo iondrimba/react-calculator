@@ -154,15 +154,12 @@ AddDefaultCharset utf-8
     RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
  </IfModule>
 
-
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{HTTPS} !=on
     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
     RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
 </IfModule>
-
-
 
 <IfModule mod_autoindex.c>
     Options -Indexes
@@ -198,15 +195,9 @@ AddDefaultCharset utf-8
     Header set X-Content-Type-Options "nosniff"
 </IfModule>
 
-
-
 <IfModule mod_headers.c>
     Header unset X-Powered-By
 </IfModule>
-
-
-ServerSignature Off
-
 
 
 <IfModule mod_deflate.c>
