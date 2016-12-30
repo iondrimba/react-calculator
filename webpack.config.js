@@ -128,7 +128,7 @@ if (isProduction) {
         'public/fonts/*.{woff2,woff}'],
         stripPrefix: 'public',
         runtimeCaching: [{
-            urlPattern: /^https:\/\/br\.iondrimbafilho\.me\/.+/,
+            urlPattern: /^https:\/\/calculator\.iondrimbafilho\.me\/.+/,
             handler: 'cacheFirst'
         }],
     }
