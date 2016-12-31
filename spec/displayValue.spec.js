@@ -78,5 +78,16 @@ describe('DisplayValue reducer tests', () => {
         expect(result).toBe('984');
     });
 
+
+    it('should display correct value when doing percent calculation', () => {
+        let state = '45*';
+        let value = '';
+        let action = createAction(constants.PERCENT, { value, data });
+        action.data.historyDisplay = '10*'
+        action.data.displayValue = '45';
+        let result = displayValue(state, action);
+        expect(result).toBe('4,5');
+    });
+
 });
 
