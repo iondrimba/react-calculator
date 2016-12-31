@@ -89,5 +89,15 @@ describe('DisplayValue reducer tests', () => {
         expect(result).toBe('4,5');
     });
 
+    it('should return zero if no history wass added when doing percent calculation', () => {
+        let state = '45*';
+        let value = '';
+        let action = createAction(constants.PERCENT, { value, data });
+        action.data.historyDisplay = ''
+        action.data.displayValue = '45';
+        let result = displayValue(state, action);
+        expect(result).toBe('0');
+    });
+
 });
 
