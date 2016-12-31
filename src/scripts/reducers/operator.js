@@ -10,7 +10,7 @@ function operator(state = '0', action) {
                 state = '';
             } else {
                 if (calculated === false || historyDisplay.length === 0) {
-                    state = `${historyDisplay}${displayValue}${action.value}`;
+                    state = `${historyDisplay}${displayValue}${action.value} `;
                 } else {
                     state = historyDisplay;
                 }

@@ -3,7 +3,6 @@ import { ADD } from '../actions/constants';
 function add(state = '', action) {
     let commands = [];
     let lastCommand = [];
-    let result = 0;
     let maxDisplay = 15;
     let { historyDisplay, displayValue, calculated } = action.data;
 
@@ -19,6 +18,7 @@ function add(state = '', action) {
 
             if (state.length) {
                 if (calculated ||
+                    Number(state) === 0 ||
                     Number(state + action.value) === 0 ||
                     (lastCommand.length === 0 && calculated)) {
                     state = action.value;
@@ -31,10 +31,6 @@ function add(state = '', action) {
             }
             if (state.length > maxDisplay) {
                 state = displayValue;
-            }
-
-            if (Number(state) === 0) {
-                state = Number(state);
             }
             break;
     }

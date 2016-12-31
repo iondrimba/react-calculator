@@ -1,6 +1,6 @@
 $button-shadow: rgba(0, 0, 0, .3);
 $primary-color: #e82e64;
-$secondary-color: #0f1;
+$secondary-color: #1f2525;
 $base-color: #333;
 $button-base-color: #1f2525;
 $border-color: rgba(255, 255, 255, .04);
@@ -34,12 +34,12 @@ $border-color: rgba(255, 255, 255, .04);
         border-bottom: 0;
         border-right: 0;
         box-shadow: 1px 6px 20px 5px $button-shadow;
-        color: $base-color;
+        color: #fff;
         font-weight: bold;
     }
 
     &_runOperator:hover {
-        background-color: darken($secondary-color, 10%);
+        background-color: darken($secondary-color, 2%);
     }
 
     &:active {

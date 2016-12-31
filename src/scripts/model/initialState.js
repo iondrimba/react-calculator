@@ -2,7 +2,7 @@ import MapKeys from './mapKeys';
 
 const defaultStore = {
     historyDisplay: '',
-    displayValue: 0,
+    displayValue: '0',
     keyDown: '',
     muted: false,
     calculated: false,

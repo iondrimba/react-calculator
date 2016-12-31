@@ -1,5 +1,4 @@
 import React from 'react';
-import Title from '../components/title.jsx';
 import Button from '../components/button.jsx';
 import SoundIcon from '../components/soundIcon';
 import GithubIcon from '../components/githubIcon';
@@ -20,13 +19,13 @@ class Calculator extends React.Component {
                     <p className={Styles.calculator__result}>{this.props.displayValue}</p>
                 </div>
                 <div className={Styles.calculator__body}> {
-                    this.props.keys.map(function (elmt, index) {
+                    this.props.keys.map((elmt, index) => {
                         var css = this.props.getButtonClass(elmt, StylesButton);
                         return (
                             <Button key={index} ref={elmt.key} label={elmt.label} id={elmt.key} onClick={this.props.buttonClick}
                                 className={this.props.isActiveCSS(css, elmt.key, this.props.keyDown, StylesButton)} />
                         );
-                    }.bind(this))
+                    })
                 }
                 </div>
             </div>

@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     keyUpAction: (key, props) => {
       let {displayValue, historyDisplay, calculated} = props;
-      props.keys.filter(function (elmt) {
+      props.keys.filter((elmt) => {
         if (key === elmt.key) {
           props[elmt.command](key, { displayValue, historyDisplay, calculated });
         }

@@ -1,6 +1,4 @@
-import {
-    CALC
-} from '../actions/constants';
+import { CALC } from '../actions/constants';
 
 function calc(state = '', action) {
     let history = '';
@@ -17,7 +15,7 @@ function calc(state = '', action) {
                     var expressionInvalid = /[a-z]|(\{|\}|\(|\))/g.test(history);
 
                     if (expressionInvalid) {
-                        state = 0;
+                        state = '';
                     } else {
                         state = eval(`${history}${input}`).toString();
                         if (state.indexOf('.') > 0) {

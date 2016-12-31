@@ -3,7 +3,7 @@ import Styles from '../../scss/button.scss';
 
 class Button extends React.Component {
     isActive() {
-        return /active/.test(this.props.className);
+        return /`${Styles.active}`/.test(this.props.className);
     }
     onClick(evt) {
         evt.preventDefault();

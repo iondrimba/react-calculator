@@ -5,8 +5,6 @@ class SoundIcon extends React.Component {
     constructor(props) {
         super(props);
     }
-    componentDidMount() {
-    }
     onClick() {
         this.props.onClick(!this.props.muted);
     }

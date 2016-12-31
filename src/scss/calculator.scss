@@ -5,20 +5,17 @@
 
     &__header {
         align-content: space-between;
-        align-items: flex-end;
-        background-color: rgba(255, 255, 255, 1);
-        display: flex;
+        background-color: #fff;
+        display: inherit;
         flex-basis: 38%;
         flex-wrap: wrap;
         padding: 10px;
     }
 
     &__body {
-        align-content: flex-start;
-        background-color: rgba(51, 51, 51, 1);
-        display: flex;
+        background-color: #333;
+        display: inherit;
         flex-basis: 77%;
-        flex-direction: row;
         flex-wrap: wrap;
     }
 
