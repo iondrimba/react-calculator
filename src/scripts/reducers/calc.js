@@ -18,13 +18,18 @@ function calc(state = '', action) {
                         state = '';
                     } else {
                         state = eval(`${history}${input}`).toString();
-                        if (state.indexOf('.') > 0) {
+
+                        if (state === 'Infinity') {
+                            state = '';
+                        }
+
+                        if (state.toString().indexOf('.') > 0) {
                             state = Number(state).toFixed(2).toString().replace(/\./, ',');
                         }
                     }
 
                 } catch (err) {
-                    console.log('Error:calc reducer', err.message);
+                    throw new Error('Error:calc reducer ' + err.message);
                 }
 
             }
