@@ -4,7 +4,7 @@ function comma(state = '', action) {
 
     switch (action.type) {
         case COMMA:
-            if (!isNaN(Number(state))) {
+            if (!isNaN(Number(parseFloat(state)))) {
                 state = `${state}${action.value}`;
             }
             break;
