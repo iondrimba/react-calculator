@@ -8,6 +8,7 @@ module.exports = function (config) {
         basePath: '',
         frameworks: ['jasmine', 'browserify'],
         files: [
+            './node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js',
             'spec/*.js'
         ],
         included: false,
@@ -32,7 +33,7 @@ module.exports = function (config) {
         },
         babelPreprocessor: {
             options: {
-                presets: ['es2015', 'react']
+                presets: ['es2015', 'react', 'stage-0']
             },
             filename: function (file) {
                 return file.originalPath;
@@ -50,7 +51,7 @@ module.exports = function (config) {
                 'spec/*.js': 'isparta'
             },
             instrumenterOptions: {
-                isparta: { babel: { presets: ['es2015', 'react'] } }
+                isparta: { babel: { presets: ['es2015', 'react', 'stage-0'] } }
             },
             istanbul: { noCompact: true },
             dir: 'test/reports/coverage',
