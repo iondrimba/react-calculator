@@ -3,7 +3,9 @@ import Styles from '../../scss/button.scss';
 
 class Button extends React.Component {
     isActive() {
-        return /`${Styles.active}`/.test(this.props.className);
+        let pattern = `${Styles.active}`;
+        let regex = new RegExp(pattern, 'gi');
+        return this.props.className.match(regex) !== null;
     }
     onClick(evt) {
         evt.preventDefault();
