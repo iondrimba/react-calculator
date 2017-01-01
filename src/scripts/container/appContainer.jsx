@@ -7,6 +7,7 @@ import * as constants from '../actions/constants';
 function mapStateToProps(store) {
   return {
     historyDisplay: store.historyDisplay,
+    history: store.history,
     displayValue: store.displayValue,
     keyDown: store.keyDown,
     calculated: store.calculated,
@@ -18,10 +19,10 @@ function mapStateToProps(store) {
 const mapDispatchToProps = (dispatch) => {
   return {
     keyUpAction: (key, props) => {
-      let {displayValue, historyDisplay, calculated} = props;
+      let {displayValue, historyDisplay, calculated, history} = props;
       props.keys.filter((elmt) => {
         if (key === elmt.key) {
-          props[elmt.command](key, { displayValue, historyDisplay, calculated });
+          props[elmt.command](key, { displayValue, historyDisplay, calculated, history });
         }
       });
       return false;
@@ -37,10 +38,13 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(createAction(constants.KEY_DOWN, { value }));
     },
     calcAction: (value, data) => {
-      dispatch(createAction(constants.CALC, { value, data }));
+      // dispatch(createAction(constants.CALC, { value, data }));
+      // dispatch(createAction(constants.HISTORY, { value, data }));
+      // dispatch(createAction(constants.CALCULATED, { value: true }));
     },
     resultAction: (value, data) => {
       dispatch(createAction(constants.CALC, { value, data }));
+      dispatch(createAction(constants.HISTORY, { value, data }));
       dispatch(createAction(constants.CALCULATED, { value: true }));
     },
     clearAction: (value, data) => {
@@ -51,6 +55,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     operatorAction: (value, data) => {
       dispatch(createAction(constants.OPERATOR, { value, data }));
+      dispatch(createAction(constants.HISTORY, { value, data }));
       dispatch(createAction(constants.CALCULATED, { value: true }));
     },
     commaAction: (value, data) => {

@@ -1,37 +1,24 @@
-import { CALC } from '../actions/constants';
+import { CALC, HISTORY } from '../actions/constants';
 
-function calc(state = '', action) {
-    let history = '';
-    let input = '';
-    let { historyDisplay, displayValue } = action.data;
-
+function calc(state = [], action) {
+    let history = [...state];
     switch (action.type) {
-        case CALC:
-            if (historyDisplay) {
-                try {
-
-                    history = historyDisplay.replace(/,/, '.');
-                    input = displayValue.replace(/,/, '.');
-                    var expressionInvalid = /[a-z]|(\{|\}|\(|\))/g.test(history);
-
-                    if (expressionInvalid) {
-                        state = '';
-                    } else {
-                        state = eval(`${history}${input}`).toString();
-
-                        if (state === 'Infinity') {
-                            state = '';
-                        }
-
-                        if (state.toString().indexOf('.') > 0) {
-                            state = Number(state).toFixed(2).toString().replace(/\./, ',');
-                        }
-                    }
-
-                } catch (err) {
-                    throw new Error('Error:calc reducer ' + err.message);
+        case HISTORY:
+            if (history.length) {
+                if (history.length === 1) {
+                    state = eval(history[0].replace(/,/g, '.')).toString().replace(/\./g, ',');
+                } else {
+                    state = history.reduce(function (a, b) {
+                        var r = eval(a.toString().replace(/,/g, '.'));
+                        return b = eval(r + b.replace(/,/g, '.'));
+                    }).toString().replace(/\./g, ',');
                 }
+            } else {
+                state = action.data.displayValue;
+            }
 
+            if (state === 'Infinity') {
+                state = '0';
             }
             break;
     }

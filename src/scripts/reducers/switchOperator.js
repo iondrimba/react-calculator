@@ -1,4 +1,4 @@
-import { SWITCH_OPERATOR, CALCULATED } from '../actions/constants';
+import { SWITCH_OPERATOR } from '../actions/constants';
 
 function switchOperator(state = '', action) {
     switch (action.type) {

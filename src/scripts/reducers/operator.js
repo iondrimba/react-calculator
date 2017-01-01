@@ -1,18 +1,18 @@
 import { OPERATOR, CALCULATED } from '../actions/constants';
 
 function operator(state = '0', action) {
-    let { historyDisplay, displayValue, calculated } = action.data;
+    let { historyDisplay, displayValue, calculated, history } = action.data;
 
     switch (action.type) {
         case OPERATOR:
-            var formatedValue = displayValue.toString().replace(/,/, '.');
+            var formatedValue = displayValue.toString().replace(/,/g, '.');
             if (isNaN(Number(formatedValue)) || Number(formatedValue) === 0) {
-                state = '';
+                state = `0 ${action.value} `;
             } else {
                 if (calculated === false || historyDisplay.length === 0) {
-                    state = `${historyDisplay}${displayValue}${action.value} `;
+                    state = `${historyDisplay}${displayValue} ${action.value} `;
                 } else {
-                    state = historyDisplay;
+                    state = historyDisplay.replace(/\D $/, ` ${action.value} `);
                 }
             }
 

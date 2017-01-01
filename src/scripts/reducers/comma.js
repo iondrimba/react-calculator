@@ -4,7 +4,9 @@ function comma(state = '', action) {
 
     switch (action.type) {
         case COMMA:
-            if (!isNaN(Number(parseFloat(state)))) {
+            if (action.data.calculated) {
+                state = `0${action.value}`;
+            } else if (state.indexOf(',') === -1) {
                 state = `${state}${action.value}`;
             }
             break;

@@ -3,17 +3,14 @@ import { shallow, mount, render } from 'enzyme';
 import calculated from '../src/scripts/reducers/calculated';
 import createAction from '../src/scripts/actions/createAction';
 import * as constants from '../src/scripts/actions/constants';
+import dataFixture from './dataFixture';
 
 describe('Calculated reducer tests', () => {
 
     let data = {};
 
     beforeEach(function () {
-        data = {
-            displayValue: '',
-            historyDisplay: '',
-            calculated: false
-        }
+        data = dataFixture;
     });
 
     it('should set calculated flag to true', () => {

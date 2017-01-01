@@ -3,17 +3,14 @@ import { shallow, mount, render } from 'enzyme';
 import displayValue from '../src/scripts/reducers/displayValue';
 import createAction from '../src/scripts/actions/createAction';
 import * as constants from '../src/scripts/actions/constants';
+import dataFixture from './dataFixture';
 
 describe('DisplayValue reducer tests', () => {
 
     let data = {};
 
     beforeEach(function () {
-        data = {
-            displayValue: '',
-            historyDisplay: '',
-            calculated: false
-        }
+        data = dataFixture
     });
 
     it('should display negative value', () => {
@@ -59,7 +56,7 @@ describe('DisplayValue reducer tests', () => {
     it('should display calculated values', () => {
         let state = '';
         let value = '';
-        let action = createAction(constants.CALC, { value, data });
+        let action = createAction(constants.HISTORY, { value, data });
         action.data.displayValue = '30';
         action.data.historyDisplay = '20+';
         let result = displayValue(state, action);
