@@ -1,18 +1,7 @@
 @import 'fonts.scss';
 
-body {
-    background-color: #3858c5;
-    background-position: top center;
-    background-repeat: no-repeat;
-    font-family: 'rounded_eleganceregular', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-}
-
 * {
     box-sizing: border-box;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    touch-action: manipulation;
 }
 
 button {

@@ -22,5 +22,9 @@
 - Responsive
 - Keyboard ready
 
+## Todo:
+
+- more tests
+- animations
 
 ### Design inspired via [http://collectui.com/designers/pramodrhegde](http://collectui.com/designers/pramodrhegde)
