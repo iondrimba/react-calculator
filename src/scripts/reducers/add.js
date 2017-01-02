@@ -1,4 +1,5 @@
 import { ADD } from '../actions/constants';
+import helper from '../model/helper';
 
 function add(state = '', action) {
     let commands = [];
@@ -16,11 +17,11 @@ function add(state = '', action) {
                 lastCommand = commands.pop();
             }
 
-            if (state.length) {
+            if (helper.hasValue(state)) {
                 if (calculated ||
-                    Number(state) === 0 ||
-                    Number(state + action.value) === 0 ||
-                    (lastCommand.length === 0 && calculated)) {
+                    helper.isNumberZero(state) ||
+                    helper.isNumberZero(state + action.value) ||
+                    (helper.isEmpty(lastCommand) && calculated)) {
                     state = action.value;
                 } else {
                     state += action.value;

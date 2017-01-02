@@ -25,7 +25,7 @@ describe('Calc reducers tests', () => {
         let value = [];
         let action = createAction(constants.CALC, { value, data });
         let result = calc(state, action);
-        expect(result).toBe('50,5');
+        expect(result).toBe('50,50');
 
     });
 
@@ -34,7 +34,7 @@ describe('Calc reducers tests', () => {
         let value = [];
         let action = createAction(constants.CALC, { value, data });
         let result = calc(state, action);
-        expect(result).toBe('-9,5');
+        expect(result).toBe('-9,50');
 
     });
 

@@ -1,10 +1,11 @@
 import { DEL } from '../actions/constants';
+import helper from '../model/helper';
 
 function del(state = '0', action) {
     switch (action.type) {
         case DEL:
-            state = state.toString().substring(0, state.length - 1);
-            if (isNaN(parseInt(state)) || Number(state) === 0) {
+            state = helper.removeLastChar(state);
+            if (helper.isNaN(state) || helper.isNumberZero(state)) {
                 state = '0';
             }
             break;
