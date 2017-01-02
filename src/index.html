@@ -73,11 +73,12 @@
             transform: translateX(-50%) translateY(-50%);
         }
     </style>
-    <script>
+<script>
         (function () {
             if ('serviceWorker' in navigator) {
-                window.onload = () => {
-                    //navigator.serviceWorker.register('/calc-service-worker.js');
+                window.onload = function () {
+                    console.log('load');
+                    navigator.serviceWorker.register('calc-service-worker.js');
                 }
 
             }
@@ -86,8 +87,8 @@
 </head>
 
 <body ontouchstart="">
-    <div id="app">
-        <h3 class="loader">almost there, hang on...</h3>
+<div id="app">
+    <h3 class="loader">almost there, hang on...</h3>
 </div>
 </body>
 

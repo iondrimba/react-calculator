@@ -16,6 +16,12 @@ class Home extends React.Component {
         this.sound = new Sound();
         this.sound.setup();
     }
+    componentDidMount() {
+        let timeout = setTimeout(() => {
+            document.getElementsByClassName(`${Styles.home}`)[0].classList.add('fadeIn');
+            clearTimeout(timeout);
+        }, 100);
+    }
     onKeyDown(evt) {
         let button = this.refs['calculator'].refs[evt.key];
         if (button && !button.isActive()) {

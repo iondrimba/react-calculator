@@ -1,5 +1,6 @@
 .home {
     left: 50%;
+    opacity: 0;
     position: absolute;
     top: 50%;
     transform: translateY(-50%) translateX(-50%);
@@ -12,4 +13,9 @@
         overflow: hidden;
         width: 360px;
     }
+}
+
+.fadeIn {
+    opacity: 1;
+    transition: opacity .3s .2s;
 }
