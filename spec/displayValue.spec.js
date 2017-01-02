@@ -1,5 +1,3 @@
-import React from 'react';
-import { shallow, mount, render } from 'enzyme';
 import displayValue from '../src/scripts/reducers/displayValue';
 import createAction from '../src/scripts/actions/createAction';
 import * as constants from '../src/scripts/actions/constants';
@@ -10,7 +8,7 @@ describe('DisplayValue reducer tests', () => {
     let data = {};
 
     beforeEach(function () {
-        data = dataFixture
+        data = { ...dataFixture };
     });
 
     it('should display negative value', () => {
@@ -56,7 +54,7 @@ describe('DisplayValue reducer tests', () => {
     it('should display calculated values', () => {
         let state = '';
         let value = '';
-        let action = createAction(constants.HISTORY, { value, data });
+        let action = createAction(constants.CALC, { value, data });
         action.data.displayValue = '30';
         action.data.historyDisplay = '20+';
         let result = displayValue(state, action);
@@ -86,7 +84,7 @@ describe('DisplayValue reducer tests', () => {
         expect(result).toBe('4,5');
     });
 
-    it('should return zero if no history wass added when doing percent calculation', () => {
+    it('should return zero if no history was added when doing percent calculation', () => {
         let state = '45*';
         let value = '';
         let action = createAction(constants.PERCENT, { value, data });

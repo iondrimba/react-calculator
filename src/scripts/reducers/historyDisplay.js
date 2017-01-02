@@ -1,11 +1,11 @@
-import { ADD, CALC, CLEAR, OPERATOR, CALCULATED, PERCENT } from '../actions/constants';
+import {  CLEAR, OPERATOR, PERCENT, HISTORY_CLEAR } from '../actions/constants';
 import operator from '../reducers/operator';
 import percent from '../reducers/percent';
 
 function historyDisplay(state = '', action) {
     switch (action.type) {
         case CLEAR:
-        case CALC:
+        case HISTORY_CLEAR:
         case PERCENT:
             state = '';
             break;

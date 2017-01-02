@@ -10,5 +10,5 @@ export const COMMA = 'COMMA';
 export const SWITCH_OPERATOR = 'SWITCH_OPERATOR';
 export const PERCENT = 'PERCENT';
 export const MUTED = 'MUTED';
-export const HISTORY = 'HISTORY';
+export const HISTORY_CLEAR = 'HISTORY_CLEAR';
 

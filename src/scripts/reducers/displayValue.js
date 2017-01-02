@@ -5,7 +5,6 @@ import del from '../reducers/del';
 import comma from '../reducers/comma';
 import switchOperator from '../reducers/switchOperator';
 import percent from '../reducers/percent';
-import operator from '../reducers/operator';
 import history from '../reducers/history';
 import calc from '../reducers/calc';
 
@@ -21,7 +20,7 @@ function displayValue(state = '', action) {
         case constants.DEL:
             state = del(state, action);
             break;
-        case constants.HISTORY:
+        case constants.CALC:
             state = calc(history(action.data.history, action), action);
             break;
         case constants.CLEAR:

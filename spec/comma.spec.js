@@ -1,5 +1,3 @@
-import React from 'react';
-import { shallow, mount, render } from 'enzyme';
 import comma from '../src/scripts/reducers/comma';
 import createAction from '../src/scripts/actions/createAction';
 import * as constants from '../src/scripts/actions/constants';
@@ -12,6 +10,7 @@ describe('Comma reducer tests', () => {
     beforeEach(function () {
         data = { ...dataFixture };
     });
+
     afterEach(function () {
         data = { ...dataFixture };
     });

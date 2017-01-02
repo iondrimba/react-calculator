@@ -37,15 +37,10 @@ const mapDispatchToProps = (dispatch) => {
     keyDownAction: (value) => {
       dispatch(createAction(constants.KEY_DOWN, { value }));
     },
-    calcAction: (value, data) => {
-      // dispatch(createAction(constants.CALC, { value, data }));
-      // dispatch(createAction(constants.HISTORY, { value, data }));
-      // dispatch(createAction(constants.CALCULATED, { value: true }));
-    },
     resultAction: (value, data) => {
       dispatch(createAction(constants.CALC, { value, data }));
-      dispatch(createAction(constants.HISTORY, { value, data }));
       dispatch(createAction(constants.CALCULATED, { value: true }));
+      dispatch(createAction(constants.HISTORY_CLEAR, { value, data }));
     },
     clearAction: (value, data) => {
       dispatch(createAction(constants.CLEAR, { value, data }));
@@ -55,7 +50,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     operatorAction: (value, data) => {
       dispatch(createAction(constants.OPERATOR, { value, data }));
-      dispatch(createAction(constants.HISTORY, { value, data }));
+      dispatch(createAction(constants.CALC, { value, data }));
       dispatch(createAction(constants.CALCULATED, { value: true }));
     },
     commaAction: (value, data) => {

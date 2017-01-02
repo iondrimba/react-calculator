@@ -3,7 +3,7 @@ import { CALC, HISTORY } from '../actions/constants';
 function calc(state = [], action) {
     let history = [...state];
     switch (action.type) {
-        case HISTORY:
+        case CALC:
             if (history.length) {
                 if (history.length === 1) {
                     state = eval(history[0].replace(/,/g, '.')).toString().replace(/\./g, ',');

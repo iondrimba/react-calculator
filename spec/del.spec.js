@@ -1,5 +1,3 @@
-import React from 'react';
-import { shallow, mount, render } from 'enzyme';
 import del from '../src/scripts/reducers/del';
 import createAction from '../src/scripts/actions/createAction';
 import * as constants from '../src/scripts/actions/constants';
@@ -10,7 +8,7 @@ describe('Del reducer tests', () => {
     let data = {};
 
     beforeEach(function () {
-        data = dataFixture
+        data = { ...dataFixture };
     });
 
     it('should delete char', () => {
