@@ -109,7 +109,6 @@ var config = {
 
 
 if (isProduction) {
-    config.plugins.push(new webpack.optimize.CommonsChunkPlugin({ name: ["bootstrap"] }));
     config.plugins.push(new ExtractTextPlugin("./css/[name].[hash].css"));
     config.plugins.push(new webpack.optimize.DedupePlugin());
     config.plugins.push(new webpack.optimize.UglifyJsPlugin());
@@ -141,8 +140,5 @@ if (isProduction) {
     }));
 }
 
-if (isTesting) {
-    config.plugins.shift();
-}
 
 module.exports = config;
