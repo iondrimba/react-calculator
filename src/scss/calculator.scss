@@ -15,6 +15,7 @@
     &__body {
         background-color: #333;
         display: inherit;
+        flex: 1 auto;
         flex-basis: 77%;
         flex-wrap: wrap;
     }
