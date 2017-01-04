@@ -3,21 +3,21 @@ import helper from '../model/helper';
 
 function operator(state = '0', action) {
     let { historyDisplay, displayValue, calculated, history } = action.data;
-
+    let output = '0';
     switch (action.type) {
         case OPERATOR:
             var formatedValue = helper.commaToPoint(displayValue);
             if (helper.isNaN(formatedValue) || helper.isNumberZero(formatedValue)) {
-                state = `0 ${action.value} `;
+                output = `0 ${action.value} `;
             } else {
                 if (calculated === false || helper.isEmpty(historyDisplay)) {
-                    state = `${historyDisplay}${displayValue} ${action.value} `;
+                    output = `${historyDisplay}${displayValue} ${action.value} `;
                 } else {
-                    state = historyDisplay.replace(/\D $/, ` ${action.value} `);
+                    output = historyDisplay.replace(/\D $/, ` ${action.value} `);
                 }
             }
 
-            break;
+            return output;
     }
     return state;
 }

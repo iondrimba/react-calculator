@@ -2,13 +2,15 @@ import { DEL } from '../actions/constants';
 import helper from '../model/helper';
 
 function del(state = '0', action) {
+    let output = '0';
+
     switch (action.type) {
         case DEL:
-            state = helper.removeLastChar(state);
-            if (helper.isNaN(state) || helper.isNumberZero(state)) {
-                state = '0';
+            output = helper.removeLastChar(state);
+            if (helper.isNaN(output) || helper.isNumberZero(output)) {
+                output = '0';
             }
-            break;
+            return output;
     }
     return state;
 }

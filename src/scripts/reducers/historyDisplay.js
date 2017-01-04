@@ -7,11 +7,9 @@ function historyDisplay(state = '', action) {
         case CLEAR:
         case HISTORY_CLEAR:
         case PERCENT:
-            state = '';
-            break;
+            return '';
         case OPERATOR:
-            state = operator(action.data.historyDisplay, action);
-            break;
+            return operator(action.data.historyDisplay, action);
     }
     return state;
 }

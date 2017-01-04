@@ -6,9 +6,11 @@ function add(state = '', action) {
     let lastCommand = [];
     let maxDisplay = 15;
     let { historyDisplay, displayValue, calculated } = action.data;
+    let output = '';
 
     switch (action.type) {
         case ADD:
+
             if (historyDisplay) {
                 commands = historyDisplay.split('');
             }
@@ -22,18 +24,18 @@ function add(state = '', action) {
                     helper.isNumberZero(state) ||
                     helper.isNumberZero(state + action.value) ||
                     (helper.isEmpty(lastCommand) && calculated)) {
-                    state = action.value;
+                    output = action.value;
                 } else {
-                    state += action.value;
+                    output += `${state}${action.value}`;
                 }
 
             } else {
-                state = action.value;
+                output = action.value;
             }
-            if (state.length > maxDisplay) {
-                state = displayValue;
+            if (output.length > maxDisplay) {
+                output = displayValue;
             }
-            break;
+            return output;
     }
     return state;
 }

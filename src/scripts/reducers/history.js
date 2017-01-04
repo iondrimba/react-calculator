@@ -2,6 +2,7 @@ import { CALC, CLEAR } from '../actions/constants';
 
 function history(state = [], action) {
     let newItem = '';
+    let output = [];
     switch (action.type) {
         case CLEAR:
             state = [];
@@ -15,14 +16,12 @@ function history(state = [], action) {
                     newItem = `${action.data.historyDisplay}${action.data.displayValue}`;
                 }
 
-                state = [...state, newItem];
+                output = [...state, newItem];
 
             } else if (action.data.historyDisplay.length && action.data.calculated === true) {
-                state = [...state];
-            } else {
-                state = [];
+                output = [...state];
             }
-            break;
+            return output;
     }
     return state;
 }

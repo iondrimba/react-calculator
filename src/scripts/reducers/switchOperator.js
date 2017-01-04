@@ -2,15 +2,16 @@ import { SWITCH_OPERATOR } from '../actions/constants';
 import helper from '../model/helper';
 
 function switchOperator(state = '', action) {
+    let output = '';
     switch (action.type) {
         case SWITCH_OPERATOR:
             if (helper.isPositiveNumber(state)) {
-                state = `-${state}`;
+                output = `-${state}`;
             } else {
-                state = state.replace(/-/, '');
+                output = state.replace(/-/, '');
             }
 
-            break;
+            return output;
     }
     return state;
 }

@@ -4,9 +4,8 @@ function clear(state = '0', action) {
     switch (action.type) {
         case CLEAR:
             if (action.value) {
-                state = '0';
+                return '0';
             }
-            break;
     }
     return state;
 }

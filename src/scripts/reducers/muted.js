@@ -3,8 +3,7 @@ import { MUTED } from '../actions/constants';
 function muted(state = false, action) {
     switch (action.type) {
         case MUTED:
-            state = action.value;
-            break;
+            return action.value;
 
     }
     return state;

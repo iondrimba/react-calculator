@@ -12,26 +12,19 @@ import calc from '../reducers/calc';
 function displayValue(state = '', action) {
     switch (action.type) {
         case constants.SWITCH_OPERATOR:
-            state = switchOperator(state, action);
-            break;
+            return switchOperator(state, action);
         case constants.COMMA:
-            state = comma(state, action);
-            break;
+            return comma(state, action);
         case constants.DEL:
-            state = del(state, action);
-            break;
+            return del(state, action);
         case constants.CALC:
-            state = calc(history(action.data.history, action), action);
-            break;
+            return calc(history(action.data.history, action), action);
         case constants.CLEAR:
-            state = clear(state, action);
-            break;
+            return clear(state, action);
         case constants.PERCENT:
-            state = add(percent(action.data.historyDisplay, action), action);
-            break;
+            return add(percent(action.data.historyDisplay, action), action);
         case constants.ADD:
-            state = comma(add(state, action), action);
-            break;
+            return comma(add(state, action), action);
 
     }
     return state;

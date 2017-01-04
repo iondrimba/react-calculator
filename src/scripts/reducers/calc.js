@@ -6,7 +6,7 @@ function calc(state = [], action) {
     let { displayValue } = action.data;
     let expression = '';
     let result = 0;
-
+    let output = '';
     switch (action.type) {
         case CALC:
             if (helper.hasValue(history)) {
@@ -21,22 +21,22 @@ function calc(state = [], action) {
                 }
 
                 if (helper.isInteger(result)) {
-                    state = result.toString();
+                    output = result.toString();
 
                 } else {
-                    state = helper.pointToComma(result.toFixed(2));
+                    output = helper.pointToComma(result.toFixed(2));
                 }
 
 
             } else {
-                state = displayValue;
+                output = displayValue;
             }
 
-            if (state === 'Infinity') {
-                state = '0';
+            if (output === 'Infinity') {
+                output = '0';
             }
 
-            break;
+            return output;
     }
     return state;
 }

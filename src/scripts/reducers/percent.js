@@ -3,16 +3,16 @@ import helper from '../model/helper';
 
 function percent(state = '0', action) {
     let { historyDisplay, displayValue } = action.data;
+    let output = '0';
 
     switch (action.type) {
         case PERCENT:
-            var output = eval(`${state}${displayValue}`) / 100;
-            state = helper.pointToComma(output);
-
-            if (helper.isEmpty(historyDisplay)) {
-                state = '0';
+            if (!helper.isEmpty(historyDisplay)) {
+                output = eval(`${state}${displayValue}`) / 100;
+                output = helper.pointToComma(output);
             }
-            break;
+
+            return output;
     }
     return state;
 }
