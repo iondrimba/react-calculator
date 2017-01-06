@@ -23,7 +23,7 @@ let helper = {
         return isNaN(parseFloat(value));
     },
     isInteger(value) {
-        return parseInt(value, 10) === value;
+        return parseInt(value, 10) == value;
     },
     isPositiveNumber(value) {
         return Number(helper.commaToPoint(value)) > 0;
