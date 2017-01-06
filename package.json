@@ -2,14 +2,16 @@
   "name": "calc",
   "version": "1.0.0",
   "main": "",
-  "author": "Ion D. FIlho <iondrimba@hotmail.com>",
+  "author": "Ion D. FIlho <iondrimba@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --compress --colors --inline --hot",
     "prod": "cross-env NODE_ENV=production webpack --progress -p",
     "test": "cross-env NODE_ENV=testing  BABEL_DISABLE_CACHE=1 karma start"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "watchify": "^3.8.0",
     "autoprefixer": "^6.5.3",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
