@@ -12,10 +12,6 @@ module.exports = function (config) {
             'spec/*.js'
         ],
         included: false,
-        webpack: require('./webpack.config.js'),
-        webpackMiddleware: {
-            stats: 'errors-only'
-        },
         browserify: {
             debug: false,
             transform: ['stringify', 'babelify', istanbul({
@@ -83,9 +79,9 @@ module.exports = function (config) {
         port: 9876,
         colors: true,
         logLevel: config.LOG_ERROR,
-        autoWatch: false,
+        autoWatch: true,
         browsers: ['PhantomJS'],
-        singleRun: true,
+        singleRun: false,
         concurrency: Infinity
     })
 }
