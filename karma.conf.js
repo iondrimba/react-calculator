@@ -3,7 +3,15 @@
 var istanbul = require('browserify-istanbul');
 var threshold = require('karma-threshold-reporter');
 
+
 module.exports = function (config) {
+    config.set({
+        client: {
+            args: ['--autoWatch', config.autoWatch]
+        }
+    });
+
+
     config.set({
         basePath: '',
         frameworks: ['jasmine', 'browserify'],
@@ -79,9 +87,9 @@ module.exports = function (config) {
         port: 9876,
         colors: true,
         logLevel: config.LOG_ERROR,
-        autoWatch: true,
+        autoWatch: config.autoWatch,
         browsers: ['PhantomJS'],
-        singleRun: false,
+        singleRun: !config.autoWatch,
         concurrency: Infinity
     })
 }

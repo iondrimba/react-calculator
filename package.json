@@ -7,7 +7,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --compress --colors --inline --hot",
     "prod": "cross-env NODE_ENV=production webpack --progress -p",
-    "test": "cross-env NODE_ENV=testing  BABEL_DISABLE_CACHE=1 karma start"
+    "test": "cross-env NODE_ENV=testing  BABEL_DISABLE_CACHE=1 karma start --autoWatch false"
   },
   "dependencies": {},
   "devDependencies": {
