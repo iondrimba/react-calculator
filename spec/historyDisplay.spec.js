@@ -34,5 +34,14 @@ describe('HistoryDisplay Reducer tests', () => {
         expect(result).toBe('59 - ');
     });
 
+    it('should clear historyDisplay', () => {
+        let state = '20 + 5 * 10';
+        let value = '10';
+        let action = createAction(constants.CLEAR, { value, data });
+        action.data.historyDisplay = '20 + 5 * 10'
+        let result = historyDisplay(state, action);
+        expect(result).toBe('');
+    });
+
 });
 
