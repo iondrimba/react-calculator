@@ -6,5 +6,19 @@
   "sourceMap": "inline",
   "plugins": [
     "transform-object-rest-spread"
-  ]
+  ],
+  "env": {
+    "testing": {
+      "sourceMap": "inline",
+      "plugins": [
+        [
+          "babel-plugin-webpack-loaders",
+          {
+            "config": "./runtime.webpack.config.js",
+            "verbose": false
+          }
+        ]
+      ]
+    }
+  }
 }
