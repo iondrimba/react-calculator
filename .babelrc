@@ -3,20 +3,8 @@
     "es2015",
     "react"
   ],
+  "sourceMap": "inline",
   "plugins": [
     "transform-object-rest-spread"
-  ],
-  "env": {
-    "testing": {
-      "plugins": [
-        [
-          "babel-plugin-webpack-loaders",
-          {
-            "config": "./runtime.webpack.config.js",
-            "verbose": false
-          }
-        ]
-      ]
-    }
-  }
+  ]
 }

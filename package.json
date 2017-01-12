@@ -11,7 +11,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "watchify": "^3.8.0",
     "autoprefixer": "^6.5.3",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
@@ -49,6 +48,7 @@
     "karma-coveralls": "^1.1.2",
     "karma-jasmine": "^0.3.7",
     "karma-phantomjs-launcher": "^1.0.0",
+    "karma-remap-coverage": "^0.1.4",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.24",
     "karma-threshold-reporter": "^0.1.15",
@@ -73,6 +73,7 @@
     "stylelint-webpack-plugin": "^0.4.0",
     "sw-precache-webpack-plugin": "^0.7.0",
     "url-loader": "^0.5.7",
+    "watchify": "^3.8.0",
     "webpack": "^1.14.0",
     "webpack-cleanup-plugin": "^0.4.1",
     "webpack-dev-server": "^1.16.2"

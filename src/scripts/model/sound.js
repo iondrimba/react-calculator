@@ -1,5 +1,4 @@
 import Howler from 'howler';
-import inputSound from '../../sounds/input';
 
 class Sound {
     setup() {

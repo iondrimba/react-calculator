@@ -2,6 +2,7 @@
 // Generated on Tue Feb 02 2016 21:20:59 GMT-0200 (Horário brasileiro de verão)
 var istanbul = require('browserify-istanbul');
 var threshold = require('karma-threshold-reporter');
+var isparta = require('isparta');
 
 
 module.exports = function (config) {
@@ -17,14 +18,19 @@ module.exports = function (config) {
         frameworks: ['jasmine', 'browserify'],
         files: [
             './node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js',
+            './node_modules/promise-polyfill/promise.js',
+            'src/scripts/**/*.js',
             'spec/*.js'
         ],
         included: false,
         browserify: {
-            debug: false,
-            transform: ['stringify', 'babelify', istanbul({
-                defaultIgnore: true
-            })],
+            debug: true,
+            transform: [istanbul({
+                instrumenter: isparta,
+                instrumenterConfig: { embedSource: true },
+                ignore: ['**/node_modules/**']
+            }),
+            ['babelify']],
             configure: function (bundle) {
                 bundle.on('prebundle', function () {
                     bundle.external('react/addons');
@@ -35,33 +41,15 @@ module.exports = function (config) {
             extensions: ['.js', '.jsx'],
             bundleDelay: 1000
         },
-        babelPreprocessor: {
-            options: {
-                presets: ['es2015', 'react', 'stage-0']
-            },
-            filename: function (file) {
-                return file.originalPath;
-            },
-            sourceFileName: function (file) {
-                return file.originalPath;
-            }
-        },
         preprocessors: {
-            'spec/*.js': ['babel', 'browserify']
+            'src/scripts/**/*.js': ['sourcemap', 'babel', 'browserify'],
+            'spec/*.js': ['sourcemap', 'babel', 'browserify']
         },
         coverageReporter: {
-            instrumenters: { isparta: require('isparta') },
-            instrumenter: {
-                'spec/*.js': 'isparta'
-            },
-            instrumenterOptions: {
-                isparta: { babel: { presets: ['es2015', 'react', 'stage-0'] } }
-            },
-            istanbul: { noCompact: true },
-            dir: 'test/reports/coverage',
+            dir: 'coverage',
             reporters: [
                 {
-                    type: 'lcovonly',
+                    type: 'lcov',
                     subdir: 'report-lcov'
                 }
             ]
@@ -73,11 +61,13 @@ module.exports = function (config) {
             'karma-jasmine',
             'karma-spec-reporter',
             'karma-threshold-reporter',
+            'karma-sourcemap-loader',
+            'karma-remap-coverage',
             'karma-babel-preprocessor',
             'karma-phantomjs-launcher',
             'karma-coveralls'
         ],
-        reporters: ['spec', 'coverage', 'threshold', 'coveralls'],
+        reporters: ['spec', 'coverage', 'remap-coverage', 'threshold', 'coveralls'],
         thresholdReporter: {
             statements: 80,
             branches: 50,
