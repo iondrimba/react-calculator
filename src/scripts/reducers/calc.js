@@ -32,7 +32,7 @@ function calc(state = [], action) {
                 output = displayValue;
             }
 
-            if (output === 'Infinity') {
+            if (output === 'Infinity' || helper.isNaN(output)) {
                 output = '0';
             }
 
