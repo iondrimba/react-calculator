@@ -92,6 +92,9 @@ var config = {
                 from: 'src/GzipSimpleHTTPServer.py', to: 'GzipSimpleHTTPServer.py'
             },
             {
+                from: 'src/sounds/', to: 'sounds'
+            },
+            {
                 from: 'src/favicon.ico', to: 'favicon.ico'
             },
             {
@@ -124,7 +127,7 @@ if (isProduction) {
         filename: 'calc-service-worker.js',
         maximumFileSizeToCacheInBytes: 4194304,
         staticFileGlobs: ['public/**/*.{js,json,mp3,html,css,png,jpg,gif,woff2,woff}',
-        'public/fonts/*.{woff2,woff}'],
+            'public/fonts/*.{woff2,woff}'],
         stripPrefix: 'public',
         runtimeCaching: [{
             urlPattern: /^https:\/\/calculator\.iondrimbafilho\.me\/.+/,
