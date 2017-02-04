@@ -2,7 +2,7 @@ import { OPERATOR } from '../actions/constants';
 import helper from '../model/helper';
 
 function operator(state = '0', action) {
-    let { historyDisplay, displayValue, calculated, history } = action.data;
+    let { historyDisplay, displayValue, calculated } = action.data;
     let output = '0';
     switch (action.type) {
         case OPERATOR:

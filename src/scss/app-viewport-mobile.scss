@@ -1,27 +1,69 @@
+@import './_variables';
+
 @media screen and (max-height: 670px) {
-    .github {
-        display: none;
-    }
+  .github {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 450px) {
-    .home {
-        width: 98%;
+  .home {
+    width: 98%;
 
-        &__content {
-            height: 98vh;
-            margin: 0 auto;
-            width: inherit;
-        }
+    &__content {
+      height: 98vh;
+      margin: 0 auto;
+      width: inherit;
     }
+  }
 
-    .calculator {
-        &__result {
-            font-size: 8vw;
-        }
+  .calculator {
+    &__result {
+      font-size: 8vw;
     }
+  }
 
-    .github {
-        display: none;
-    }
+  .github {
+    display: none;
+  }
 }
+
+@media screen and (min-width: 1024px) {
+
+  .button {
+    &_primaryOperator:hover {
+      background-color: darken($primary-color, 5%);
+    }
+
+    &_runOperator:hover {
+      background-color: darken($secondary-color, 2%);
+    }
+
+    &:active {
+      background-color: $button-base-color;
+      box-shadow: inset 0 -3px 8px 0 $button-shadow;
+    }
+
+    &:hover:not(&_runOperator):not(&_primaryOperator):not(:active) {
+      background-color: lighten($button-base-color, 1%);
+    }
+
+    &_primaryOperator:active {
+      background-color: $primary-color;
+    }
+
+    &_runOperator:active {
+      background-color: $secondary-color;
+      box-shadow: inset 1px 5px 9px 0 rgba(0, 0, 0, .37);
+    }
+  }
+
+  .button:nth-child(17),
+  .button:nth-child(18),
+  .button:nth-child(19) {
+    &:active {
+      box-shadow: inset 0 3px 8px 0 $button-shadow;
+    }
+  }
+}
+

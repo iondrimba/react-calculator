@@ -25,8 +25,14 @@
 		"node": true
 	},
 	"rules": {
+		"no-const-assign": "warn",
+		"no-this-before-super": "warn",
+		"no-undef": "warn",
+		"no-unreachable": "warn",
+		"no-unused-vars": "warn",
+		"constructor-super": "warn",
+		"valid-typeof": "warn",
 		"eqeqeq": 1,
-		"no-unused-vars": 0,
 		"no-console": 0,
 		"curly": 1,
 		"quotes": [

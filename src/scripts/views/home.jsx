@@ -4,8 +4,6 @@ import GithubIcon from '../components/githubIcon';
 import Styles from '../../scss/home.scss';
 import Sound from '../model/sound';
 
-
-
 class Home extends React.Component {
     constructor(props) {
         super(props);

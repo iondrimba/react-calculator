@@ -56,7 +56,6 @@ describe('Calc reducers tests', () => {
 
     });
 
-
     it('should calculate divide operation', () => {
         let state = ['20+30', '/2'];
         let value = [];

@@ -1,6 +1,5 @@
 import {  CLEAR, OPERATOR, PERCENT, HISTORY_CLEAR } from '../actions/constants';
 import operator from '../reducers/operator';
-import percent from '../reducers/percent';
 
 function historyDisplay(state = '', action) {
     switch (action.type) {

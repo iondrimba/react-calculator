@@ -1,7 +1,7 @@
 {
 	"extends": "stylelint-config-standard",
 	"rules": {
-		"indentation": 4,
+		"indentation": 2,
 		"declaration-block-properties-order": "alphabetical",
 		"no-missing-end-of-source-newline": true,
 		"number-leading-zero":"never"

@@ -1,10 +1,8 @@
 import React from 'react';
 import Button from '../components/button.jsx';
 import SoundIcon from '../components/soundIcon';
-import GithubIcon from '../components/githubIcon';
 import Styles from '../../scss/calculator.scss';
 import StylesButton from '../../scss/button.scss';
-import Sound from '../model/sound';
 
 class Calculator extends React.Component {
     constructor(props) {

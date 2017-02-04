@@ -1,82 +1,54 @@
-$button-shadow: rgba(0, 0, 0, .3);
-$primary-color: #e82e64;
-$secondary-color: #1f2525;
-$base-color: #333;
-$button-base-color: #1f2525;
-$border-color: rgba(255, 255, 255, .04);
+@import './_variables.scss';
 
 .button {
-    background-color: $button-base-color;
-    border-bottom: 1px solid $border-color;
-    border-left: 0;
-    border-right: 1px solid $border-color;
-    border-top: 0;
-    box-shadow: inset -1px -1px 0 0 $button-shadow;
+  background-color: $button-base-color;
+  border-bottom: 1px solid $border-color;
+  border-left: 0;
+  border-right: 1px solid $border-color;
+  border-top: 0;
+  box-shadow: inset -1px -1px 0 0 $button-shadow;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.1rem;
+  outline: none;
+  width: 25%;
+
+  &_primaryOperator {
+    background-color: $primary-color;
+    border-right: 0;
+    box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, .13);
+  }
+
+  &_runOperator {
+    background-color: $secondary-color;
+    border-bottom: 0;
+    border-right: 0;
+    box-shadow: 1px 6px 20px 5px $button-shadow;
     color: #fff;
-    cursor: pointer;
-    font-size: 1.1rem;
-    outline: none;
-    width: 25%;
+    font-weight: bold;
+  }
 
-    &_primaryOperator {
-        background-color: $primary-color;
-        border-right: 0;
-        box-shadow: inset 0 -1px 0 0 rgba(255, 255, 255, .13);
-    }
-
-    &_primaryOperator:hover {
-        background-color: darken($primary-color, 5%);
-    }
-
-    &_runOperator {
-        background-color: $secondary-color;
-        border-bottom: 0;
-        border-right: 0;
-        box-shadow: 1px 6px 20px 5px $button-shadow;
-        color: #fff;
-        font-weight: bold;
-    }
-
-    &_runOperator:hover {
-        background-color: darken($secondary-color, 2%);
-    }
-
-    &:active {
-        background-color: $button-base-color;
-        box-shadow: inset 0 -3px 8px 0 $button-shadow;
-    }
-
-    &:hover:not(&_runOperator):not(&_primaryOperator):not(:active) {
-        background-color: lighten($button-base-color, 1%);
-    }
-
-    &_primaryOperator:active {
-        background-color: $primary-color;
-    }
-
-    &_runOperator:active,
-    &_runOperator.active {
-        background-color: $secondary-color;
-        box-shadow: inset 1px 5px 9px 0 rgba(0, 0, 0, .37);
-    }
+  &_runOperator.active {
+    background-color: $secondary-color;
+    box-shadow: inset 1px 5px 9px 0 rgba(0, 0, 0, .37);
+  }
 }
 
 .active {
-    box-shadow: inset 0 -3px 8px 0 $button-shadow;
+  box-shadow: inset 0 -3px 8px 0 $button-shadow;
 }
 
 .button:nth-child(17),
 .button:nth-child(18),
 .button:nth-child(19) {
-    border-bottom: 0;
-    box-shadow: inset -1px 0 0 0 $button-shadow;
+  border-bottom: 0;
+  box-shadow: inset -1px 0 0 0 $button-shadow;
 
-    &:active,
-    &.active {
-        box-shadow: inset 0 3px 8px 0 $button-shadow;
-    }
+  &.active {
+    box-shadow: inset 0 3px 8px 0 $button-shadow;
+  }
 }
 
 .button:nth-child(19) {
-    font-size: .8rem;
+  font-size: .8rem;
 }
