@@ -14,7 +14,7 @@ class Button extends React.Component {
     }
     render() {
         return (
-            <button ref={'btn'} type={'button'} onClick={this.onClick.bind(this)} className={this.props.className}>{this.props.label}</button>
+            <button ref={'btn'} type={'button'} onTouchStart={this.onClick.bind(this)} onClick={this.onClick.bind(this)} className={this.props.className}>{this.props.label}</button>
         );
     }
 }
