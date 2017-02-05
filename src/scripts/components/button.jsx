@@ -12,9 +12,13 @@ class Button extends React.Component {
         evt.currentTarget.blur();
         this.props.onClick(this.props.id);
     }
+    onMouseDown(evt) {
+        evt.preventDefault();
+        this.props.onMouseDown(this.props.id);
+    }
     render() {
         return (
-            <button ref={'btn'} type={'button'} onTouchStart={this.onClick.bind(this)} onClick={this.onClick.bind(this)} className={this.props.className}>{this.props.label}</button>
+            <button ref={'btn'} type={'button'} onMouseDown={this.onMouseDown.bind(this)} onClick={this.onClick.bind(this)} className={this.props.className}>{this.props.label}</button>
         );
     }
 }
@@ -23,6 +27,7 @@ Button.propTypes = {
     id: React.PropTypes.string,
     label: React.PropTypes.string,
     onClick: React.PropTypes.func,
+    onMouseDown: React.PropTypes.func,
     className: React.PropTypes.string
 };
 

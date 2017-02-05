@@ -8,6 +8,7 @@ class Home extends React.Component {
     constructor(props) {
         super(props);
         this.onClick = this.onButtonClick.bind(this);
+        this.onMouseDown = this.onMouseDown.bind(this);
         document.body.onkeydown = this.onKeyDown.bind(this);
         document.body.onkeyup = this.onKeyUp.bind(this);
 
@@ -42,6 +43,9 @@ class Home extends React.Component {
         this.props.keyDownAction('');
         this.props.keyUpAction(key, this.props);
     }
+    onMouseDown(key) {
+        this.props.keyDownAction(key);
+    }
     onMuteIconClick(value) {
         this.props.muteAction(value);
     }
@@ -49,7 +53,7 @@ class Home extends React.Component {
         return (
             <div className={Styles.home}>
                 <div className={Styles.home__content}>
-                    <Calculator ref={'calculator'} {...this.props} buttonClick={this.onButtonClick.bind(this)} muteIconClick={this.onMuteIconClick.bind(this)} />
+                    <Calculator ref={'calculator'} {...this.props} onMouseDown={this.onMouseDown.bind(this)} buttonClick={this.onButtonClick.bind(this)} muteIconClick={this.onMuteIconClick.bind(this)} />
                 </div>
                 <GithubIcon />
             </div>

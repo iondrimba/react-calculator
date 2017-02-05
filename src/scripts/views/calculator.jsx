@@ -20,7 +20,7 @@ class Calculator extends React.Component {
                     this.props.keys.map((elmt, index) => {
                         var css = this.props.getButtonClass(elmt, StylesButton);
                         return (
-                            <Button key={index} ref={elmt.key} label={elmt.label} id={elmt.key} onClick={this.props.buttonClick}
+                            <Button key={index} ref={elmt.key} label={elmt.label} id={elmt.key} onMouseDown={this.props.onMouseDown} onClick={this.props.buttonClick}
                                 className={this.props.isActiveCSS(css, elmt.key, this.props.keyDown, StylesButton)} />
                         );
                     })
@@ -34,6 +34,7 @@ class Calculator extends React.Component {
 Calculator.propTypes = {
     muteIconClick: React.PropTypes.func
     , buttonClick: React.PropTypes.func
+    , onMouseDown: React.PropTypes.func
     , displayValue: React.PropTypes.number
     , historyDisplay: React.PropTypes.string
     , keyDown: React.PropTypes.string
