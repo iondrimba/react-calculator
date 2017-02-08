@@ -8,11 +8,10 @@
 
 @media screen and (max-width: 450px) {
   .home {
-    margin-top: 3vh;
-    width: 95vw;
+    width: 98%;
 
     &__content {
-      height: 90vh;
+      height: 98vh;
       margin: 0 auto;
       width: inherit;
     }
@@ -30,6 +29,7 @@
 }
 
 @media screen and (min-width: 1024px) {
+
   .button {
     &_primaryOperator:hover {
       background-color: darken($primary-color, 5%);
