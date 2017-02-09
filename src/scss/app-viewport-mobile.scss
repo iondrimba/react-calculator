@@ -1,16 +1,11 @@
 @import './_variables';
 
-@media screen and (max-height: 670px) {
-  .github {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 450px) {
+@media screen and (min-width: 450px) {
   .home {
     width: 98%;
 
     &__content {
+      height: 98vh;
       margin: 0 auto;
       width: inherit;
     }
@@ -18,17 +13,39 @@
 
   .calculator {
     &__result {
-      font-size: 8vw;
+      //font-size: 8vw;
     }
   }
+}
 
+@media screen and (min-width: 768px) {
+  .home {
+    &__content {
+      height: 600px;
+      position: relative;
+      width: 360px;
+    }
+  }
+  .calculator {
+    &__result {
+    }
+  }
   .github {
-    display: none;
+    display: inline-block;
   }
 }
 
 @media screen and (min-width: 1024px) {
-
+  .github {
+    display: inline-block;
+  }
+  .home {
+    &__content {
+      height: 600px;
+      position: relative;
+      width: 360px;
+    }
+  }
   .button {
     &_primaryOperator:hover {
       background-color: darken($primary-color, 5%);
