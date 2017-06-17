@@ -3,9 +3,8 @@
   "short_name": "Calc",
   "theme_color": "#47494b",
   "background_color": "#3858c5",
-  "display": "fullscreen",
+  "display": "standalone",
   "orientation": "portrait",
-  "Scope": "/",
   "start_url": "/",
   "icons": [
     {
@@ -48,6 +47,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "splash_pages": null
+  ]
 }
