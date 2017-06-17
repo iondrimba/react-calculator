@@ -1,4 +1,4 @@
-![Calculator](https://dl.dropboxusercontent.com/u/4633623/calctwitter.png)
+![Calculator](https://calculator.iondrimbafilho.me/images/calctwitter.png)
 
 [![Build Status](https://travis-ci.org/iondrimba/react-calculator.svg?branch=master)](https://travis-ci.org/iondrimba/react-calculator)
 [![Build status](https://ci.appveyor.com/api/projects/status/3l2q53jrjw196r5n?svg=true)](https://ci.appveyor.com/project/iondrimba/react-calculator)
