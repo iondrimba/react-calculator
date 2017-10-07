@@ -79,6 +79,7 @@ module.exports = function (config) {
     logLevel: config.LOG_ERROR,
     autoWatch: config.autoWatch,
     browsers: ['PhantomJS'],
+    browserNoActivityTimeout: 30000,
     singleRun: !config.autoWatch,
     concurrency: Infinity
   })

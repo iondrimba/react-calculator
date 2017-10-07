@@ -11,7 +11,6 @@ install:
   - gem install scss_lint
   - npm install -g yarn
   - yarn install
-  - yarn add node-sass --dev
 test_script:  
   - yarn prod
   - yarn test
