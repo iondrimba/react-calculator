@@ -1,6 +1,5 @@
 sudo: required
 language: node_js
-cache: yarn
 node_js:
 - '6'
 before_install:
@@ -8,7 +7,7 @@ before_install:
 - gem install ruby
 - gem install scss_lint
 - npm install -g yarn
-- npm install promise
+- yarn add node-sass --dev
 before_script:
 - yarn install
 script:

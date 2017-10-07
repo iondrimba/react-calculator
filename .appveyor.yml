@@ -1,5 +1,5 @@
 init:
-  - git config --global core.autocrlf true
+  - git config --global core.autocrlf false
 environment:
   matrix:
   - nodejs_version: "6"
@@ -11,7 +11,8 @@ install:
   - gem install scss_lint
   - npm install -g yarn
   - yarn install
-test_script:
+  - yarn add node-sass --dev
+test_script:  
   - yarn prod
   - yarn test
 build: off
