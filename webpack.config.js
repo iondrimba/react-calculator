@@ -2,7 +2,6 @@ var webpack = require('webpack');
 require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var postcssCssnext = require('postcss-cssnext');
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var CompressionPlugin = require('compression-webpack-plugin');
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
