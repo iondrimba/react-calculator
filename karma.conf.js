@@ -64,7 +64,7 @@ module.exports = function (config) {
       'karma-sourcemap-loader',
       'karma-remap-coverage',
       'karma-babel-preprocessor',
-      'karma-phantomjs-launcher',
+      'karma-chrome-launcher',
       'karma-coveralls'
     ],
     reporters: ['spec', 'coverage', 'remap-coverage', 'threshold', 'coveralls'],
@@ -78,8 +78,17 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_ERROR,
     autoWatch: config.autoWatch,
-    browsers: ['PhantomJS'],
-    browserNoActivityTimeout: 30000,
+    browsers: ['ChromeHeadless'],
+    customLaunchers: {
+      ChromeHeadless: {
+        base: 'Chrome',
+        flags: [
+          '--headless',
+          '--disable-gpu',
+          '--remote-debugging-port=9222',
+        ],
+      },
+    },    
     singleRun: !config.autoWatch,
     concurrency: Infinity
   })
