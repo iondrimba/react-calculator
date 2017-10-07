@@ -11,7 +11,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^6.5.3",
+    "autoprefixer": "7.1.5",
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-istanbul": "^3.0.0",
