@@ -3,7 +3,7 @@
 	"rules": {
 		"indentation": 2,
 		"declaration-block-properties-order": "alphabetical",
-		"no-missing-end-of-source-newline": true,
+		"no-missing-end-of-source-newline": false,
 		"number-leading-zero":"never"
 	}
 }

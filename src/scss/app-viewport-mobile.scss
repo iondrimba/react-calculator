@@ -1,4 +1,4 @@
-@import './_variables';
+@import './variables';
 
 @media screen and (min-width: 450px) {
   .home {
@@ -20,6 +20,7 @@
       width: 360px;
     }
   }
+
   .github {
     display: inline-block;
   }
@@ -29,6 +30,7 @@
   .github {
     display: inline-block;
   }
+
   .home {
     &__content {
       height: 600px;
@@ -36,6 +38,7 @@
       width: 360px;
     }
   }
+
   .button {
     &_primaryOperator:hover {
       background-color: darken($primary-color, 5%);
@@ -62,14 +65,13 @@
       background-color: $secondary-color;
       box-shadow: inset 1px 5px 9px 0 rgba(0, 0, 0, .37);
     }
-  }
 
-  .button:nth-child(17),
-  .button:nth-child(18),
-  .button:nth-child(19) {
-    &:active {
-      box-shadow: inset 0 3px 8px 0 $button-shadow;
+    &:nth-child(17),
+    &:nth-child(18),
+    &:nth-child(19) {
+      &:active {
+        box-shadow: inset 0 3px 8px 0 $button-shadow;
+      }
     }
   }
 }
-

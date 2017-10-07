@@ -134,13 +134,6 @@ if (isProduction) {
     }],
   }
   ));
-} else {
-  config.plugins.push(new StyleLintPlugin({
-    configFile: '.stylelintrc',
-    files: ['./src/scss/**/*.s?(a|c)ss'],
-    failOnError: false
-  }));
 }
-
 
 module.exports = config;
