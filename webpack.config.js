@@ -63,9 +63,7 @@ var config = {
     ]
 
   },
-  postcss: [
-    postcssCssnext()
-  ],
+
   plugins: [
     new WebpackCleanupPlugin(),
     new HtmlWebpackPlugin({
