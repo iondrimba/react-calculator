@@ -2,8 +2,6 @@ var webpack = require('webpack');
 require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var StyleLintPlugin = require('stylelint-webpack-plugin');
-var postcssCssnext = require('postcss-cssnext');
 var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var CompressionPlugin = require('compression-webpack-plugin');
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
@@ -64,9 +62,7 @@ var config = {
     ]
 
   },
-  postcss: [
-    postcssCssnext()
-  ],
+
   plugins: [
     new WebpackCleanupPlugin(),
     new HtmlWebpackPlugin({
@@ -134,13 +130,6 @@ if (isProduction) {
     }],
   }
   ));
-} else {
-  config.plugins.push(new StyleLintPlugin({
-    configFile: '.stylelintrc',
-    files: ['./src/scss/**/*.s?(a|c)ss'],
-    failOnError: false
-  }));
 }
-
 
 module.exports = config;
