@@ -1,14 +1,16 @@
 sudo: required
 language: node_js
 node_js:
-- '6'
+  - '6'
 before_install:
-- gem install sass
-- gem install ruby
-- gem install scss_lint
-- npm install -g yarn
+  - gem install sass
+  - gem install ruby
+  - gem install scss_lint
+  - npm install -g yarn
 before_script:
-- yarn install
+  - yarn install
 script:
-- yarn prod
-- yarn test
+  - yarn prod
+  - yarn test
+after_success:
+  - npm run lh http://localhost:8080/
