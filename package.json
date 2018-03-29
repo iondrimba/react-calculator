@@ -7,7 +7,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --compress --colors --inline --hot",
     "prod": "cross-env NODE_ENV=production webpack -p",
-    "test": "cross-env NODE_ENV=testing  BABEL_DISABLE_CACHE=1 karma start --autoWatch false"
+    "test": "cross-env NODE_ENV=testing  BABEL_DISABLE_CACHE=1 karma start --autoWatch false",
+    "lh": "./node_modules/.bin/lighthouse-ci"
   },
   "dependencies": {},
   "devDependencies": {
@@ -54,6 +55,7 @@
     "karma-spec-reporter": "0.0.31",
     "karma-threshold-reporter": "0.1.15",
     "karma-webpack": "1.8.1",
+    "lighthouse-ci": "git+https://github.com/ebidel/lighthouse-ci.git",
     "node-sass": "4.5.3",
     "phantomjs-polyfill-object-assign": "0.0.2",
     "phantomjs-prebuilt": "2.1.15",
