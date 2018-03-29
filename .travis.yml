@@ -13,4 +13,4 @@ script:
   - yarn prod
   - yarn test
 after_success:
-  - npm run lh http://localhost:8080/
+  - npm run lh --score=100 http://localhost:8080/
