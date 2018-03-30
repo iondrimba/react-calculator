@@ -7,7 +7,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --compress --colors --inline --hot",
     "prod": "cross-env NODE_ENV=production webpack -p",
-    "test": "cross-env NODE_ENV=testing  BABEL_DISABLE_CACHE=1 karma start --autoWatch false"
+    "test": "cross-env NODE_ENV=testing  BABEL_DISABLE_CACHE=1 karma start --autoWatch false",
+    "workbox": "./node_modules/.bin/workbox generateSW workbox-config.js"
   },
   "dependencies": {},
   "devDependencies": {
@@ -79,6 +80,7 @@
     "webpack": "1.15.0",
     "webpack-cleanup-plugin": "0.4.2",
     "webpack-dev-server": "1.16.5",
+    "workbox-cli": "^3.0.1",
     "workbox-webpack-plugin": "^3.0.1"
   }
 }
