@@ -11,3 +11,4 @@ before_script:
 script:
 - npm run prod
 - npm run test
+- npm run workbox
