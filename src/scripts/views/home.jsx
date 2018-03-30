@@ -13,7 +13,8 @@ class Home extends React.Component {
     this.onMouseDown = this.onMouseDown.bind(this);
     document.body.onkeydown = this.onKeyDown.bind(this);
     document.body.onkeyup = this.onKeyUp.bind(this);
-    document.addEventListener('touchstart', () => { }, { passive: true });
+
+    document.addEventListener('touchstart', (evt) => { evt.preventDefault() }, { passive: true });
 
     this.sound = new Sound();
     this.sound.setup();

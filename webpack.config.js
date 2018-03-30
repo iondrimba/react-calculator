@@ -6,6 +6,8 @@ var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 var CompressionPlugin = require('compression-webpack-plugin');
 var SWPrecacheWebpackPlugin = require('sw-precache-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+
 
 var isProduction = (process.env.NODE_ENV === 'production');
 
@@ -101,7 +103,7 @@ var config = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-
+    new WorkboxPlugin.GenerateSW()
   ]
 };
 
@@ -117,18 +119,7 @@ if (isProduction) {
     threshold: 10240,
     minRatio: 0.8
   }));
-  config.plugins.push(new SWPrecacheWebpackPlugin({
-    cacheId: 'calc' + Date.now(),
-    filename: 'calc-service-worker.js',
-    maximumFileSizeToCacheInBytes: 4194304,
-    staticFileGlobs: ['public/**/*.{js,json,mp3,html,css,png,jpg,gif,woff2,woff}',
-      'public/fonts/*.{woff2,woff}'],
-    stripPrefix: 'public',
-    runtimeCaching: [{
-      urlPattern: /^https:\/\/calculator\.iondrimbafilho\.me\/.+/,
-      handler: 'cacheFirst'
-    }],
-  }));
+  config.plugins.push();
 }
 
 module.exports = config;

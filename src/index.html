@@ -55,6 +55,7 @@ body {
   background-position: top center;
   background-repeat: no-repeat;
   font-family: 'rounded_eleganceregular', sans-serif;
+  font-display: swap;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -75,9 +76,8 @@ body {
     (function () {
       if ('serviceWorker' in navigator) {
         window.onload = function () {
-          navigator.serviceWorker.register('calc-service-worker.js');
+          navigator.serviceWorker.register('sw.js');
         }
-
       }
     })();
     (function (i, s, o, g, r, a, m) {
