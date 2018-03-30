@@ -3,4 +3,9 @@ exclude_patterns:
 - "**/spec/"
 - "**/public/"
 - "**/*.py"
+- "karma.conf.js"
+- "workbox-config.js"
+- "webpack.config.js"
+- "runtime.webpack.config.js"
+- "postcss.config.js"
 
