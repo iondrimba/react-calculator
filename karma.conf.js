@@ -1,9 +1,7 @@
 // Karma configuration
 // Generated on Tue Feb 02 2016 21:20:59 GMT-0200 (Horário brasileiro de verão)
 var istanbul = require('browserify-istanbul');
-var threshold = require('karma-threshold-reporter');
 var isparta = require('isparta');
-
 
 module.exports = function (config) {
   config.set({
@@ -50,7 +48,7 @@ module.exports = function (config) {
       reporters: [
         {
           type: 'lcov',
-          subdir: 'report-lcov'
+          subdir: '/'
         }
       ]
     },
@@ -88,7 +86,7 @@ module.exports = function (config) {
           '--remote-debugging-port=9222',
         ],
       },
-    },    
+    },
     singleRun: !config.autoWatch,
     concurrency: Infinity
   })
