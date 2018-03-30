@@ -5,7 +5,7 @@ import { createStore } from 'redux';
 import AppContainer from './container/appContainer.jsx';
 import RootReducer from './reducers/root';
 import defaultStore from './model/initialState';
-import css from './../scss/app.scss';
+import './../scss/app.scss';
 
 let store = createStore(RootReducer, defaultStore, window.devToolsExtension && window.devToolsExtension());
 

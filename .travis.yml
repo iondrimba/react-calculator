@@ -1,14 +1,13 @@
 sudo: required
 language: node_js
 node_js:
-- '6'
+- '8'
 before_install:
 - gem install sass
-- gem install ruby
 - gem install scss_lint
-- npm install -g yarn
+- npm install -g npm
 before_script:
-- yarn install
+- npm i
 script:
-- yarn prod
-- yarn test
+- npm run prod
+- npm run test

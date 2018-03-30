@@ -5,18 +5,17 @@ import dataFixture from './dataFixture';
 
 describe('Clear reducer tests', () => {
 
-    let data = {};
+  let data = {};
 
-    beforeEach(function () {
-        data = { ...dataFixture };
-    });
+  beforeEach(function () {
+    data = { ...dataFixture };
+  });
 
-    it('should return 0 after clear', () => {
-        let state = '2';
-        let value = '99';
-        let action = createAction(constants.CLEAR, { value, data });
-        let result = clear(state, action);
-        expect(result).toBe('0');
-    });
+  it('should return 0 after clear', () => {
+    let state = '2';
+    let value = '99';
+    let action = createAction(constants.CLEAR, { value, data });
+    let result = clear(state, action);
+    expect(result).toBe('0');
+  });
 });
-

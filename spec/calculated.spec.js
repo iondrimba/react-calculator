@@ -5,26 +5,25 @@ import dataFixture from './dataFixture';
 
 describe('Calculated reducer tests', () => {
 
-    let data = {};
+  let data = {};
 
-    beforeEach(function () {
-        data = { ...dataFixture };
-    });
+  beforeEach(function () {
+    data = { ...dataFixture };
+  });
 
-    it('should set calculated flag to true', () => {
-        let state = false;
-        let value = true;
-        let action = createAction(constants.CALCULATED, { value, data });
-        let result = calculated(state, action);
-        expect(result).toBe(true);
-    });
+  it('should set calculated flag to true', () => {
+    let state = false;
+    let value = true;
+    let action = createAction(constants.CALCULATED, { value, data });
+    let result = calculated(state, action);
+    expect(result).toBe(true);
+  });
 
-    it('should set calculated flag to false', () => {
-        let state = true;
-        let value = false;
-        let action = createAction(constants.CALCULATED, { value, data });
-        let result = calculated(state, action);
-        expect(result).toBe(false);
-    });
+  it('should set calculated flag to false', () => {
+    let state = true;
+    let value = false;
+    let action = createAction(constants.CALCULATED, { value, data });
+    let result = calculated(state, action);
+    expect(result).toBe(false);
+  });
 });
-

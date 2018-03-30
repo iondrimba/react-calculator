@@ -10,24 +10,24 @@ import calc from '../reducers/calc';
 
 
 function displayValue(state = '', action) {
-    switch (action.type) {
-        case constants.SWITCH_OPERATOR:
-            return switchOperator(state, action);
-        case constants.COMMA:
-            return comma(state, action);
-        case constants.DEL:
-            return del(state, action);
-        case constants.CALC:
-            return calc(history(action.data.history, action), action);
-        case constants.CLEAR:
-            return clear(state, action);
-        case constants.PERCENT:
-            return add(percent(action.data.historyDisplay, action), action);
-        case constants.ADD:
-            return comma(add(state, action), action);
+  switch (action.type) {
+    case constants.SWITCH_OPERATOR:
+      return switchOperator(state, action);
+    case constants.COMMA:
+      return comma(state, action);
+    case constants.DEL:
+      return del(state, action);
+    case constants.CALC:
+      return calc(history(action.data.history, action), action);
+    case constants.CLEAR:
+      return clear(state, action);
+    case constants.PERCENT:
+      return add(percent(action.data.historyDisplay, action), action);
+    case constants.ADD:
+      return comma(add(state, action), action);
 
-    }
-    return state;
+  }
+  return state;
 }
 
 export default displayValue;

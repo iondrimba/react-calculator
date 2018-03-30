@@ -66,9 +66,7 @@
       box-shadow: inset 1px 5px 9px 0 rgba(0, 0, 0, .37);
     }
 
-    &:nth-child(17),
-    &:nth-child(18),
-    &:nth-child(19) {
+    &:nth-child(17), &:nth-child(18), &:nth-child(19) {
       &:active {
         box-shadow: inset 0 3px 8px 0 $button-shadow;
       }

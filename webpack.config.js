@@ -128,8 +128,7 @@ if (isProduction) {
       urlPattern: /^https:\/\/calculator\.iondrimbafilho\.me\/.+/,
       handler: 'cacheFirst'
     }],
-  }
-  ));
+  }));
 }
 
 module.exports = config;

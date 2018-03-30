@@ -1,8 +1,8 @@
 let dataFixture = {
-    displayValue: '',
-    historyDisplay: '',
-    history:[],
-    calculated: false
+  displayValue: '',
+  historyDisplay: '',
+  history: [],
+  calculated: false
 }
 
 export default dataFixture;

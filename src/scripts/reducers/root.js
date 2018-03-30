@@ -8,13 +8,13 @@ import calculated from './calculated';
 import muted from './muted';
 
 const RootReducer = combineReducers({
-    historyDisplay,
-    history,
-    displayValue,
-    calculated,
-    keyDown,
-    keys: () => MapKeys,
-    muted
+  historyDisplay,
+  history,
+  displayValue,
+  calculated,
+  keyDown,
+  keys: () => MapKeys,
+  muted
 });
 
 export default RootReducer;

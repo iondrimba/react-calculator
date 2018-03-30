@@ -1,6 +1,0 @@
-{
-    "python.linting.pylintEnabled": false,
-    "css.lint.duplicateProperties": "warning",
-    "css.lint.boxModel": "warning",
-    "eslint.autoFixOnSave": true
-}

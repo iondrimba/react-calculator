@@ -3,7 +3,6 @@ import Home from '../views/home.jsx';
 import createAction from '../actions/createAction';
 import * as constants from '../actions/constants';
 
-
 function mapStateToProps(store) {
   return {
     historyDisplay: store.historyDisplay,
@@ -19,7 +18,7 @@ function mapStateToProps(store) {
 const mapDispatchToProps = (dispatch) => {
   return {
     keyUpAction: (key, props) => {
-      let {displayValue, historyDisplay, calculated, history} = props;
+      let { displayValue, historyDisplay, calculated, history } = props;
       props.keys.map((elmt) => {
         if (key === elmt.key) {
           props[elmt.command](key, { displayValue, historyDisplay, calculated, history });

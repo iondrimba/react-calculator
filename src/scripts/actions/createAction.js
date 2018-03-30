@@ -1,9 +1,5 @@
 const createAction = (type, ...args) => {
-
-    let action = { type };
-    action = Object.assign({}, action, ...args);
-
-    return action;
+  return Object.assign({}, { type }, ...args);
 };
 
 export default createAction;
