@@ -28,16 +28,16 @@ function _addToHistory({ data, newItem, state }) {
 function history(state = [], action) {
   let newItem = '';
   let output = [];
+  const { historyDisplay } = action.data;
+
   switch (action.type) {
     case CLEAR:
       state = [];
       break;
     case CALC:
-      if (action.data.historyDisplay.length) {
-        output = _addToHistory({ data: action.data, newItem, state });
+      output = historyDisplay.length ? _addToHistory({ data: action.data, newItem, state }) : [];
 
-        output = output.length ? output : [...state];
-      }
+      output = historyDisplay.length ? output.length ? output : [...state] : [];
 
       return output;
   }
