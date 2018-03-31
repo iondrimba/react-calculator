@@ -15,34 +15,40 @@ function _appendValues({ output, calculated, state, lastCommand, value }) {
   return output;
 }
 
+function _getLastCommand(commands) {
+  let lastCommand = [];
+  if (commands.length > 1) {
+    lastCommand = commands.pop();
+  }
+
+  return lastCommand;
+}
+
+function _getCommands(historyDisplay) {
+  let commands = [];
+  if (historyDisplay) {
+    commands = historyDisplay.split('');
+  }
+
+  return commands;
+}
+
 const maxDisplay = 15;
 
 function add(state = '', action) {
-  let commands = [], lastCommand = [];
+  let lastCommand = [];
   let { historyDisplay, displayValue, calculated } = action.data;
   let output = '';
 
   switch (action.type) {
     case ADD:
-      if (historyDisplay) {
-        commands = historyDisplay.split('');
-      }
+      lastCommand = _getLastCommand(_getCommands(historyDisplay));
 
-      if (commands.length > 1) {
-        lastCommand = commands.pop();
-      }
+      output = helper.hasValue(state) ? _appendValues({ output, calculated, state, lastCommand, value: action.value }) : output;
 
-      if (helper.hasValue(state)) {
-        output = _appendValues({
-          output, calculated, state, lastCommand, value: action.value
-        });
-      } else {
-        output = action.value;
-      }
+      output = output.length ? output : action.value;
 
-      if (output.length > maxDisplay) {
-        output = displayValue;
-      }
+      output = output.length > maxDisplay ? displayValue : output;
 
       return output;
   }
