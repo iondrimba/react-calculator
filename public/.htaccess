@@ -19,8 +19,12 @@
     </FilesMatch>
 </IfModule>
 
-<filesMatch ".(jpg|jpeg|png|gif|ico|svg|woff|woff2)$">
+<filesMatch ".(jpg|jpeg|png|gif|ico|svg|woff|woff2|mp3)$">
     Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+
+<filesMatch "app.\d.+.(css|js)">
+    Header set Cache-Control "max-age=2628000, public"
 </filesMatch>
 
 <IfModule mod_headers.c>
