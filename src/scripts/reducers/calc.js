@@ -1,12 +1,30 @@
 import { CALC } from '../actions/constants';
 import helper from '../model/helper';
 
+function _formatOutput({ output, result }) {
+  if (helper.isInteger(result)) {
+    output = result.toString();
+  } else {
+    output = helper.pointToComma(result.toFixed(2));
+  }
+
+  return output;
+}
+
+function _calculate({ history, expression }) {
+  return history.reduce(function (a, b) {
+    expression = helper.commaToPoint(a);
+    return b = eval(eval(expression) + helper.commaToPoint(b));
+  });
+}
+
 function calc(state = [], action) {
   let history = [...state];
   let { displayValue } = action.data;
   let expression = '';
   let result = 0;
   let output = '';
+
   switch (action.type) {
     case CALC:
       if (helper.hasValue(history)) {
@@ -14,18 +32,10 @@ function calc(state = [], action) {
           expression = helper.commaToPoint(history[0]);
           result = eval(expression);
         } else {
-          result = history.reduce(function (a, b) {
-            expression = helper.commaToPoint(a);
-            return b = eval(eval(expression) + helper.commaToPoint(b));
-          });
+          result = _calculate({ history, expression });
         }
 
-        if (helper.isInteger(result)) {
-          output = result.toString();
-
-        } else {
-          output = helper.pointToComma(result.toFixed(2));
-        }
+        output = _formatOutput({ output, result });
 
 
       } else {

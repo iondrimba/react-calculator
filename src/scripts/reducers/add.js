@@ -5,7 +5,7 @@ function _concatValues(calculated, state, lastCommand, value) {
   return calculated || helper.isNumberZero(state) || helper.isNumberZero(state + value) || (helper.isEmpty(lastCommand) && calculated);
 }
 
-function _appendValues(output, calculated, state, lastCommand, value) {
+function _appendValues({ output, calculated, state, lastCommand, value }) {
   if (_concatValues(calculated, state, lastCommand, value)) {
     output = `${state}${value}`;
   } else {
@@ -33,7 +33,9 @@ function add(state = '', action) {
       }
 
       if (helper.hasValue(state)) {
-        output = _appendValues(output, calculated, state, lastCommand, action.value);
+        output = _appendValues({
+          output, calculated, state, lastCommand, value: action.value
+        });
       } else {
         output = action.value;
       }
