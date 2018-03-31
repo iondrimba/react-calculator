@@ -33,6 +33,10 @@ function _getCommands(historyDisplay) {
   return commands;
 }
 
+function _getOutput(conditional, firstResult, secondResult) {
+  return conditional ? firstResult : secondResult;
+}
+
 const maxDisplay = 15;
 
 function add(state = '', action) {
@@ -46,9 +50,9 @@ function add(state = '', action) {
 
       output = helper.hasValue(state) ? _appendValues({ output, calculated, state, lastCommand, value: action.value }) : output;
 
-      output = output.length ? output : action.value;
+      output = _getOutput(output.length, output, action.value);
 
-      output = output.length > maxDisplay ? displayValue : output;
+      output = _getOutput(output.length > maxDisplay, displayValue, output);
 
       return output;
   }

@@ -48,30 +48,36 @@ function _resultAction(dispatch, value, data) {
   _dispatchAction(dispatch, constants.HISTORY_CLEAR, { value, data });
 }
 
+function _commonActions({ constants, dispatch, value, data }) {
+  const { first, second } = constants;
+  _dispatchAction(dispatch, first, { value, data });
+  _dispatchAction(dispatch, second, { value: false });
+}
+
 function _addAction(dispatch, value, data) {
-  _dispatchAction(dispatch, constants.ADD, { value, data });
-  _dispatchAction(dispatch, constants.CALCULATED, { value: false });
+  const { ADD, CALCULATED } = constants;
+  _commonActions({ constants: [ADD, CALCULATED], dispatch, value, data });
+}
+
+function _commaAction(dispatch, value, data) {
+  const { COMMA, CALCULATED } = constants;
+  _commonActions({ constants: [COMMA, CALCULATED], dispatch, value, data });
+}
+
+function _switchOperatorAction(dispatch, value, data) {
+  const { SWITCH_OPERATOR, CALCULATED } = constants;
+  _commonActions({ constants: [SWITCH_OPERATOR, CALCULATED], dispatch, value, data });
+}
+
+function _percentAction(dispatch, value, data) {
+  const { PERCENT, CALCULATED } = constants;
+  _commonActions({ constants: [PERCENT, CALCULATED], dispatch, value, data });
 }
 
 function _operatorAction(dispatch, value, data) {
   _dispatchAction(dispatch, constants.OPERATOR, { value, data });
   _dispatchAction(dispatch, constants.CALC, { value, data });
   _dispatchAction(dispatch, constants.CALCULATED, { value: true });
-}
-
-function _commaAction(dispatch, value, data) {
-  _dispatchAction(dispatch, constants.COMMA, { value, data });
-  _dispatchAction(dispatch, constants.CALCULATED, { value: false });
-}
-
-function _switchOperatorAction(dispatch, value, data) {
-  _dispatchAction(dispatch, constants.SWITCH_OPERATOR, { value, data });
-  _dispatchAction(dispatch, constants.CALCULATED, { value: false });
-}
-
-function _percentAction(dispatch, value, data) {
-  _dispatchAction(dispatch, constants.PERCENT, { value, data });
-  _dispatchAction(dispatch, constants.CALCULATED, { value: false });
 }
 
 const mapDispatchToProps = (dispatch) => {
