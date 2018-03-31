@@ -25,19 +25,28 @@ function _addToHistory({ data, newItem, state }) {
   return output;
 }
 
+function _addCalculatedToHistory({ data, state, newItem }) {
+  let output = []
+  const { historyDisplay } = data;
+
+  if (historyDisplay.length) {
+    output = _addToHistory({ data, newItem, state });
+
+    output = output.length ? output : [...state];
+  }
+
+  return output;
+}
+
 function history(state = [], action) {
   let newItem = '';
   let output = [];
-  const { historyDisplay } = action.data;
-
   switch (action.type) {
     case CLEAR:
-      state = [];
+      state = output;
       break;
     case CALC:
-      output = historyDisplay.length ? _addToHistory({ data: action.data, newItem, state }) : [];
-
-      output = historyDisplay.length ? output.length ? output : [...state] : [];
+      output = _addCalculatedToHistory({data: action.data, state, newItem});
 
       return output;
   }
