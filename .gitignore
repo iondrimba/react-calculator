@@ -3,3 +3,4 @@ test/
 coverage/
 nodesource_setup.sh
 testing
+src/GzipSimpleHTTPServer.py
