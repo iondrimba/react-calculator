@@ -8,7 +8,7 @@ describe('Add reducers tests', () => {
   let data = {};
 
   beforeEach(function () {
-    data = { ...dataFixture };
+    data = Object.assign(data, dataFixture);
   });
 
   it('should add string to display', () => {

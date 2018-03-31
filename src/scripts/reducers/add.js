@@ -5,8 +5,19 @@ function _concatValues(calculated, state, lastCommand, value) {
   return calculated || helper.isNumberZero(state) || helper.isNumberZero(state + value) || (helper.isEmpty(lastCommand) && calculated);
 }
 
+function _appendValues(output, calculated, state, lastCommand, value) {
+  if (_concatValues(calculated, state, lastCommand, value)) {
+    output = `${state}${value}`;
+  } else {
+    output += `${state}${value}`;
+  }
+
+  return output;
+}
+
 function add(state = '', action) {
-  let commands, lastCommand = [];
+  let commands = [];
+  let lastCommand = [];
   const maxDisplay = 15;
   let { historyDisplay, displayValue, calculated } = action.data;
   let output = '';
@@ -22,11 +33,7 @@ function add(state = '', action) {
       }
 
       if (helper.hasValue(state)) {
-        if (_concatValues(calculated, state, lastCommand, action.value)) {
-          output = action.value;
-        } else {
-          output += `${state}${action.value}`;
-        }
+        output = _appendValues(output, calculated, state, lastCommand, action.value);
       } else {
         output = action.value;
       }
