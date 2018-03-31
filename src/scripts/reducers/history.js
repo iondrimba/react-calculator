@@ -3,7 +3,9 @@ import { CALC, CLEAR } from '../actions/constants';
 
 function _appendValueToNewItem({ state, data }) {
   const { historyDisplay, displayValue } = data;
+
   let newItem = '';
+
   if (state.length >= 1) {
     const operator = historyDisplay.substr(historyDisplay.length - 3, 3);
     newItem = `${operator}${displayValue}`;
@@ -12,23 +14,29 @@ function _appendValueToNewItem({ state, data }) {
   return newItem;
 }
 
+function _addToHistory({ data, newItem, state }) {
+  const { historyDisplay, calculated, displayValue } = data;
+  let output = [];
+
+  newItem = !calculated ? _appendValueToNewItem({ state, data }) : '';
+  newItem = !newItem.length ? `${historyDisplay}${displayValue}` : newItem;
+  output = !calculated ? [...state, newItem] : [];
+
+  return output;
+}
+
 function history(state = [], action) {
   let newItem = '';
   let output = [];
-
   switch (action.type) {
     case CLEAR:
       state = [];
       break;
     case CALC:
       if (action.data.historyDisplay.length) {
-        if (action.data.calculated === false) {
-          newItem = _appendValueToNewItem({ state, data: action.data });
-          newItem = newItem.length ? newItem : `${action.data.historyDisplay}${action.data.displayValue}`;
-          output = [...state, newItem];
-        } else {
-          output = [...state];
-        }
+        output = _addToHistory({ data: action.data, newItem, state });
+
+        output = output.length ? output : [...state];
       }
 
       return output;
