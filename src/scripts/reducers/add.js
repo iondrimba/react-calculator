@@ -15,10 +15,10 @@ function _appendValues({ output, calculated, state, lastCommand, value }) {
   return output;
 }
 
+const maxDisplay = 15;
+
 function add(state = '', action) {
-  let commands = [];
-  let lastCommand = [];
-  const maxDisplay = 15;
+  let commands = [], lastCommand = [];
   let { historyDisplay, displayValue, calculated } = action.data;
   let output = '';
 
