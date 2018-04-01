@@ -5,16 +5,6 @@ function _concatValues(calculated, state, lastCommand, value) {
   return calculated || helper.isNumberZero(state) || helper.isNumberZero(state + value) || (helper.isEmpty(lastCommand) && calculated);
 }
 
-function _appendValues({ output, calculated, state, lastCommand, value }) {
-  if (_concatValues(calculated, state, lastCommand, value)) {
-    output = `${state}${value}`;
-  } else {
-    output += `${state}${value}`;
-  }
-
-  return output;
-}
-
 function _getLastCommand(commands) {
   let lastCommand = [];
   if (commands.length > 1) {
@@ -31,6 +21,16 @@ function _getCommands(historyDisplay) {
   }
 
   return commands;
+}
+
+function _appendValues({ output, calculated, state, lastCommand, value }) {
+  if (_concatValues(calculated, state, lastCommand, value)) {
+    output = value;
+  } else {
+    output += `${state}${value}`;
+  }
+
+  return output;
 }
 
 function _getOutput(conditional, firstResult, secondResult) {
