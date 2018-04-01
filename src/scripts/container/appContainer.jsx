@@ -54,26 +54,6 @@ function _commonActions({ constants, dispatch, value, data }) {
   _dispatchAction(dispatch, second, { value: false });
 }
 
-function _addAction(dispatch, value, data) {
-  const { ADD, CALCULATED } = constants;
-  _commonActions({ constants: [ADD, CALCULATED], dispatch, value, data });
-}
-
-function _commaAction(dispatch, value, data) {
-  const { COMMA, CALCULATED } = constants;
-  _commonActions({ constants: [COMMA, CALCULATED], dispatch, value, data });
-}
-
-function _switchOperatorAction(dispatch, value, data) {
-  const { SWITCH_OPERATOR, CALCULATED } = constants;
-  _commonActions({ constants: [SWITCH_OPERATOR, CALCULATED], dispatch, value, data });
-}
-
-function _percentAction(dispatch, value, data) {
-  const { PERCENT, CALCULATED } = constants;
-  _commonActions({ constants: [PERCENT, CALCULATED], dispatch, value, data });
-}
-
 function _operatorAction(dispatch, value, data) {
   _dispatchAction(dispatch, constants.OPERATOR, { value, data });
   _dispatchAction(dispatch, constants.CALC, { value, data });
@@ -84,15 +64,15 @@ const mapDispatchToProps = (dispatch) => {
   return {
     keyUpAction: (key, props) => { _keyUpAction(key, props); },
     muteAction: (value) => { _dispatchAction(dispatch, constants.MUTED, { value }); },
-    addAction: (value, data) => { _addAction(dispatch, value, data) },
     keyDownAction: (value) => { _dispatchAction(dispatch, constants.KEY_DOWN, { value }); },
     resultAction: (value, data) => { _resultAction(dispatch, value, data); },
     clearAction: (value, data) => { _dispatchAction(dispatch, constants.CLEAR, { value, data }); },
     deleteAction: (value, data) => { _dispatchAction(dispatch, constants.DEL, { value, data }); },
     operatorAction: (value, data) => { _operatorAction(dispatch, value, data); },
-    commaAction: (value, data) => { _commaAction(dispatch, value, data) },
-    switchOperatorAction: (value, data) => { _switchOperatorAction(dispatch, value, data); },
-    percentAction: (value, data) => { _percentAction(dispatch, value, data) },
+    addAction: (value, data) => { _commonActions({ constants: [constants.ADD, constants.CALCULATED], dispatch, value, data }); },
+    commaAction: (value, data) => { _commonActions({ constants: [constants.COMMA, constants.CALCULATED], dispatch, value, data }); },
+    switchOperatorAction: (value, data) => { _commonActions({ constants: [constants.SWITCH_OPERATOR, constants.CALCULATED], dispatch, value, data }); },
+    percentAction: (value, data) => { _commonActions({ constants: [constants.PERCENT, constants.CALCULATED], dispatch, value, data }) },
     isActiveCSS: (css, key, keyDown, Styles) => { return _isActiveCSS(css, key, keyDown, Styles); },
     getButtonClass: (elmt, Styles) => { return _getButtonClass(elmt, Styles); }
   };
