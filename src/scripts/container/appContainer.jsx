@@ -49,7 +49,7 @@ function _resultAction(dispatch, value, data) {
 }
 
 function _commonActions({ constants, dispatch, value, data }) {
-  const { first, second } = constants;
+  const [first, second ] = constants;
   _dispatchAction(dispatch, first, { value, data });
   _dispatchAction(dispatch, second, { value: false });
 }
