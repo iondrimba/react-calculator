@@ -20,11 +20,11 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.0.1/workbox
  */
 self.__precacheManifest = [
   {
-    "url": "app.12f042739bbf5b867295.js",
-    "revision": "184afe0184409b8d04d06c599107b821"
+    "url": "app.24e0afa7d9a289255797.js",
+    "revision": "794cc9ce111839536b1930e384d23713"
   },
   {
-    "url": "css/app.12f042739bbf5b867295.css",
+    "url": "css/app.24e0afa7d9a289255797.css",
     "revision": "b1a7fcb80199cd806c722e02077d060f"
   },
   {
@@ -121,18 +121,10 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "8af31c7b0afa9b28e4dc699a52f2faed"
-  },
-  {
-    "url": "precache-manifest.9b51d9aed5f57b308814d975722d0ec7.js",
-    "revision": "9b51d9aed5f57b308814d975722d0ec7"
-  },
-  {
-    "url": "service-worker.js",
-    "revision": "081dbbe88688a691996df946b9abc802"
+    "revision": "a29a18f9c73c88b5b76c5a9f61197bde"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerRoute(/iondrimbafilho/, workbox.strategies.cacheFirst({ plugins: [new workbox.expiration.Plugin({"maxEntries":20})] }), 'GET');
+workbox.routing.registerRoute(/^calculator\.iondrimbafilho\.me$/, workbox.strategies.cacheFirst({ plugins: [new workbox.expiration.Plugin({"maxEntries":100})] }), 'GET');

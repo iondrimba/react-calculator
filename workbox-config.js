@@ -2,11 +2,11 @@ module.exports = {
   swDest: 'public/sw.js',
   runtimeCaching: [
     {
-      urlPattern: /iondrimbafilho/,
+      urlPattern: /^calculator\.iondrimbafilho\.me$/,
       handler: 'cacheFirst',
       options: {
         expiration: {
-          maxEntries: 20,
+          maxEntries: 100,
         },
       },
     },

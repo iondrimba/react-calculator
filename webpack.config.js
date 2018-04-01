@@ -103,7 +103,6 @@ var config = {
         'NODE_ENV': JSON.stringify('production')
       }
     }),
-    new WorkboxPlugin.GenerateSW()
   ]
 };
 
