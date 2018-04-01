@@ -126,5 +126,3 @@ self.__precacheManifest = [
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
-
-workbox.routing.registerRoute(/^calculator\.iondrimbafilho\.me$/, workbox.strategies.cacheFirst({ plugins: [new workbox.expiration.Plugin({"maxEntries":100})] }), 'GET');
