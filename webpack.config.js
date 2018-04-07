@@ -86,9 +86,6 @@ var config = {
         from: 'src/.htaccess'
       },
       {
-        from: 'src/GzipSimpleHTTPServer.py', to: 'GzipSimpleHTTPServer.py'
-      },
-      {
         from: 'src/sounds/', to: 'sounds'
       },
       {
