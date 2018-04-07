@@ -86,13 +86,16 @@ var config = {
         from: 'src/.htaccess'
       },
       {
-        from: 'src/sounds/', to: 'sounds'
+        from: 'src/sounds', to: 'sounds'
+      },
+      {
+        from: 'src/browserconfig.xml', to: 'browserconfig.xml'
       },
       {
         from: 'src/favicon.ico', to: 'favicon.ico'
       },
       {
-        from: 'src/images/', to: 'images'
+        from: 'src/images', to: 'images'
       },
     ]),
     new webpack.DefinePlugin({
