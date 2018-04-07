@@ -44,10 +44,6 @@ self.__precacheManifest = [
     "revision": "05c1672c90045863e6ea0d4a134560b1"
   },
   {
-    "url": "images/calcface.png",
-    "revision": "8810b8e06dbf231c0851231886277ffe"
-  },
-  {
     "url": "images/calcgoogleplus.png",
     "revision": "e8cb07e44fd45cc1d690015632956ce0"
   },
@@ -57,31 +53,55 @@ self.__precacheManifest = [
   },
   {
     "url": "images/favicons/android-chrome-192x192.png",
-    "revision": "3eeabd51bb075957c8fed8ba84df2c78"
+    "revision": "0d3cf22b0f6e9ebf50b47f82ee3d068d"
   },
   {
     "url": "images/favicons/android-chrome-512x512.png",
-    "revision": "8dcab15b9ae2bb3a62911e9762e84c12"
+    "revision": "c59aec5e034ea0eac556a6d98e99c7f9"
+  },
+  {
+    "url": "images/favicons/apple-touch-icon-120x120.png",
+    "revision": "85c93618b07c81d67b6436c5b92843d4"
+  },
+  {
+    "url": "images/favicons/apple-touch-icon-152x152.png",
+    "revision": "bee7f9b3020c8e1b6c9be0783e51ba6d"
+  },
+  {
+    "url": "images/favicons/apple-touch-icon-180x180.png",
+    "revision": "a23f6ea15efc50c232de274d7e1e1137"
+  },
+  {
+    "url": "images/favicons/apple-touch-icon-60x60.png",
+    "revision": "70782d4f5b86231efe1961c76082e88f"
+  },
+  {
+    "url": "images/favicons/apple-touch-icon-76x76.png",
+    "revision": "36bab0918b72610fe232e48659700d2b"
   },
   {
     "url": "images/favicons/apple-touch-icon.png",
-    "revision": "f5d8ef130e4fd5a32e826d645a2fab71"
+    "revision": "a23f6ea15efc50c232de274d7e1e1137"
   },
   {
     "url": "images/favicons/favicon-16x16.png",
-    "revision": "9d1dce8bdbfd5d00f2d00bb6fd8e30f2"
+    "revision": "8dede73e0b8d12d20a9f56c6c6cafaef"
   },
   {
     "url": "images/favicons/favicon-32x32.png",
-    "revision": "f98d3c48b8d9b193badf21073c3c9b1b"
+    "revision": "f1e3f1c3e6010559d46bc18ad6923ac2"
+  },
+  {
+    "url": "images/favicons/mstile-144x144.png",
+    "revision": "d8fee62fbfc6f25042c76fcad17a2f67"
   },
   {
     "url": "images/favicons/mstile-150x150.png",
-    "revision": "7fdbc51bc1612b06440ac7daec61f362"
+    "revision": "279dee2dead9329f0ec9fb4bad331a80"
   },
   {
     "url": "images/favicons/safari-pinned-tab.svg",
-    "revision": "1cb01598e0129232e6157b8a19518509"
+    "revision": "1367476a5723a9ad56297c288bc6b1fb"
   },
   {
     "url": "images/icons/icon-128x128.png",
@@ -104,10 +124,6 @@ self.__precacheManifest = [
     "revision": "bc187a844d8b7007f84973db047a3a53"
   },
   {
-    "url": "images/icons/icon-512x512.png",
-    "revision": "1f441bca0677a6997f39370e8454c0fd"
-  },
-  {
     "url": "images/icons/icon-72x72.png",
     "revision": "df783b4a9ec0da3ef1df0d9b3a2a44a3"
   },
@@ -121,7 +137,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "3a3d39bc2447cb52a341082e8fcdad77"
+    "revision": "fb2349ab81341372348c4c3d66964353"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
