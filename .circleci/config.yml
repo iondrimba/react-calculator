@@ -5,8 +5,8 @@ jobs:
       - image: circleci/node:8
     steps:
       - checkout
-      - run: npm install -g npm
-      - run: npm i
-      - run: npm run prod
-      - run: npm test
-      - run: npm workbox
+      - run: sudo npm install -g npm
+      - run: sudo npm i
+      - run: sudo npm run prod
+      - run: sudo npm test
+      - run: sudo npm workbox
