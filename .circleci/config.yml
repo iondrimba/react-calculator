@@ -6,7 +6,7 @@ jobs:
     steps:
       - checkout
       - run: sudo npm install -g npm
-      - run: sudo npm i
-      - run: sudo npm run prod
-      - run: sudo npm test
-      - run: sudo npm workbox
+      - run: npm i
+      - run: npm run prod
+      - run: npm test
+      - run: npm workbox
