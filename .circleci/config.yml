@@ -5,5 +5,10 @@ jobs:
       - image: circleci/node:8
     steps:
       - checkout
+      - run: gem install sass
+      - run: gem install scss_lint
+      - run: npm install -g npm
       - run: npm i
+      - run: npm run prod
       - run: npm test
+      - run: npm workbox
