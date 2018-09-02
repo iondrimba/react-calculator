@@ -1,10 +1,16 @@
 import React from 'react';
-import Styles from '../../scss/button.scss';
+import '../../scss/button.scss';
 
 class Button extends React.Component {
+  constructor() {
+    super();
+
+    this.onClick = this.onClick.bind(this);
+    this.onMouseDown = this.onMouseDown.bind(this);
+  }
+
   isActive() {
-    const pattern = `${Styles.active}`;
-    const regex = new RegExp(pattern, 'gi');
+    const regex = new RegExp(/active/, 'gi');
 
     return this.props.className.match(regex) !== null;
   }
@@ -21,7 +27,7 @@ class Button extends React.Component {
   }
   render() {
     return (
-      <button ref={'btn'} type={'button'} onTouchStart={this.onMouseDown.bind(this)} onTouchEnd={this.onClick.bind(this)} onMouseDown={this.onMouseDown.bind(this)} onClick={this.onClick.bind(this)} className={this.props.className}>{this.props.label}</button>
+      <button ref={'btn'} type={'button'} onTouchStart={this.onMouseDown} onTouchEnd={this.onClick} onMouseDown={this.onMouseDown} onClick={this.onClick} className={this.props.className}>{this.props.label}</button>
     );
   }
 }

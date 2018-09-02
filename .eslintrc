@@ -4,7 +4,10 @@
 		"describe": true,
 		"it": true,
 		"expect": true,
-		"beforeEach": true
+		"beforeEach": true,
+		"jasmine": true,
+		"afterEach": true,
+		"spyOn": true
 	},
 	"plugins": [
 		"react"
