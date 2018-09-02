@@ -16,7 +16,8 @@ before_script:
 - npm i
 script:
 - CI=false npm run prod
-- npm run test
+- npm test
+- npm run coverage
 - npm run workbox
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT

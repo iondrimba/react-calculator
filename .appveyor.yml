@@ -13,7 +13,8 @@ install:
   - npm install
 test_script:
   - npm run prod
-  - npm run test
+  - npm test
+  - npm run coverage
   - npm run workbox
 build: off
 matrix:
