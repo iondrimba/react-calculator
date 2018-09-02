@@ -4,43 +4,39 @@ import * as constants from '../src/scripts/actions/constants';
 import dataFixture from './dataFixture';
 
 describe('Comma reducer tests', () => {
-
   let data = {};
 
-  beforeEach(function () {
-    data = { ...dataFixture };
+  beforeEach(() => {
+    data = Object.assign({}, data, dataFixture);
   });
 
-  afterEach(function () {
-    data = { ...dataFixture };
+  afterEach(() => {
+    data = Object.assign({}, data, dataFixture);
   });
 
-  it('should add comma to state', () => {
-    let state = '20';
-    let value = ',';
-    let action = createAction(constants.COMMA, { value, data });
-    let result = comma(state, action);
-    expect(result).toBe('20,');
+  it('adds comma to state', () => {
+    const value = ',';
+    const action = createAction(constants.COMMA, { value, data });
 
-    state = '0';
-    result = comma(state, action);
-    expect(result).toBe('0,');
+    expect(comma('20', action)).toBe('20,');
+    expect(comma('0', action)).toBe('0,');
   });
 
-  it('should reset string to 0,', () => {
-    let state = '150';
-    let value = ',';
-    let action = createAction(constants.COMMA, { value, data });
+  it('resets string to 0,', () => {
+    const state = '150';
+    const value = ',';
+    const action = createAction(constants.COMMA, { value, data });
+
     action.data.calculated = true;
-    let result = comma(state, action);
-    expect(result).toBe('0,');
+
+    expect(comma(state, action)).toBe('0,');
   });
 
-  it('should not add another comma', () => {
-    let state = '150,';
-    let value = ',';
-    let action = createAction(constants.COMMA, { value, data });
-    let result = comma(state, action);
-    expect(result).toBe('150,');
+  it('does not add another comma', () => {
+    const state = '150,';
+    const value = ',';
+    const action = createAction(constants.COMMA, { value, data });
+
+    expect(comma(state, action)).toBe('150,');
   });
 });

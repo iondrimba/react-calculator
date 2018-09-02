@@ -1,13 +1,12 @@
 import { CALC, CLEAR } from '../actions/constants';
 
-
 function _appendValueToNewItem({ state, data }) {
   const { historyDisplay, displayValue } = data;
-
   let newItem = '';
 
   if (state.length >= 1) {
     const operator = historyDisplay.substr(historyDisplay.length - 3, 3);
+
     newItem = `${operator}${displayValue}`;
   }
 
@@ -31,7 +30,6 @@ function _addCalculatedToHistory({ data, state, newItem }) {
 
   if (historyDisplay.length) {
     output = _addToHistory({ data, newItem, state });
-
     output = output.length ? output : [...state];
   }
 
@@ -39,8 +37,9 @@ function _addCalculatedToHistory({ data, state, newItem }) {
 }
 
 function history(state = [], action) {
-  let newItem = '';
+  const newItem = '';
   let output = [];
+
   switch (action.type) {
     case CLEAR:
       state = output;

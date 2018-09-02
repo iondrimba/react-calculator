@@ -1,4 +1,4 @@
-let MapKeys = [
+const MapKeys = [
   {
     key: 'Delete',
     label: 'C',

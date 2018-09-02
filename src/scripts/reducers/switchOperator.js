@@ -3,6 +3,7 @@ import helper from '../model/helper';
 
 function switchOperator(state = '', action) {
   let output = '';
+
   switch (action.type) {
     case SWITCH_OPERATOR:
       if (helper.isPositiveNumber(state)) {
@@ -13,6 +14,7 @@ function switchOperator(state = '', action) {
 
       return output;
   }
+
   return state;
 }
 

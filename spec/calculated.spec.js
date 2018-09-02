@@ -4,26 +4,27 @@ import * as constants from '../src/scripts/actions/constants';
 import dataFixture from './dataFixture';
 
 describe('Calculated reducer tests', () => {
-
   let data = {};
 
   beforeEach(function () {
-    data = { ...dataFixture };
+    data = Object.assign({}, data, dataFixture);
   });
 
-  it('should set calculated flag to true', () => {
-    let state = false;
-    let value = true;
-    let action = createAction(constants.CALCULATED, { value, data });
-    let result = calculated(state, action);
+  it('calculates flag to true', () => {
+    const state = false;
+    const value = true;
+    const action = createAction(constants.CALCULATED, { value, data });
+    const result = calculated(state, action);
+
     expect(result).toBe(true);
   });
 
-  it('should set calculated flag to false', () => {
-    let state = true;
-    let value = false;
-    let action = createAction(constants.CALCULATED, { value, data });
-    let result = calculated(state, action);
+  it('calculates flag to false', () => {
+    const state = true;
+    const value = false;
+    const action = createAction(constants.CALCULATED, { value, data });
+    const result = calculated(state, action);
+
     expect(result).toBe(false);
   });
 });

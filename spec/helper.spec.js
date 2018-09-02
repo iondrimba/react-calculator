@@ -1,7 +1,6 @@
 import helper from '../src/scripts/model/helper';
 
 describe('Helper tests', () => {
-
   it('isNumberZero - should return true', () => {
     let result = helper.isNumberZero('0');
     expect(result).toBe(true);
@@ -33,7 +32,6 @@ describe('Helper tests', () => {
     result = helper.hasValue([]);
     expect(result).toBe(false);
   });
-
 
   it('isEmpty - should return true', () => {
     let result = helper.isEmpty('');

@@ -8,7 +8,6 @@ import percent from '../reducers/percent';
 import history from '../reducers/history';
 import calc from '../reducers/calc';
 
-
 function displayValue(state = '', action) {
   switch (action.type) {
     case constants.SWITCH_OPERATOR:
@@ -25,8 +24,8 @@ function displayValue(state = '', action) {
       return add(percent(action.data.historyDisplay, action), action);
     case constants.ADD:
       return comma(add(state, action), action);
-
   }
+
   return state;
 }
 

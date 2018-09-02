@@ -18,7 +18,7 @@ function _appendOperatorToHistory({ output, historyDisplay, displayValue, value,
 }
 
 function operator(state = '0', action) {
-  let { historyDisplay, displayValue, calculated } = action.data;
+  const { historyDisplay, displayValue, calculated } = action.data;
   let output = '0';
 
   switch (action.type) {
@@ -31,6 +31,7 @@ function operator(state = '0', action) {
 
       return output;
   }
+
   return state;
 }
 

@@ -14,13 +14,14 @@ function _formatOutput({ output, result }) {
 function _calculate({ history, expression }) {
   return history.reduce(function (a, b) {
     expression = helper.commaToPoint(a);
+
     return b = eval(eval(expression) + helper.commaToPoint(b));
   });
 }
 
 function calc(state = [], action) {
-  let history = [...state];
-  let { displayValue } = action.data;
+  const history = [...state];
+  const { displayValue } = action.data;
   let expression = '';
   let result = 0;
   let output = '';
@@ -36,8 +37,6 @@ function calc(state = [], action) {
         }
 
         output = _formatOutput({ output, result });
-
-
       } else {
         output = displayValue;
       }

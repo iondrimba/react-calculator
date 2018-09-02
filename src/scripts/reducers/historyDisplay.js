@@ -10,6 +10,7 @@ function historyDisplay(state = '', action) {
     case OPERATOR:
       return operator(action.data.historyDisplay, action);
   }
+
   return state;
 }
 

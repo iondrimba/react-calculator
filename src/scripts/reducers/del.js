@@ -10,8 +10,10 @@ function del(state = '0', action) {
       if (helper.isNaN(output) || helper.isNumberZero(output)) {
         output = '0';
       }
+
       return output;
   }
+
   return state;
 }
 

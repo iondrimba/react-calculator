@@ -5,16 +5,21 @@ class SoundIcon extends React.Component {
   constructor(props) {
     super(props);
   }
+
   onClick() {
     this.props.onClick(!this.props.muted);
   }
+
   getMutedCss(muted) {
     let css = Styles.soundIcon;
+
     if (muted) {
       css = `${css} ${Styles['soundIcon--muted']}`
     }
+
     return css;
   }
+
   render() {
     return (
       <div muted={this.props.muted} >

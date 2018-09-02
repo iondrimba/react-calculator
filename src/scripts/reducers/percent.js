@@ -2,7 +2,7 @@ import { PERCENT } from '../actions/constants';
 import helper from '../model/helper';
 
 function percent(state = '0', action) {
-  let { historyDisplay, displayValue } = action.data;
+  const { historyDisplay, displayValue } = action.data;
   let output = '0';
 
   switch (action.type) {
@@ -14,6 +14,7 @@ function percent(state = '0', action) {
 
       return output;
   }
+
   return state;
 }
 

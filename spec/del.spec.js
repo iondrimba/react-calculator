@@ -4,19 +4,19 @@ import * as constants from '../src/scripts/actions/constants';
 import dataFixture from './dataFixture';
 
 describe('Del reducer tests', () => {
-
   let data = {};
 
   beforeEach(function () {
-    data = { ...dataFixture };
+    data = Object.assign({}, data, dataFixture);
   });
 
-  it('should delete char', () => {
-    let state = '20,12';
-    let value = '';
-    let action = createAction(constants.DEL, { value, data });
+  it('deletes char', () => {
+    const state = '20,12';
+    const value = '';
+    const action = createAction(constants.DEL, { value, data });
     let result = del(state, action);
-    expect(result).toBe('20,1');
+
+    expect(del(state, action)).toBe('20,1');
 
     result = del(result, action);
     expect(result).toBe('20,');
@@ -30,8 +30,7 @@ describe('Del reducer tests', () => {
     result = del(result, action);
     expect(result).toBe('0');
 
-    state = '-2';
-    result = del(state, action);
+    result = del('-2', action);
     expect(result).toBe('0');
   });
 });

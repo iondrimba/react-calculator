@@ -1,86 +1,84 @@
-import helper from '../src/scripts/model/helper';
 import createAction from '../src/scripts/actions/createAction';
 import * as constants from '../src/scripts/actions/constants';
 import dataFixture from './dataFixture';
 import history from '../src/scripts/reducers/history';
 
 describe('History Reducer tests', () => {
-
   let data = {};
 
-  beforeEach(function () {
-    data = { ...dataFixture };
+  beforeEach(() => {
+    data = Object.assign({}, data, dataFixture);
   });
 
-  afterEach(function () {
-    data = { ...dataFixture };
+  afterEach(() => {
+    data = Object.assign({}, data, dataFixture);
   });
 
-  it('should add item to history', () => {
-    let state = [];
-    let value = '+';
-    let action = createAction(constants.CALC, { value, data });
+  it('adds item to history', () => {
+    const state = [];
+    const value = '+';
+    const action = createAction(constants.CALC, { value, data });
+
     action.data.displayValue = '59';
     action.data.historyDisplay = '20+';
 
-    let result = history(state, action);
-    expect(result.length).toBe(1);
+    expect(history(state, action).length).toBe(1);
   });
 
-  it('should match historyDisplay', () => {
-    let state = [];
-    let value = '+';
-    let action = createAction(constants.CALC, { value, data });
+  it('matches historyDisplay', () => {
+    const state = [];
+    const value = '+';
+    const action = createAction(constants.CALC, { value, data });
+
     action.data.displayValue = '59';
     action.data.historyDisplay = '20+';
 
-    let result = history(state, action);
-    expect(result[0]).toBe('20+59');
+    expect(history(state, action)[0]).toBe('20+59');
   });
 
-  it('should have length > 1', () => {
-    let state = ['20+59'];
-    let value = '*';
-    let action = createAction(constants.CALC, { value, data });
+  it('has length > 1', () => {
+    const state = ['20+59'];
+    const value = '*';
+    const action = createAction(constants.CALC, { value, data });
+
     action.data.displayValue = '10';
     action.data.historyDisplay = state[0];
 
-    let result = history(state, action);
-    expect(result.length).toBe(2);
+    expect(history(state, action).length).toBe(2);
   });
 
-  it('should match second history item', () => {
-    let state = ['20 + 59 * '];
-    let value = '1';
-    let action = createAction(constants.CALC, { value, data });
+  it('matches second history item', () => {
+    const state = ['20 + 59 * '];
+    const value = '1';
+    const action = createAction(constants.CALC, { value, data });
+
     action.data.displayValue = '10';
     action.data.historyDisplay = state[0];
 
-    let result = history(state, action);
-    expect(result[1]).toBe(' * 10');
+    expect(history(state, action)[1]).toBe(' * 10');
   });
 
-  it('should not add item to history', () => {
-    let state = ['20 + 59', ' * 10'];
-    let value = '1';
-    let action = createAction(constants.CALC, { value, data });
+  it('does not add item to history', () => {
+    const state = ['20 + 59', ' * 10'];
+    const value = '1';
+    const action = createAction(constants.CALC, { value, data });
+
     action.data.displayValue = '20';
     action.data.calculated = true;
     action.data.historyDisplay = '20 + 59 * 10';
 
-    let result = history(state, action);
-    expect(result.length).toBe(2);
+    expect(history(state, action).length).toBe(2);
   });
 
-  it('should be empty', () => {
-    let state = ['20 + 59', ' * 10'];
-    let value = '1';
-    let action = createAction(constants.CALC, { value, data });
+  it('return empty history', () => {
+    const state = ['20 + 59', ' * 10'];
+    const value = '1';
+    const action = createAction(constants.CALC, { value, data });
+
     action.data.displayValue = '20';
     action.data.calculated = true;
     action.data.historyDisplay = '';
 
-    let result = history(state, action);
-    expect(result.length).toBe(0);
+    expect(history(state, action).length).toBe(0);
   });
 });

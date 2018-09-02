@@ -6,6 +6,7 @@ function muted(state = false, action) {
       return action.value;
 
   }
+
   return state;
 }
 

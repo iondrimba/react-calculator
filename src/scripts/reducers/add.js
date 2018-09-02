@@ -7,6 +7,7 @@ function _concatValues(calculated, state, lastCommand, value) {
 
 function _getLastCommand(commands) {
   let lastCommand = [];
+
   if (commands.length > 1) {
     lastCommand = commands.pop();
   }
@@ -16,6 +17,7 @@ function _getLastCommand(commands) {
 
 function _getCommands(historyDisplay) {
   let commands = [];
+
   if (historyDisplay) {
     commands = historyDisplay.split('');
   }
@@ -40,9 +42,9 @@ function _getOutput(conditional, firstResult, secondResult) {
 const maxDisplay = 15;
 
 function add(state = '', action) {
-  let lastCommand = [];
-  let { historyDisplay, displayValue, calculated } = action.data;
   let output = '';
+  let lastCommand = [];
+  const { historyDisplay, displayValue, calculated } = action.data;
 
   switch (action.type) {
     case ADD:

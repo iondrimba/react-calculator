@@ -3,17 +3,20 @@ import Styles from '../../scss/button.scss';
 
 class Button extends React.Component {
   isActive() {
-    let pattern = `${Styles.active}`;
-    let regex = new RegExp(pattern, 'gi');
+    const pattern = `${Styles.active}`;
+    const regex = new RegExp(pattern, 'gi');
+
     return this.props.className.match(regex) !== null;
   }
   onClick(evt) {
     evt.preventDefault();
     evt.currentTarget.blur();
+
     this.props.onClick(this.props.id);
   }
   onMouseDown(evt) {
     evt.preventDefault();
+
     this.props.onMouseDown(this.props.id);
   }
   render() {

@@ -11,6 +11,7 @@ class Home extends React.Component {
   componentDidMount() {
     this.onClick = this.onButtonClick.bind(this);
     this.onMouseDown = this.onMouseDown.bind(this);
+
     document.body.onkeydown = this.onKeyDown.bind(this);
     document.body.onkeyup = this.onKeyUp.bind(this);
 
@@ -25,14 +26,18 @@ class Home extends React.Component {
       });
     });
   }
+
   onKeyDown(evt) {
     let button = this.refs['calculator'].refs[evt.key];
+
     if (button && !button.isActive()) {
       this.props.keyDownAction(evt.key);
     }
   }
+
   onKeyUp(evt) {
     let button = this.refs['calculator'].refs[evt.key];
+
     if (button) {
       this.sound.mute(this.props.muted);
       this.sound.play();
@@ -41,18 +46,22 @@ class Home extends React.Component {
     this.props.keyDownAction('');
     this.props.keyUpAction(evt.key, this.props);
   }
+
   onButtonClick(key) {
     this.sound.mute(this.props.muted);
     this.sound.play();
     this.props.keyDownAction('');
     this.props.keyUpAction(key, this.props);
   }
+
   onMouseDown(key) {
     this.props.keyDownAction(key);
   }
+
   onMuteIconClick(value) {
     this.props.muteAction(value);
   }
+
   render() {
     return (
       <div className={Styles.home}>

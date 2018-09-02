@@ -10,31 +10,39 @@ function mapStateToProps(store) {
 function _isActiveCSS(css, key, keyDown, Styles) {
   let active = '';
   let className = '';
+
   if (key === keyDown) {
     active = Styles.active;
   }
+
   className = `${css} ${active}`;
+
   return className;
 }
 
 function _getButtonClass(elmt, Styles) {
   let css = '';
+
   if (elmt.type === 'operator') {
     css = Styles.button_primaryOperator;
   }
+
   if (elmt.type === 'result') {
     css = Styles.button_runOperator;
   }
+
   return `${Styles.button} ${css}`;
 }
 
 function _keyUpAction(key, props) {
-  let { displayValue, historyDisplay, calculated, history } = props;
+  const { displayValue, historyDisplay, calculated, history } = props;
+
   props.keys.map((elmt) => {
     if (key === elmt.key) {
       props[elmt.command](key, { displayValue, historyDisplay, calculated, history });
     }
   });
+
   return false;
 }
 

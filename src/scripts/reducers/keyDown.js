@@ -5,6 +5,7 @@ function keyDown(state = '', action) {
     case KEY_DOWN:
       return action.value;
   }
+
   return state;
 }
 
