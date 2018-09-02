@@ -12,7 +12,7 @@
 - React + Redux
 - Sass
 - ES6
-- Jasmine + Karma + Enzyme
+- Jest + Enzyme
 - Webpack
 
 ## Features:
