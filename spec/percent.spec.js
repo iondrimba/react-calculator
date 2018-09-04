@@ -11,7 +11,7 @@ describe('Clear reducer tests', () => {
   });
 
   describe('default action', () => {
-    describe('when action.type not CLEAR', () => {
+    describe('when no matching action.type present', () => {
       it('returns default state', () => {
         const state = '2';
         const value = '99';
