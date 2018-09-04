@@ -39,4 +39,28 @@ describe('Add reducers tests', () => {
 
     expect(result).toBe('0,30');
   });
+
+  describe('_getLastCommand', () => {
+    it('appends string with last command filled', () => {
+      const localData = Object.assign({}, data, { historyDisplay: '90 +' });
+      const state = '0,';
+      const value = '30';
+      const action = createAction(constants.ADD, { value, data: localData });
+      const result = add(state, action);
+
+      expect(result).toBe('0,30');
+    });
+  });
+
+  describe('_appendValues', () => {
+    it('appends string', () => {
+      const localData = Object.assign({}, data, { historyDisplay: '90 +' });
+      const state = '';
+      const value = '30';
+      const action = createAction(constants.ADD, { value, data: localData });
+      const result = add(state, action);
+
+      expect(result).toBe('30');
+    });
+  });
 });
