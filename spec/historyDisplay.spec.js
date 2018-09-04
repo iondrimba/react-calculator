@@ -44,4 +44,18 @@ describe('HistoryDisplay Reducer tests', () => {
 
     expect(historyDisplay(state, action)).toBe('');
   });
+
+  describe('default action', () => {
+    describe('when no matching action.type present', () => {
+      it('returns default state', () => {
+        const state = '59 + ';
+        const value = '-';
+        const action = createAction(constants.ADD, { value, data });
+
+        action.data.displayValue = '59';
+
+        expect(historyDisplay(state, action)).toBe('59 + ');
+      });
+    });
+  });
 });

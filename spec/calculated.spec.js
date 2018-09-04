@@ -27,4 +27,17 @@ describe('Calculated reducer tests', () => {
 
     expect(result).toBe(false);
   });
+
+  describe('default action', () => {
+    describe('when action.type not CALCULATED', () => {
+      it('returns default state', () => {
+        const state = false;
+        const value = true;
+        const action = createAction(constants.ADD, { value, data });
+        const result = calculated(state, action);
+
+        expect(result).toBe(false);
+      });
+    });
+  });
 });
