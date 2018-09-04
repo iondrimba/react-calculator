@@ -124,7 +124,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  // testEnvironment: 'jest-environment-jsdom',
+  testEnvironment: 'jest-environment-jsdom',
 
   // Options that will be passed to the testEnvironment
   // testEnvironmentOptions: {},
@@ -134,14 +134,13 @@ module.exports = {
 
   // The glob patterns Jest uses to detect test files
   testMatch: [
-    '**/spec/**/*.spec.js?(x)',
-    '**/?(*.)+(spec|test).spec.js?(x)'
+    '**/spec/**/*.spec.js?(x)'
   ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   '/node_modules/'
-  // ],
+  testPathIgnorePatterns: [
+    '/node_modules/'
+  ],
 
   // The regexp pattern Jest uses to detect test files
   // testRegex: '',
@@ -162,9 +161,9 @@ module.exports = {
   // transform: null,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-  // transformIgnorePatterns: [
-  //   '/node_modules/'
-  // ],
+  transformIgnorePatterns: [
+    '/node_modules/'
+  ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
