@@ -18,4 +18,17 @@ describe('Clear reducer tests', () => {
 
     expect(result).toBe('0');
   });
+
+  describe('default action', () => {
+    describe('when action.type not CLEAR', () => {
+      it('returns default state', () => {
+        const state = '2';
+        const value = '99';
+        const action = createAction(constants.ADD, { value, data });
+        const result = clear(state, action);
+
+        expect(result).toBe('2');
+      });
+    });
+  });
 });
