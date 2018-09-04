@@ -17,6 +17,26 @@ describe('Button', () => {
     expect(wrapper.props().className).toBe('button active');
   });
 
+  describe('.isActive', () => {
+    describe('when button has active class', () => {
+      it('returns true', () => {
+        const wrapper = mount(<Button label="Add" className="button active" id="1" />);
+        const instance = wrapper.instance();
+
+        expect(instance.isActive()).toBe(true);
+      });
+    });
+
+    describe('when button does not havve active class', () => {
+      it('returns false', () => {
+        const wrapper = mount(<Button label="Add" className="button" id="1" />);
+        const instance = wrapper.instance();
+
+        expect(instance.isActive()).toBe(false);
+      });
+    });
+  });
+
   describe('.onClick', () => {
     it('calls onClick', () => {
       spyOn(Button.prototype, 'onClick');
