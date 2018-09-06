@@ -452,11 +452,9 @@ AddDefaultCharset utf-8
 </FilesMatch>
 
 
-
- <IfModule mod_headers.c>
-     Header always set Strict-Transport-Security "max-age=16070400; includeSubDomains"
- </IfModule>
-
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
 
 <IfModule mod_headers.c>
     Header set X-Content-Type-Options "nosniff"
