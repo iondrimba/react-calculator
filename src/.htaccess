@@ -348,11 +348,11 @@ AddDefaultCharset utf-8
 # Redirect from the `http://` to the `https://` version of the URL.
 # https://wiki.apache.org/httpd/RewriteHTTPToHTTPS
 
-# <IfModule mod_rewrite.c>
-#    RewriteEngine On
-#    RewriteCond %{HTTPS} !=on
-#    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-# </IfModule>
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+   RewriteCond %{HTTPS} !=on
+   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | Suppressing the `www.` at the beginning of URLs                    |
@@ -490,19 +490,19 @@ AddDefaultCharset utf-8
 # https://www.html5rocks.com/en/tutorials/security/content-security-policy/
 # https://w3c.github.io/webappsec-csp/
 
-# <IfModule mod_headers.c>
+<IfModule mod_headers.c>
 
-#     Header set Content-Security-Policy "script-src 'self'; object-src 'self'"
+    Header set Content-Security-Policy "script-src 'self'; object-src 'self'"
 
-#     # `mod_headers` cannot match based on the content-type, however,
-#     # the `Content-Security-Policy` response header should be send
-#     # only for HTML documents and not for the other resources.
+    # `mod_headers` cannot match based on the content-type, however,
+    # the `Content-Security-Policy` response header should be send
+    # only for HTML documents and not for the other resources.
 
-#     <FilesMatch "\.(appcache|atom|bbaw|bmp|br|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|gz|htc|ic[os]|jpe?g|m?js|json(ld)?|m4[av]|manifest|map|markdown|md|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcard|vcf|vtt|wasm|webapp|web[mp]|webmanifest|woff2?|xloc|xml|xpi)$">
-#         Header unset Content-Security-Policy
-#     </FilesMatch>
+    <FilesMatch "\.(appcache|atom|bbaw|bmp|br|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|gz|htc|ic[os]|jpe?g|m?js|json(ld)?|m4[av]|manifest|map|markdown|md|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcard|vcf|vtt|wasm|webapp|web[mp]|webmanifest|woff2?|xloc|xml|xpi)$">
+        Header unset Content-Security-Policy
+    </FilesMatch>
 
-# </IfModule>
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | File access                                                        |
@@ -605,13 +605,13 @@ AddDefaultCharset utf-8
 # (3) https://tools.ietf.org/html/rfc6797#section-7.2
 # (4) https://stackoverflow.com/questions/24144552/how-to-set-hsts-header-from-htaccess-only-on-https/24145033#comment81632711_24145033
 
-# <IfModule mod_headers.c>
-#     Header always set Strict-Transport-Security "max-age=16070400; includeSubDomains"
-#     # (1) or if HSTS preloading is desired (respect (2) for current requirements):
-#     # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
-#     # (4) respectively… (respect (2) for current requirements):
-#     # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" "expr=%{HTTPS} == 'on'"
-# </IfModule>
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=16070400; includeSubDomains; preload"
+    # (1) or if HSTS preloading is desired (respect (2) for current requirements):
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+    # (4) respectively… (respect (2) for current requirements):
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" "expr=%{HTTPS} == 'on'"
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | Reducing MIME type security risks                                  |
@@ -669,20 +669,20 @@ AddDefaultCharset utf-8
 # https://blogs.msdn.microsoft.com/ieinternals/2011/01/31/controlling-the-xss-filter/
 # https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29
 
-# <IfModule mod_headers.c>
+<IfModule mod_headers.c>
 
-#     #                           (1)    (2)
-#     Header set X-XSS-Protection "1; mode=block"
+    #                           (1)    (2)
+    Header set X-XSS-Protection "1; mode=block"
 
-#     # `mod_headers` cannot match based on the content-type, however,
-#     # the `X-XSS-Protection` response header should be send only for
-#     # HTML documents and not for the other resources.
+    # `mod_headers` cannot match based on the content-type, however,
+    # the `X-XSS-Protection` response header should be send only for
+    # HTML documents and not for the other resources.
 
-#     <FilesMatch "\.(appcache|atom|bbaw|bmp|br|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|gz|htc|ic[os]|jpe?g|m?js|json(ld)?|m4[av]|manifest|map|markdown|md|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcard|vcf|vtt|wasm|webapp|web[mp]|webmanifest|woff2?|xloc|xml|xpi)$">
-#         Header unset X-XSS-Protection
-#     </FilesMatch>
+    <FilesMatch "\.(appcache|atom|bbaw|bmp|br|crx|css|cur|eot|f4[abpv]|flv|geojson|gif|gz|htc|ic[os]|jpe?g|m?js|json(ld)?|m4[av]|manifest|map|markdown|md|mp4|oex|og[agv]|opus|otf|pdf|png|rdf|rss|safariextz|svgz?|swf|topojson|tt[cf]|txt|vcard|vcf|vtt|wasm|webapp|web[mp]|webmanifest|woff2?|xloc|xml|xpi)$">
+        Header unset X-XSS-Protection
+    </FilesMatch>
 
-# </IfModule>
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | Referrer Policy                                                    |
@@ -871,42 +871,42 @@ ServerSignature Off
 #
 # https://httpd.apache.org/docs/current/mod/mod_brotli.html#precompressed
 
-# <IfModule mod_headers.c>
+<IfModule mod_headers.c>
 
-#     RewriteCond %{HTTP:Accept-Encoding} br
-#     RewriteCond %{REQUEST_FILENAME}\.br -f
-#     RewriteRule \.(css|ics|js|json|html|svg)$ %{REQUEST_URI}.br [L]
+    RewriteCond %{HTTP:Accept-Encoding} br
+    RewriteCond %{REQUEST_FILENAME}\.br -f
+    RewriteRule \.(css|ics|js|json|html|svg)$ %{REQUEST_URI}.br [L]
 
-#     # Prevent mod_deflate double gzip
-#     RewriteRule \.br$ - [E=no-gzip:1]
+    # Prevent mod_deflate double gzip
+    RewriteRule \.br$ - [E=no-gzip:1]
 
-#     <FilesMatch "\.br$">
+    <FilesMatch "\.br$">
 
-#         <IfModule mod_mime.c>
-#             # Serve correct content types
-#             AddType text/css              css.br
-#             AddType text/calendar         ics.br
-#             AddType text/javascript       js.br
-#             AddType application/json      json.br
-#             AddType text/html             html.br
-#             AddType image/svg+xml         svg.br
+        <IfModule mod_mime.c>
+            # Serve correct content types
+            AddType text/css              css.br
+            AddType text/calendar         ics.br
+            AddType text/javascript       js.br
+            AddType application/json      json.br
+            AddType text/html             html.br
+            AddType image/svg+xml         svg.br
 
-#             # Serve correct content charset
-#             AddCharset utf-8 .css.br \
-#                              .ics.br \
-#                              .js.br \
-#                              .json.br
-#         </IfModule>
+            # Serve correct content charset
+            AddCharset utf-8 .css.br \
+                             .ics.br \
+                             .js.br \
+                             .json.br
+        </IfModule>
 
-#         # Force proxies to cache brotlied and non-brotlied files separately
-#         Header append Vary Accept-Encoding
+        # Force proxies to cache brotlied and non-brotlied files separately
+        Header append Vary Accept-Encoding
 
-#     </FilesMatch>
+    </FilesMatch>
 
-#     # Serve correct encoding type
-#     AddEncoding br .br
+    # Serve correct encoding type
+    AddEncoding br .br
 
-# </IfModule>
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | GZip pre-compressed content                                        |
@@ -1022,7 +1022,7 @@ FileETag None
 <IfModule mod_expires.c>
 
     ExpiresActive on
-    ExpiresDefault                                      "access plus 1 month"
+    ExpiresDefault                                      "access plus 1 year"
 
   # CSS
 
