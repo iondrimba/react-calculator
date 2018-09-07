@@ -122,6 +122,8 @@ Options -MultiViews
 
 <IfModule mod_headers.c>
 
+    Header set X-UA-Compatible "IE=edge"
+
     # `mod_headers` cannot match based on the content-type, however,
     # the `X-UA-Compatible` response header should be send only for
     # HTML documents and not for the other resources.
@@ -183,6 +185,7 @@ Options -MultiViews
     AddType application/manifest+json                   webmanifest
     AddType application/x-web-app-manifest+json         webapp
     AddType text/cache-manifest                         appcache
+
 
   # Media files
 
@@ -1119,24 +1122,6 @@ FileETag None
   # Other
 
     ExpiresByType text/x-cross-domain-policy            "access plus 1 week"
-
-    <IfModule mod_headers.c>
-
-        # Because `mod_headers` cannot match based on the content-type,
-        # the following workaround needs to be done.
-
-        # 1) Add the `immutable` value to the `Cache-Control` header
-        #    to all resources.
-
-        Header merge Cache-Control immutable
-
-        # 2) Remove the value for all resources that shouldn't be have it.
-
-        <FilesMatch "\.(appcache|cur|geojson|ico|json(ld)?|x?html?|topojson|xml)$">
-            Header edit Cache-Control immutable ""
-        </FilesMatch>
-
-    </IfModule>
 
 </IfModule>
 
