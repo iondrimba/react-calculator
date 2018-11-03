@@ -7,7 +7,8 @@
     "beforeEach": true,
     "jest": true,
     "afterEach": true,
-    "spyOn": true
+    "spyOn": true,
+    "ga": true
   },
   "plugins": [
     "react"

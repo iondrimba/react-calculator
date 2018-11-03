@@ -21,5 +21,22 @@ describe('Clear reducer tests', () => {
         expect(result).toBe('2');
       });
     });
+
+    describe('when matching action.type present', () => {
+      it('returns 0,525', () => {
+        const state = '10,50*';
+        const value = '5';
+        const action = createAction(constants.PERCENT, { value, data:{
+          displayValue: '5',
+          historyDisplay: '10,50 * ',
+          calculated: false,
+          history:[]
+        }});
+
+        const result = percent(state, action);
+
+        expect(result).toBe('0,525');
+      });
+    });
   });
 });

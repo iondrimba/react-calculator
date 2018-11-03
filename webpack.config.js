@@ -1,13 +1,13 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
 require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var WebpackCleanupPlugin = require('webpack-cleanup-plugin');
-var CompressionPlugin = require('compression-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var isProduction = (process.env.NODE_ENV === 'production');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const isProduction = (process.env.NODE_ENV === 'production');
 
-var config = {
+const config = {
   resolve: {
     extensions: ['', '.js', '.jsx', '.json', '.mp3', '.ico']
   },

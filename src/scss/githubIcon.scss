@@ -2,17 +2,17 @@
   display: none;
   fill: #ffffff;
   left: 50%;
-  margin-top: 30px;
+  margin-top: 50px;
   position: relative;
-  transform: translateX(-50%);
+  transform: translate(0, -50%);
 
   span {
     visibility: hidden;
   }
 
   &:active {
-    left: 50.5%;
-    top: 2px;
+    left: 50.1%;
+    top: 1px;
   }
 
   &:hover {
