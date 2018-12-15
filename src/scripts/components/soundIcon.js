@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Styles from '../../scss/soundIcon.scss';
 
 class SoundIcon extends React.Component {
@@ -35,8 +36,8 @@ class SoundIcon extends React.Component {
 }
 
 SoundIcon.propTypes = {
-  muted: React.PropTypes.bool,
-  onClick: React.PropTypes.func
+  muted: PropTypes.bool,
+  onClick: PropTypes.func
 };
 
 export default SoundIcon;

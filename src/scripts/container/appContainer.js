@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Home from '../views/home.jsx';
+import Home from '../views/home.js';
 import createAction from '../actions/createAction';
 import * as constants from '../actions/constants';
 

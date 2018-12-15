@@ -1,3 +1,5 @@
+@import './variables';
+
 .calculator {
   display: flex;
   flex-direction: column;
@@ -5,7 +7,7 @@
 
   &__header {
     align-content: space-between;
-    background-color: #ffffff;
+    background-color: $air;
     display: inherit;
     flex-basis: 38%;
     flex-wrap: wrap;
@@ -13,7 +15,7 @@
   }
 
   &__body {
-    background-color: #333333;
+    background-color: $base-color;
     display: inherit;
     flex: 1 auto;
     flex-basis: 77%;
