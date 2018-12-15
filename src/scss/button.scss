@@ -8,7 +8,7 @@
   border-right: 1px solid $border-color;
   border-top: 0;
   box-shadow: inset -1px -1px 0 0 $button-shadow;
-  color: #ffffff;
+  color: #fff;
   cursor: pointer;
   font-size: 1.1rem;
   outline: none;
@@ -27,7 +27,7 @@
     border-bottom: 0;
     border-right: 0;
     box-shadow: 1px 6px 20px 5px $button-shadow;
-    color: #ffffff;
+    color: #fff;
     font-weight: bold;
   }
 
@@ -41,7 +41,9 @@
   box-shadow: inset 0 -3px 8px 0 $button-shadow;
 }
 
-.button:nth-child(17), .button:nth-child(18), .button:nth-child(19) {
+.button:nth-child(17),
+.button:nth-child(18),
+.button:nth-child(19) {
   border-bottom: 0;
   box-shadow: inset -1px 0 0 0 $button-shadow;
 
