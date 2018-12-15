@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../../scss/button.scss';
 
 class Button extends React.Component {
@@ -27,17 +28,17 @@ class Button extends React.Component {
   }
   render() {
     return (
-      <button ref={'btn'} type={'button'} onTouchStart={this.onMouseDown} onTouchEnd={this.onClick} onMouseDown={this.onMouseDown} onClick={this.onClick} className={this.props.className}>{this.props.label}</button>
+      <button ref={(button) => { this.btn = button; }} type={'button'} onTouchStart={this.onMouseDown} onTouchEnd={this.onClick} onMouseDown={this.onMouseDown} onClick={this.onClick} className={this.props.className}>{this.props.label}</button>
     );
   }
 }
 
 Button.propTypes = {
-  id: React.PropTypes.string,
-  label: React.PropTypes.string,
-  onClick: React.PropTypes.func,
-  onMouseDown: React.PropTypes.func,
-  className: React.PropTypes.string
+  id: PropTypes.string,
+  label: PropTypes.string,
+  onClick: PropTypes.func,
+  onMouseDown: PropTypes.func,
+  className: PropTypes.string
 };
 
 export default Button;

@@ -1,5 +1,6 @@
 import React from 'react';
-import Button from '../components/button.jsx';
+import PropTypes from 'prop-types';
+import Button from '../components/button.js';
 import SoundIcon from '../components/soundIcon';
 import Styles from '../../scss/calculator.scss';
 import StylesButton from '../../scss/button.scss';
@@ -32,16 +33,16 @@ class Calculator extends React.Component {
 }
 
 Calculator.propTypes = {
-  muteIconClick: React.PropTypes.func
-  , buttonClick: React.PropTypes.func
-  , onMouseDown: React.PropTypes.func
-  , displayValue: React.PropTypes.number
-  , historyDisplay: React.PropTypes.string
-  , keyDown: React.PropTypes.string
-  , muted: React.PropTypes.bool
-  , getButtonClass: React.PropTypes.func
-  , isActiveCSS: React.PropTypes.func
-  , keys: React.PropTypes.array
+  muteIconClick: PropTypes.func
+  , buttonClick: PropTypes.func
+  , onMouseDown: PropTypes.func
+  , displayValue: PropTypes.string
+  , historyDisplay: PropTypes.string
+  , keyDown: PropTypes.string
+  , muted: PropTypes.bool
+  , getButtonClass: PropTypes.func
+  , isActiveCSS: PropTypes.func
+  , keys: PropTypes.array
 };
 
 export default Calculator;

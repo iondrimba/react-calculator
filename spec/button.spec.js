@@ -1,9 +1,12 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import Button from '../src/scripts/components/button.jsx';
+import { shallow, mount, configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import Button from '../src/scripts/components/button.js';
+
+configure({ adapter: new Adapter() });
 
 describe('Button', () => {
-  it('reners button', () => {
+  it('renders button', () => {
     const wrapper = shallow(<Button label="Add" className="button" id="1" />);
 
     expect(wrapper.props().type).toBe('button');
