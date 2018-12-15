@@ -1,4 +1,5 @@
 @import 'fonts';
+@import './variables';
 
 * {
   box-sizing: border-box;
@@ -10,5 +11,5 @@ button {
 }
 
 a {
-  color: #fff;
+  color: $air;
 }

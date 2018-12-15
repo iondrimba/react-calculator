@@ -8,7 +8,7 @@
   border-right: 1px solid $border-color;
   border-top: 0;
   box-shadow: inset -1px -1px 0 0 $button-shadow;
-  color: #fff;
+  color: $air;
   cursor: pointer;
   font-size: 1.1rem;
   outline: none;
@@ -27,7 +27,7 @@
     border-bottom: 0;
     border-right: 0;
     box-shadow: 1px 6px 20px 5px $button-shadow;
-    color: #fff;
+    color: $air;
     font-weight: bold;
   }
 
