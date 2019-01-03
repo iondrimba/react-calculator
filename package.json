@@ -43,7 +43,7 @@
     "enzyme-adapter-react-16": "^1.7.1",
     "eslint": "5.10.0",
     "eslint-loader": "2.1.1",
-    "eslint-plugin-react": "7.12.1",
+    "eslint-plugin-react": "7.12.2",
     "extract-text-webpack-plugin": "3.0.2",
     "file-loader": "3.0.0",
     "howler": "2.1.1",
