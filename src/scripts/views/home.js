@@ -68,7 +68,11 @@ class Home extends React.Component {
     return (
       <div className={Styles.home}>
         <div className={Styles.home__content}>
-          <Calculator ref={(calculator) => this.calculator = calculator} {...this.props} onMouseDown={this.onMouseDown.bind(this)} buttonClick={this.onButtonClick.bind(this)} muteIconClick={this.onMuteIconClick.bind(this)} />
+          <Calculator ref={(calculator) => this.calculator = calculator}
+            {...this.props}
+            onMouseDown={this.onMouseDown.bind(this)}
+            buttonClick={this.onButtonClick.bind(this)}
+            muteIconClick={this.onMuteIconClick.bind(this)} />
         </div>
         <GithubIcon />
       </div>

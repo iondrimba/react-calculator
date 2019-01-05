@@ -10,6 +10,10 @@ class Button extends React.Component {
     this.onMouseDown = this.onMouseDown.bind(this);
   }
 
+  shouldComponentUpdate(prevProps) {
+    return prevProps.className !== this.props.className;
+  }
+
   isActive() {
     const regex = new RegExp(/active/, 'gi');
 

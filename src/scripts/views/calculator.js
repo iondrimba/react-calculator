@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '../components/button.js';
 import SoundIcon from '../components/soundIcon';
+import Display from '../components/display';
 import Styles from '../../scss/calculator.scss';
 import StylesButton from '../../scss/button.scss';
 
@@ -14,8 +15,8 @@ class Calculator extends React.Component {
       <div className={Styles.calculator}>
         <SoundIcon onClick={this.props.muteIconClick} muted={this.props.muted} />
         <div className={Styles.calculator__header}>
-          <p className={Styles.calculator__history}>{this.props.historyDisplay}</p>
-          <p className={Styles.calculator__result}>{this.props.displayValue}</p>
+          <Display className={Styles.calculator__history} value={this.props.historyDisplay}/>
+          <Display className={Styles.calculator__result} value={this.props.displayValue}/>
         </div>
         <div className={Styles.calculator__body}> {
           this.props.keys.map((elmt, index) => {

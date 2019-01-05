@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Styles from '../../scss/soundIcon.scss';
 
-class SoundIcon extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+class SoundIcon extends Component {
   onClick() {
     this.props.onClick(!this.props.muted);
+  }
+
+  shouldComponentUpdate(prevProps) {
+    return prevProps.muted !== this.props.muted;
   }
 
   getMutedCss(muted) {
