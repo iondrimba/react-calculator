@@ -73,7 +73,7 @@
     "url-loader": "^1.1.2",
     "webpack": "4.28.4",
     "webpack-cleanup-plugin": "0.5.1",
-    "webpack-cli": "^3.2.0",
+    "webpack-cli": "^3.2.1",
     "webpack-dev-server": "3.1.14",
     "webpack-merge": "^4.2.1",
     "workbox-cli": "^3.6.3",
