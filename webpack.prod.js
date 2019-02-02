@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackCleanupPlugin = require('webpack-cleanup-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const isProduction = (process.env.NODE_ENV === 'production');
+const MinifyPlugin = require('babel-minify-webpack-plugin');
 const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
@@ -15,6 +16,7 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: './css/[name].[hash].css',
     }),
+    new MinifyPlugin(),
     new WebpackCleanupPlugin(),
     new HtmlWebpackPlugin({
       title: 'Calculator',
