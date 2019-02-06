@@ -60,7 +60,7 @@
     "raw-loader": "1.0.0",
     "react": "16.8.1",
     "react-addons-test-utils": "15.6.2",
-    "react-dom": "16.8.0",
+    "react-dom": "16.8.1",
     "react-redux": "6.0.0",
     "react-test-renderer": "16.8.0",
     "redux": "4.0.1",
