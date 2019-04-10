@@ -53,7 +53,7 @@
     "image-webpack-loader": "^4.6.0",
     "jest": "^24.7.1",
     "json-loader": "0.5.7",
-    "mini-css-extract-plugin": "^0.5.0",
+    "mini-css-extract-plugin": "^0.6.0",
     "node-sass": "^4.10.0",
     "postcss-cssnext": "3.1.0",
     "postcss-loader": "3.0.0",
