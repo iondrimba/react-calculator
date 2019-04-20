@@ -2,7 +2,7 @@ init:
   - git config --global core.autocrlf false
 environment:
   matrix:
-  - nodejs_version: "8"
+  - nodejs_version: "10"
 
 install:
   - set PATH=C:\Ruby22\bin;%PATH%
