@@ -11,6 +11,9 @@
     "coverage": "./node_modules/.bin/jest --env=jsdom --coverage",
     "workbox": "./node_modules/.bin/workbox generateSW workbox-config.js"
   },
+  "engines": {
+    "node": ">=10"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
     "@babel/runtime": "^7.4.3",
