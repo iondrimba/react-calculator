@@ -8,7 +8,7 @@ install:
   - set PATH=C:\Ruby22\bin;%PATH%
   - ps: Install-Product node $env:nodejs_version
   - gem install sass
-  - gem install scss_lint
+  - gem install scss_lint -v 0.57.1
   - npm install -g npm
   - npm install
 test_script:
