@@ -11,7 +11,13 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
@@ -20,8 +26,8 @@ importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox
  */
 self.__precacheManifest = [
   {
-    "url": "app.e57548ab4944ee7442d7.js",
-    "revision": "16a91a2ceeb780d7352980ac5669241e"
+    "url": "app.54b136b1cfeeb0e8d121.js",
+    "revision": "eb41942c7c89a7040bf397d6d03fcbea"
   },
   {
     "url": "fonts/geosanslight.woff",
@@ -137,8 +143,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "e232abd80014f91cfb5d87d6878d8c1b"
+    "revision": "089bb83efc2345dd115a2e3de8fec1d6"
   }
 ].concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
