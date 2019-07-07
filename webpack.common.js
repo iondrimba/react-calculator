@@ -31,10 +31,10 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-							modules: {
-								mode: 'local',
-								localIdentName: '[local]',
-							},
+              modules: {
+                mode: 'local',
+                localIdentName: '[local]',
+              },
               importLoaders: true,
               sourceMap: true,
               localIdentName: '[local]',
@@ -50,9 +50,9 @@ const config = {
             loader: 'css-loader',
             options: {
               modules: {
-								mode: 'local',
-								localIdentName: '[local]',
-							},
+                mode: 'local',
+                localIdentName: '[local]',
+              },
               import: true,
               importLoaders: true,
             }
