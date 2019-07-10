@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "@babel/runtime": "^7.5.2",
+    "@babel/runtime": "^7.5.4",
     "prop-types": "^15.7.2"
   },
   "jest": {
@@ -27,9 +27,9 @@
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.5.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.4",
     "@babel/plugin-transform-runtime": "^7.5.0",
-    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
     "autoprefixer": "9.6.1",
