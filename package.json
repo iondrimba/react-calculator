@@ -68,7 +68,7 @@
     "react-test-renderer": "16.9.0",
     "redux": "4.0.4",
     "resolve-url-loader": "3.1.0",
-    "sass-loader": "7.1.0",
+    "sass-loader": "7.2.0",
     "style-loader": "1.0.0",
     "stylefmt": "6.0.3",
     "stylelint-config-standard": "18.3.0",
