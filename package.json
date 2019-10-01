@@ -65,7 +65,7 @@
     "react-addons-test-utils": "15.6.2",
     "react-dom": "16.9.0",
     "react-redux": "7.1.1",
-    "react-test-renderer": "16.9.0",
+    "react-test-renderer": "16.10.1",
     "redux": "4.0.4",
     "resolve-url-loader": "3.1.0",
     "sass-loader": "7.3.1",
