@@ -74,7 +74,7 @@
     "stylefmt": "6.0.3",
     "stylelint-config-standard": "19.0.0",
     "stylelint-webpack-plugin": "^1.2.1",
-    "sw-precache-webpack-plugin": "0.11.5",
+    "sw-precache-webpack-plugin": "1.0.0",
     "url-loader": "^3.0.0",
     "webpack": "4.41.5",
     "webpack-cleanup-plugin": "0.5.1",
