@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:9.11-browsers
+      - image: circleci/node:10-browsers
     steps:
       - checkout
       - run: sudo npm install -g npm
