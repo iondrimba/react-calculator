@@ -8,7 +8,7 @@
 
 ## [Live demo](https://calculator.iondrimbafilho.me/)
 
-## Stack:
+## Stack
 
 - React + Redux
 - Sass
@@ -16,7 +16,7 @@
 - Jest + Enzyme
 - Webpack
 
-## Features:
+## Features
 
 - PWA
 - Offline ready
@@ -24,7 +24,7 @@
 - Responsive
 - Keyboard ready
 
-## Todo:
+## Todo
 
 - more tests
 - animations
