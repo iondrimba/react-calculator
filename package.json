@@ -7,8 +7,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --open --config webpack.dev.js",
     "prod": "cross-env NODE_ENV=production ./node_modules/.bin/webpack -p --config webpack.prod.js",
-    "test": "./node_modules/.bin/jest --env=jsdom",
-    "coverage": "./node_modules/.bin/jest --env=jsdom --coverage",
+    "test": "./node_modules/.bin/jest --env=jsdom --coverage",
     "workbox": "./node_modules/.bin/workbox generateSW workbox-config.js"
   },
   "engines": {
@@ -27,6 +26,7 @@
   "devDependencies": {
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.10.4",
+    "@babel/helper-compilation-targets": "^7.10.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
@@ -35,7 +35,7 @@
     "autoprefixer": "9.7.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.3",
-    "babel-jest": "^24.9.0",
+    "babel-jest": "^26.1.0",
     "babel-loader": "^8.0.6",
     "babel-minify-webpack-plugin": "^0.3.1",
     "babel-plugin-webpack-loaders": "0.9.0",
@@ -55,7 +55,7 @@
     "html-loader": "1.1.0",
     "html-webpack-plugin": "3.2.0",
     "image-webpack-loader": "^6.0.0",
-    "jest": "^24.9.0",
+    "jest": "^26.1.0",
     "json-loader": "0.5.7",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
