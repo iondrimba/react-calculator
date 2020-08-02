@@ -33,14 +33,11 @@ jobs:
       matrix:
         node-version: [14.x]
     steps:
-      - name: Execute SSH commmands on remote server
-        uses: JimCronqvist/action-ssh@master
-        env:
-          NAME: "Root"
-        with:
-          hosts: 'ssh root@${{secrets.DIGITAL_OCEAN_IP}}'
-          privateKey: ${{ secrets.SSH_DIGITAL_OCEAN }}
-          debug: true
-          command: |
-            cd /var/www/calculator.iondrimbafilho.me/public_html/
-            git pull
+      - name: ls -a via ssh
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        command: ls -a
+        host: ${{ secrets.DIGITAL_OCEAN_IP }}
+        username: root
+        privateKey: ${{ secrets.SSH_DIGITAL_OCEAN}}
+
