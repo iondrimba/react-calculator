@@ -33,10 +33,10 @@ jobs:
       matrix:
         node-version: [14.x]
     steps:
-      - name: ls -a via ssh
+      - name: SSH Deploy
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: ls -a
+        command: cd /var/www/calculator.iondrimbafilho.me/public_html/ && git pull
         host: ${{ secrets.DIGITAL_OCEAN_IP }}
         username: root
         privateKey: ${{ secrets.SSH_DIGITAL_OCEAN}}
