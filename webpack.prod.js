@@ -29,25 +29,27 @@ module.exports = merge(common, {
       template: './src/index.html',
       inject: 'body'
     }),
-    new CopyWebpackPlugin([
-      {
-        from: 'src/manifest.webmanifest', to: 'manifest.webmanifest'
-      },
-      {
-        from: 'src/.htaccess'
-      },
-      {
-        from: 'src/sounds', to: 'sounds'
-      },
-      {
-        from: 'src/browserconfig.xml', to: 'browserconfig.xml'
-      },
-      {
-        from: 'src/favicon.ico', to: 'favicon.ico'
-      },
-      {
-        from: 'src/images', to: 'images'
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: 'src/manifest.webmanifest', to: 'manifest.webmanifest'
+        },
+        {
+          from: 'src/.htaccess'
+        },
+        {
+          from: 'src/sounds', to: 'sounds'
+        },
+        {
+          from: 'src/browserconfig.xml', to: 'browserconfig.xml'
+        },
+        {
+          from: 'src/favicon.ico', to: 'favicon.ico'
+        },
+        {
+          from: 'src/images', to: 'images'
+        },
+      ]
+    }),
   ]
 });
