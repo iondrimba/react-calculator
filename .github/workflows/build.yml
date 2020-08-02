@@ -1,13 +1,13 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: CI
+name: build
 
 on:
   push:
-    branches: [ master ]
+    branches: [ '*', '!master' ]
   pull_request:
-    branches: [ master ]
+    branches: [ '*', '!master' ]
 
 jobs:
   build:
@@ -26,8 +26,8 @@ jobs:
     - run: npm run prod
     - run: npm run workbox
 
-  coverage:
-    name: coverage
+  test:
+    name: test
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -46,18 +46,3 @@ jobs:
         CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
       with:
         coverageCommand: npm test
-
-  deploy:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    steps:
-      - name: SSH Deploy
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          command: cd /var/www/calculator.iondrimbafilho.me/public_html/react-calculator && git pull
-          host: ${{ secrets.DIGITAL_OCEAN_IP }}
-          username: root
-          privateKey: ${{ secrets.SSH_DIGITAL_OCEAN}}
-
