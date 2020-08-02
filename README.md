@@ -1,6 +1,7 @@
 ![Calculator](https://calculator.iondrimbafilho.me/images/calctwitter.png)
 
-![CI](https://github.com/iondrimba/react-calculator/workflows/CI/badge.svg)
+![build](https://github.com/iondrimba/react-calculator/workflows/build/badge.svg)
+![deploy](https://github.com/iondrimba/react-calculator/workflows/deploy/badge.svg)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/a82eed604ee312a0edfa/test_coverage)](https://codeclimate.com/github/iondrimba/react-calculator/test_coverage)
 [![Code Climate](https://codeclimate.com/github/iondrimba/react-calculator/badges/gpa.svg)](https://codeclimate.com/github/iondrimba/react-calculator)
 
