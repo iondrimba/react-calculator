@@ -9,7 +9,7 @@
 
 ## Stack
 
-- React + Redux
+- React + Redux 1
 - Sass
 - ES6
 - Jest + Enzyme
