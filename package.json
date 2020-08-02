@@ -7,7 +7,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --open --config webpack.dev.js",
     "prod": "cross-env NODE_ENV=production ./node_modules/.bin/webpack -p --config webpack.prod.js",
-    "test": "./node_modules/.bin/jest --env=jsdom --coverage",
+    "test": "./node_modules/.bin/jest --coverage --testMatch '**/*.spec.js'",
     "workbox": "./node_modules/.bin/workbox generateSW workbox-config.js"
   },
   "engines": {
@@ -21,7 +21,18 @@
   "jest": {
     "transform": {
       "^.+\\.js?$": "babel-jest"
-    }
+    },
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "notify": false,
+    "clearMocks": true,
+    "restoreMocks": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts}"
+    ]
   },
   "devDependencies": {
     "@babel/cli": "^7.8.3",
