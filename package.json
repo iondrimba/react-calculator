@@ -14,7 +14,7 @@
     "node": ">=10"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.7.0",
+    "@babel/polyfill": "^7.10.4",
     "@babel/runtime": "^7.10.5",
     "prop-types": "^15.7.2"
   },
