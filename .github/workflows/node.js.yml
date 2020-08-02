@@ -28,14 +28,19 @@ jobs:
     - run: npm test
 
   deploy:
-    - name: Execute SSH commmands on remote server
-      uses: JimCronqvist/action-ssh@master
-      env:
-        NAME: "Root"
-      with:
-        hosts: 'ssh root@${{secrets.DIGITAL_OCEAN_IP}}'
-        privateKey: ${{ secrets.SSH_DIGITAL_OCEAN }}
-        debug: false
-        command: |
-          cd /var/www/calculator.iondrimbafilho.me/public_html/
-          git pull
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x]
+    steps:
+      - name: Execute SSH commmands on remote server
+        uses: JimCronqvist/action-ssh@master
+        env:
+          NAME: "Root"
+        with:
+          hosts: 'ssh root@${{secrets.DIGITAL_OCEAN_IP}}'
+          privateKey: ${{ secrets.SSH_DIGITAL_OCEAN }}
+          debug: false
+          command: |
+            cd /var/www/calculator.iondrimbafilho.me/public_html/
+            git pull
