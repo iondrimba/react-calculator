@@ -26,3 +26,16 @@ jobs:
     - run: npm run prod
     - run: npm run workbox
     - run: npm test
+
+  deploy:
+    - uses: JimCronqvist/action-ssh@master
+    - name: Execute SSH commmands on remote server
+      env:
+        NAME: "Root"
+      with:
+        hosts: 'ssh root@${{secrets.DIGITAL_OCEAN_IP}}'
+        privateKey: ${{ secrets.SSH_DIGITAL_OCEAN }}
+        debug: false
+        command: |
+          cd /var/www/calculator.iondrimbafilho.me/public_html/
+          git pull
