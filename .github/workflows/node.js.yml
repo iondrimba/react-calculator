@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x]
+        node-version: [14.x]
     steps:
       - name: Execute SSH commmands on remote server
         uses: JimCronqvist/action-ssh@master
@@ -40,7 +40,7 @@ jobs:
         with:
           hosts: 'ssh root@${{secrets.DIGITAL_OCEAN_IP}}'
           privateKey: ${{ secrets.SSH_DIGITAL_OCEAN }}
-          debug: false
+          debug: true
           command: |
             cd /var/www/calculator.iondrimbafilho.me/public_html/
             git pull
