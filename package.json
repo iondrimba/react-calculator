@@ -57,7 +57,7 @@
     "css-loader": "4.2.1",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
-    "eslint": "7.6.0",
+    "eslint": "7.7.0",
     "eslint-loader": "4.0.2",
     "eslint-plugin-react": "7.20.5",
     "extract-text-webpack-plugin": "3.0.2",
