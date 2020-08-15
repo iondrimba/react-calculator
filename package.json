@@ -66,7 +66,7 @@
     "html-loader": "1.1.0",
     "html-webpack-plugin": "4.3.0",
     "image-webpack-loader": "^6.0.0",
-    "jest": "^26.1.0",
+    "jest": "^26.4.0",
     "json-loader": "0.5.7",
     "mini-css-extract-plugin": "^0.10.0",
     "node-sass": "^4.14.1",
