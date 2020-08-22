@@ -51,7 +51,7 @@
     "babel-minify-webpack-plugin": "^0.3.1",
     "babel-plugin-webpack-loaders": "0.9.0",
     "braces": "^3.0.2",
-    "compression-webpack-plugin": "4.0.1",
+    "compression-webpack-plugin": "5.0.0",
     "copy-webpack-plugin": "6.0.3",
     "cross-env": "7.0.2",
     "css-loader": "4.2.1",
