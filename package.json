@@ -11,7 +11,7 @@
     "workbox": "./node_modules/.bin/workbox generateSW workbox-config.js"
   },
   "engines": {
-    "node": ">=12"
+    "node": ">=15"
   },
   "dependencies": {
     "@babel/polyfill": "^7.7.0",

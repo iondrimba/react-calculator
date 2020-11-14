@@ -6,4 +6,4 @@ updates:
     interval: weekly
     day: saturday
     time: "09:00"
-  open-pull-requests-limit: 10
+  open-pull-requests-limit: 5
