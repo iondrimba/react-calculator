@@ -29,7 +29,7 @@ const helper = {
   },
 
   isInteger(value) {
-    return parseInt(value, 10) == value;
+    return parseInt(value, 10) === Number(value);
   },
 
   isPositiveNumber(value) {
