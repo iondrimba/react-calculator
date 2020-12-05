@@ -14,6 +14,8 @@ jobs:
       matrix:
         node-version: [14.x, 15.x]
     steps:
+      - run: npm run prod
+      - run: npm run workbox
       - name: SSH Deploy
         uses: garygrossgarten/github-action-ssh@release
         with:
