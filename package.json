@@ -8,7 +8,8 @@
     "start": "cross-env NODE_ENV=development ./node_modules/.bin/webpack-dev-server --open --config webpack.dev.js",
     "prod": "cross-env NODE_ENV=production ./node_modules/.bin/webpack -p --config webpack.prod.js",
     "test": "./node_modules/.bin/jest --coverage --testMatch '**/*.spec.js'",
-    "workbox": "./node_modules/.bin/workbox generateSW workbox-config.js"
+    "workbox": "./node_modules/.bin/workbox generateSW workbox-config.js",
+    "build": "npm run prod && npm run workbox"
   },
   "engines": {
     "node": ">=15"

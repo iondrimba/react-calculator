@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x, 15.x]
+        node-version: [15.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -23,15 +23,14 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm run prod
-    - run: npm run workbox
+    - run: npm run build
 
   test:
     name: test
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x, 15.x]
+        node-version: [15.x]
 
     steps:
     - uses: actions/checkout@master
