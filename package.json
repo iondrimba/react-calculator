@@ -76,7 +76,7 @@
     "raw-loader": "4.0.2",
     "react": "16.14.0",
     "react-addons-test-utils": "15.6.2",
-    "react-dom": "16.13.0",
+    "react-dom": "16.14.0",
     "react-redux": "7.2.2",
     "react-test-renderer": "16.14.0",
     "redux": "4.0.5",
