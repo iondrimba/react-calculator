@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.11.4",
+    "@babel/core": "^7.12.10",
     "@babel/helper-compilation-targets": "^7.10.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
     "@babel/plugin-transform-runtime": "^7.12.1",
@@ -81,7 +81,7 @@
     "react-test-renderer": "16.14.0",
     "redux": "4.0.5",
     "resolve-url-loader": "3.1.2",
-    "sass-loader": "10.0.1",
+    "sass-loader": "10.1.1",
     "style-loader": "2.0.0",
     "stylefmt": "6.0.3",
     "stylelint-config-standard": "20.0.0",
