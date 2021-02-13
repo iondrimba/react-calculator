@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "@babel/runtime": "^7.12.5",
+    "@babel/runtime": "^7.12.13",
     "prop-types": "^15.7.2"
   },
   "jest": {
