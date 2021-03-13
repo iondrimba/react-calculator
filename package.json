@@ -94,6 +94,6 @@
     "webpack-dev-server": "3.11.2",
     "webpack-merge": "^5.7.3",
     "workbox-cli": "^6.0.2",
-    "workbox-webpack-plugin": "^5.1.4"
+    "workbox-webpack-plugin": "^6.1.1"
   }
 }
