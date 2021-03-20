@@ -12,7 +12,8 @@
     "build": "npm run prod && npm run workbox"
   },
   "engines": {
-    "node": ">=15"
+    "node": "15.11.0",
+    "npm": "7.6.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
@@ -38,7 +39,7 @@
   "devDependencies": {
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.13.10",
-    "@babel/helper-compilation-targets": "^7.13.8",
+    "@babel/helper-compilation-targets": "^7.13.10",
     "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
     "@babel/plugin-transform-runtime": "^7.13.8",
     "@babel/preset-env": "^7.13.9",
@@ -83,7 +84,7 @@
     "resolve-url-loader": "3.1.2",
     "sass-loader": "10.1.1",
     "style-loader": "2.0.0",
-    "stylefmt": "6.0.3",
+    "stylefmt": "^5.3.2",
     "stylelint-config-standard": "20.0.0",
     "stylelint-webpack-plugin": "^2.1.1",
     "sw-precache-webpack-plugin": "1.0.0",
