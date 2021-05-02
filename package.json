@@ -37,7 +37,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.14",
+    "@babel/cli": "^7.13.16",
     "@babel/core": "^7.13.16",
     "@babel/helper-compilation-targets": "^7.13.10",
     "@babel/plugin-proposal-object-rest-spread": "^7.13.8",
